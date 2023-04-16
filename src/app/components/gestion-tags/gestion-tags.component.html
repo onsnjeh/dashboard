@@ -1,0 +1,97 @@
+<section class="section-intro padding-top-sm">
+    <div class="container">
+  <div class="container">
+    
+                           
+    <div class="row g-2 w-100  ">
+        <div class="col flex-grow ">
+          <div class="input-group  rounded-pill py-3 px-7">
+           
+            
+          <input type="text" placeholder="entrer un mot clé" class="form-control" name="">
+         
+          <div class="input-field second-wrap">
+              <button class="btn-primary  py-3 px-5" type="button"><i class="fa fa-search-plus" aria-hidden="true"></i>chercher</button>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link underline" routerLink="/recherche">Recherche avancé</a>
+          </div>
+          
+        </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  <div class="row" style="margin: 20px;">
+    <div class=" col-lg-10 col-md-6">
+    </div>
+    <div class=" col-lg-2 col-md-6">
+        <app-ajouter-tags></app-ajouter-tags>
+    </div>
+  </div> 
+  <div class="card-header bg-primary text-white px-6">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="me-6">
+            <h2 class="card-title text-white mb-0">List Tags</h2>
+        </div>
+  
+    </div>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of items">
+        <tr>
+          <td>
+            <span class="pl-{{ item.level }} cursor-pointer" (click)="toggleExpand(item)">
+              <span *ngIf="item.children && item.children.length > 0">
+                <i class="fas fa-caret-right mr-1" [ngClass]="{'rotate-icon': item.expanded}"></i>
+              </span>
+              {{ item.name }}
+            </span>
+          </td>
+          <td>{{item.description}}</td>
+        </tr>
+        <ng-container *ngIf="item.children && item.children.length > 0 && item.expanded">
+          <ng-container *ngFor="let child of item.children">
+            <tr>
+              <td>
+                <span class="pl-{{ child.level }} cursor-pointer" (click)="toggleExpand(child)">
+                  <span *ngIf="child.children && child.children.length > 0">
+                    <i class="fas fa-caret-right mr-1" [ngClass]="{'rotate-icon': child.expanded}"></i>
+                  </span>
+                  {{ child.name }}
+                </span>
+              </td>
+              <td>{{child.description}}</td>
+            </tr>
+            <ng-container *ngIf="child.children && child.children.length > 0 && child.expanded">
+              <ng-container *ngFor="let grandChild of child.children">
+                <tr>
+                  <td>
+                    <span class="pl-{{ grandChild.level }} cursor-pointer" (click)="toggleExpand(grandChild)">
+                      <span *ngIf="grandChild.children && grandChild.children.length > 0">
+                        <i class="fas fa-caret-right mr-1" [ngClass]="{'rotate-icon': grandChild.expanded}"></i>
+                      </span>
+                      {{ grandChild.name }}
+                    </span>
+                  </td>
+                  <td>{{grandChild.description}}</td>
+                </tr>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+  
+  
+
+  

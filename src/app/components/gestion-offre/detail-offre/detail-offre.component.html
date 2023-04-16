@@ -1,0 +1,56 @@
+<div class="container-xxl bg-light my-3 py-5">
+ <div class="card">
+   <div class="container my-2 py-2">
+     <form *ngIf="offre">
+       <div class="row g-3">
+         <div class="col-12 mb-2">
+           <h2>Detail Offre</h2>
+         </div>
+         <div class="container my-2 py-2">
+           <div class="col-lg-6 col-md-4">
+             <h3> Titre:</h3>
+             <input type="text" placeholder="Enter Titre" class="form-control"
+               id="titre" [value]="offre.titre" name="titre" [readonly]="true">
+           </div>
+         </div>
+         <div class="col-lg-6 col-md-4">
+           <h3> Période:</h3>
+           <input type="text" placeholder="Enter Période" class="form-control"
+             id="periode" [value]="offre.periode" name="periode" [readonly]="true">
+         </div>
+         <div class="col-lg-6 col-md-4">
+           <h3> Price:</h3>
+           <input type="text" placeholder="Entrer le prix en Dinar Tunisien" class="form-control"
+             id="prix" [value]="offre.prix" name="prix" [readonly]="true">
+         </div>
+         <div class="row g-3">
+           <div class="col-lg-6 col-md-4">
+             <h3>Date Debut :</h3>
+             <input type="text" placeholder="Entrer date debut" class="form-control"
+               id="dateDebut" [value]="offre.dateDebut" name="dateDebut" [readonly]="true">
+           </div>
+           <div class=" col-lg-6 col-md-4">
+             <h3>Date Fin :</h3>
+             <input type="text" placeholder="Entrer date fin" class="form-control"
+               id="dateFin" [value]="offre.dateFin" name="dateFin" [readonly]="true">
+           </div>
+         </div>
+         <div class=" col-12">
+           <h3>Description:</h3>
+           <textarea class="form-control" rows="4" class="form-control" id="exampleInputName"
+             id="description" [value]="offre.description" name="description" [readonly]="true"
+             placeholder="écrire ici ..."></textarea>
+           <br>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" (click)="annuler()">Retour</button>
+           </div>
+         </div>
+       </div>
+     </form>
+   </div>
+ </div>
+</div>
+
+
+
+

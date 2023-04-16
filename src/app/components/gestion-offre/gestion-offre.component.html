@@ -1,0 +1,61 @@
+<app-barre-recherche></app-barre-recherche>
+
+
+<div class="container-fluid">
+
+    <div class="row" style="margin: 20px;">
+        <div class=" col-lg-10 col-md-6">
+       
+        </div>
+        <div class=" col-lg-2 col-md-6">
+            <button class="btn btn-lg btn-outline-primary" routerLink="/creation-offre" >Créer offre</button>
+        </div>
+       </div>
+        
+         <div class="card">
+        <div class="card-header bg-primary text-white px-6">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="me-6">
+                    <h2 class="card-title text-white mb-0">List offres</h2>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    
+                    <th scope="col">Titre</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Période</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Action</th>
+                  
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of offres | paginate: { itemsPerPage: pageSize, currentPage: page }">
+                  
+                    <td>
+                        <a [routerLink]="['/detail-offre', data.id]">{{ data.titre }}</a>
+                    </td>
+                    <td>{{data.description}}</td>
+                    <td>{{data. periode}}</td>
+                    <td>{{data.prix}}</td>
+   
+                    <td>
+                        <button class="btn btn-primary text-uppercase" style="margin-left: 10px;" ngbTooltip="modifier"
+                        [routerLink]="['/edit-offre', data.id]"><i class="fa fa-pencil" ></i></button>
+                        <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"  ngbTooltip="supprimer"
+                        (click)="deleteOffre(data)"><i class="fa fa-trash"></i></button>
+                       
+                    </td>
+                </tr>
+             
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </div>   

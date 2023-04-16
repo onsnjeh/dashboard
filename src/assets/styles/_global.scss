@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// .mat-drawer-container {
+//   background-color: $body-color;
+// }
+
+a:hover,
+a:focus,
+a {
+  text-decoration: none;
+  color: unset;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+.feather-sm {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.feather-base {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.feather-lg {
+  width: 24px !important;
+  height: 24px !important;
+}

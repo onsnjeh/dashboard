@@ -1,0 +1,55 @@
+<app-barre-recherche></app-barre-recherche>
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-lg-10 col-md-6"></div>
+        <div class="col-lg-2 col-md-6 " >
+            <button class="btn btn-outline-primary mb-2 me-2 " routerLink="/creation-Document" >Ajouter Document</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="card-title text-white mb-0">List Documents </h2>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-2">Title</th>
+                        <th class="col-7">Abstract</th>
+                        <th class="col-1.5">Tags</th>
+                        <th class="col-1.5">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of articles | paginate: { itemsPerPage: pageSize, currentPage: page }">
+                        <td>
+                            <div class="fw-bold">{{item.titre}}</div>
+                            <div class="text-muted small">
+                                <span class="me-2">Reference: {{item.reference}}</span>
+                                <br>
+                                <span>Publié le: {{item.date_publication}}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p >{{item.abstract}}</p>
+                        </td>
+                        <td>
+                            <ul>
+                                <li *ngFor="let tagId of item.tags">
+                                    {{ getTagName(tagId) }}
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary" data-bs-toggle="tooltip" ngbTooltip="modifier"><i class="fa fa-pencil"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>

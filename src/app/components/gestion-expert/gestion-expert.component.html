@@ -1,0 +1,52 @@
+<app-barre-recherche></app-barre-recherche>
+<div class="row" style="margin: 20px;">
+    <div class=" col-lg-9 col-md-6">
+    </div>
+    <div class=" col-lg-3 col-md-6">
+        <button class="btn btn-lg btn-outline-primary" routerLink="/ajouter-compte">Ajouter expert</button>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <div class="card">
+        <div class="card-header bg-primary text-white px-6">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="me-6">
+                    <h2 class="card-title text-white mb-0">List experts</h2>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mot de Passe</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let items of  comptes | paginate: { itemsPerPage: pageSize, currentPage: page }">
+                        <th><a [routerLink]="['/detail-compte', items.id]">{{items.nom}}</a></th>
+                        <th>{{items.prenom}}</th>
+                        <th>{{items.email}}</th>
+                        <th>{{items.password}}</th>
+                        <td>
+                            <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"
+                            [routerLink]="['/edit-compte', items.id]"   ngbTooltip="modifier"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"
+                                ngbTooltip="supprimer" (click)="deleteCompte(items)"><i class="fa fa-trash"></i></button>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+        </div>

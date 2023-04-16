@@ -1,0 +1,51 @@
+<div class="container-xxl bg-light my-3 py-5 ">
+	<div class="card">
+		<div class="container my-2 py-2 ">
+      <form *ngIf="Compte" [formGroup]=" CompteForm" (ngSubmit)="onSubmit()">
+        <div class="row g-3">
+					<div class="col-12 mb-2">
+						<h2>Modifier Compte</h2>
+					</div>
+
+    <div class="container my-2 py-2">
+
+     <div class="row g-3">
+    <div class="col-lg-6 col-md-4">
+         <h3>Nom:</h3>
+         <input type="text" placeholder="Enter Nom" class="form-control"
+          id="nom" formControlName="nom" name="nom" required>
+    </div>
+        <div class="col-lg-6 col-md-4">
+         <h3>Prénom:</h3>
+         <input type="text" placeholder="Enter Prénom" class="form-control"
+          id="prenom" formControlName="prenom" name="prenom" required>
+        </div>
+       </div>
+    </div>
+        <div class="col-lg-8 col-md-4">
+         <h3>Email</h3>
+         <input type="text" placeholder="Entrer Email" class="form-control" 
+         id="email" formControlName="email" name="email" required>
+        </div>
+        <div class="col-lg-8 col-md-4">
+          <h3>Rôle</h3>
+          <input type="text" placeholder="Entrer Rôle" class="form-control" 
+          name="role" id="role" formControlName="role" name="role" required>
+      </div>
+        
+      <div class="col-lg-8 col-md-4">
+       <h3>Password</h3>
+       <input type="text" placeholder="Entrer Password" class="form-control" 
+       id="password" formControlName="password" name="password" required>
+      </div>
+      <br>
+        <br>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+          <button type="button" class="btn btn-primary" (click)="annuler()">Annuler</button>
+        </div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

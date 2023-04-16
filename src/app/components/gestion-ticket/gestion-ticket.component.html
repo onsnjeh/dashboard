@@ -1,0 +1,54 @@
+<app-barre-recherche></app-barre-recherche>
+
+
+<div class="container-fluid">
+    <div class="row" style="margin: 20px;">
+        <div class="col-lg-10 col-md-6"></div>
+        <div class="col-lg-2 col-md-6">
+            <button class="btn btn-lg btn-outline-primary" routerLink="/creation-ticket">Créer ticket</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white px-6">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="me-6">
+                    <h2 class="card-title text-white mb-0">Liste des tickets</h2>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Titre</th>
+                        <th scope="col">Priorité</th>
+                        <th scope="col">Catégorie</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of tickets | paginate: { itemsPerPage: pageSize, currentPage: page }">
+
+                        <td>{{ item.titre }}</td>
+                        <td>{{ item.priorite }}</td>
+                        <td>{{ item.categorie }}</td>
+                        <td>{{ item.date }}</td>
+                        <td>
+                            <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"
+                                ngbTooltip="Fermer">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center">
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

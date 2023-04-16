@@ -1,0 +1,30 @@
+// @=@=@=@=@=@=@=@=@=@=@=@=@=@=@=@=@
+// Sidebar
+// @=@=@=@=@=@=@=@=@=@=@=@=@=@=@=@=@
+
+.sidenav {
+  min-width: 230px;
+  box-shadow: 0px 7px 30px 0px rgba(113, 122, 131, 0.11);
+  border: 0;
+
+  .list-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebar-menu {
+    padding: 14px 16px;
+    border-radius: 9px;
+
+    &.activelink {
+      background-color: #DAA520 !important;
+      color: #fff !important;
+    }
+  }
+
+  .buy-flexy {
+    background-color: #fcf1ed;
+    border-radius: 10px;
+  }
+
+}

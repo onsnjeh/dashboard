@@ -1,0 +1,61 @@
+
+  <div class="container-xxl bg-light my-6 py-6">
+    <div class="card">
+      <div class="container my-4 py-4">
+        <form [formGroup]="ticketForm"  *ngIf="ticket">
+          <div class="row g-3">
+            <div class="col-12 mb-4">
+              <h3>répondre au Ticket</h3>
+            </div>
+  
+            <div class="col-lg-4 col-md-8">
+              <h5>Categorie :</h5>
+              <input type="text" class="form-control" id="exampleInput" [value]="ticket.categorie" [readonly]="true">
+            </div>
+            <div class="col-lg-8 col-md-6" >
+              <h5>Priorité :</h5>
+              
+              {{ ticket.priorite }}
+            </div>
+  
+            <div class="form-group col-4">
+              <h5>Question :</h5>
+              <input type="text" class="form-control" id="exampleInput" [value]="ticket.question" [readonly]="true">
+            </div>
+  
+            <div class="form-group col-4">
+              <h5>Le fichier :</h5>
+              <input type="text" class="form-control" id="exampleInput" [value]="ticket.fichier" [readonly]="true">
+            </div>
+            <div class="form-group col-6">
+            <form (ngSubmit)="onAssign()">
+            <h5>Assigner vers: </h5>
+           
+            <select class="form-select" id="expert" formControlName="expert" ngModel="selectedExpert">
+							<option value="">--select Expert--</option>
+							<option *ngFor="let expert of comptes" >{{expert.nom}}
+							</option>
+						</select>
+              <button class="btn btn-primary text-uppercase m-3" type="submit">Assigner </button>
+            </form>
+            <button (click)="toggleResponse()" class="btn btn-outline-primary mb-2 me-2">Répondre</button>
+            <form *ngIf="isResponseVisible" (ngSubmit)="submitResponse()">
+              <label for="response">Réponse :</label>
+              <textarea id="response" [(ngModel)]="responseText" name="responseText" required></textarea>
+              <input type="file" [(ngModel)]="responseFile" name="responseFile" multiple required>
+              <button type="submit">Envoyer</button>
+            </form></div>
+  
+            <div class="col-lg-10 col-md-8">
+              
+            </div>
+  
+            <div class="col-lg-2 col-md-8">
+              
+              <button class="btn btn-primary text-uppercase" type="submit"(click)="fermerTicket()">close </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>  

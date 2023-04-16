@@ -1,0 +1,45 @@
+<div class="container-xxl bg-light my-3 py-5 ">
+	<div class="card">
+		<div class="container my-2 py-2 ">
+			<form [formGroup]="typeThemeForm" (ngSubmit)="onSubmit()">
+				<div class="row g-3">
+					<div class="col-12 mb-2">
+						<h3>Ajouter le Type ou le Théme</h3>
+					</div>
+					<div class="col-lg-6 col-md-12">
+						<label>Categorie :</label>
+						<select class="form-select" id="categorie" formControlName="categorieName" name="categorieName">
+							<option value="">--select Categorie--</option>
+							<option *ngFor="let categorie of categories" [value]="categorie.name">{{categorie.name}}
+							</option>
+						</select>
+
+					</div>
+					<div class="col-lg-6 col-md-12">
+						<div class="form-group">
+							<label for="exampleTheme">Théme :</label>
+							<input type="Text" class="form-control" id="exampleTheme" formControlName="theme"
+								name="theme" placeholder="Entrer Théme">
+						</div>
+
+					</div>
+				</div>
+				<div class="row g-3 mt-1">
+					<div class="col-lg-6 col-md-12">
+						<div class="form-group">
+							<label for="exampleType">Type :</label>
+							<input type="Text" class="form-control" id="exampleType" formControlName="type" name="type"
+								placeholder="Entrer Type">
+						</div>
+					</div>
+					<div class=" col-lg-10 col-md-8"></div>
+					<div class=" col-lg-2 col-md-8">
+						<button class="btn btn-primary text-uppercase" type="submit">Ajouter <i class="fa fa-check"
+								style="color:write;"></i></button>
+					</div>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

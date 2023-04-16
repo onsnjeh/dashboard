@@ -1,0 +1,57 @@
+<app-barre-recherche></app-barre-recherche>
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-lg-10 col-md-6"></div>
+        <div class="col-lg-2 col-md-6 ">
+            <app-creation-categorie></app-creation-categorie>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="card-title text-white mb-0">List Categories</h2>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+
+                        <th scope="col">ID</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item1 of item1">
+
+                        <td>
+                            {{item1.id}}
+                        </td>
+                        <td>{{item1.name}}</td>
+                        <td>{{item1.description}}</td>
+
+                        <td>
+                            <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"
+                                ngbTooltip="modifier" [routerLink]="['/edit-categorie',item1.id]"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"
+                                ngbTooltip="supprimer" (click)="deleteCategorie(item1.id)"><i
+                                    class="fa fa-trash"></i></button>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class=" col-lg-2 col-md-6">
+            <button class="btn  btn-primary" routerLink="/ajouter-type-theme">Ajouter type et théme</button>
+        </div>
+    </div>

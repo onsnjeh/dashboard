@@ -1,0 +1,44 @@
+<app-barre-recherche></app-barre-recherche>
+<div class="container-fluid">
+  <div class="row mb-4">
+    <div class="col-lg-10 col-md-6"></div>
+    <div class="col-lg-2 col-md-6 ">
+      <app-ajouter-partenaires></app-ajouter-partenaires>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="card-title text-white mb-0">List Partenaires</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="col">Nom</th>
+            <th class="col">Email</th>
+            <th class="col">Téléphone</th>
+            <th class="col">Logo</th>
+            <th class="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let partenaire of partenaires">
+            <td>{{ partenaire.nom }}</td>
+            <td>{{ partenaire.email }}</td>
+            <td>{{ partenaire.telephone }}</td>
+            <td> <img src="assets/img/{{ partenaire.image }}" style="width: 50px; height: 50px;">
+            </td>
+            <td>
+              <button class="btn btn-primary text-uppercase"[routerLink]="['/edit-partenaire', partenaire.id]" style="margin-left: 10px;" ngbTooltip="modifier" 
+              ><i class="fa fa-pencil"></i></button>
+              <button class="btn btn-primary text-uppercase" style="margin-left: 10px;" ngbTooltip="supprimer"
+                (click)="deletePartenaire(partenaire)"><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>

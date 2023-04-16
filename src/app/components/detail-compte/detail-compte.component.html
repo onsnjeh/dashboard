@@ -1,0 +1,52 @@
+<div class="container-xxl bg-light my-3 py-5 ">
+	<div class="card">
+		<div class="container my-2 py-2 ">
+      <form *ngIf="Compte" >
+        <div class="row g-3">
+					<div class="col-12 mb-2">
+						<h2>Detail Compte</h2>
+					</div>
+
+    <div class="container my-2 py-2">
+
+     <div class="row g-3">
+    <div class="col-lg-6 col-md-4">
+         <h3>Nom:</h3>
+         <input type="text" placeholder="Enter Nom" class="form-control"
+         id="nom" [value]="Compte.nom" name="nom" [readonly]="true">
+    </div>
+        <div class="col-lg-6 col-md-4">
+         <h3>Prénom:</h3>
+         <input type="text" placeholder="Enter Prénom" class="form-control"
+         id="prenom" [value]="Compte.prenom" name="prenom" [readonly]="true">
+        </div>
+       </div>
+    </div>
+        <div class="col-lg-8 col-md-4">
+         <h3>Email</h3>
+         <input type="text" placeholder="Entrer Email" class="form-control" 
+         id="email" [value]="Compte.email" name="email" [readonly]="true">
+        </div>
+        <div class="col-lg-8 col-md-4">
+          <h3>Rôle</h3>
+          <input type="text" placeholder="Entrer Rôle" class="form-control" 
+          id="role" [value]="Compte.role" name="role" [readonly]="true">
+      </div>
+        
+      <div class="col-lg-8 col-md-4">
+       <h3>Password</h3>
+       <input type="text" placeholder="Entrer Password" class="form-control" 
+       id="password" [value]="Compte.password" name="password" [readonly]="true">
+      </div>
+      <br>
+        <br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="annuler()">Annuler</button>
+        </div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+

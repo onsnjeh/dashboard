@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-header bg-primary text-white px-6">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="me-4">
+                <h2 class="card-title text-white mb-0">Listes des tickets</h2>
+                <div class="card-subtitle">Les Dernieres tickets</div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="card-body p-6">
+        <table class="table table-striped">
+            <thead>
+
+                <tr>
+
+                    <th scope="col">Nom</th>
+                    <th scope="col">Periority</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item2 of item2">
+
+                    <td>
+                        {{item2.titre }}
+                    </td>
+                    <td> {{item2.priorite}}</td>
+                    <td>{{item2.categorie}} </td>
+                    <td>{{item2.date}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-end"><i routerLink="/gestion-ticket" class="bi bi-arrow-right-circle"></i></div>
+
+
+    </div>
