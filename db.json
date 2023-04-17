@@ -64,7 +64,7 @@
       "nom": "expert1",
       "prenom": "expert1",
       "email": "expert1@gmail",
-      "role": "expert",
+      "role": "manager",
       "password": "123456"
     },
     {
@@ -418,24 +418,6 @@
       "date": "2023-04-13T09:33:50.200Z"
     }
   ],
-  "tags": [
-    {
-      "id": 1,
-      "name": "Tag 1"
-    },
-    {
-      "id": 2,
-      "name": "Tag 2"
-    },
-    {
-      "id": 3,
-      "name": "Tag 3"
-    },
-    {
-      "id": 4,
-      "name": "Tag 4"
-    }
-  ],
   "themes": [
     {
       "id": 1,
@@ -583,13 +565,6 @@
     }
   ],
   "partenaires": [
-    {
-      "id": 1,
-      "nom": "zitouna",
-      "email": "zitouna@gmail.com",
-      "telephone": "12345678",
-      "image": "team-1.jpg"
-    },
     {
       "id": 2,
       "nom": "TT",
@@ -1108,6 +1083,91 @@
       "description": "Description de l'offre 5",
       "dateDebut": "2022-07-01",
       "dateFin": "2022-09-30"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "title": "option 1",
+      "description": "Description d'option 1",
+      "level": 0,
+      "children": [
+        {
+          "id": 2,
+          "title": "option 1.1",
+          "description": "Description de l'option 1.1",
+          "level": 1,
+          "parentId": 1
+        },
+        {
+          "id": 3,
+          "title": "option 1.2",
+          "description": "Description de l'option 1.2",
+          "level": 1,
+          "parentId": 1,
+          "children": [
+            {
+              "id": 4,
+              "title": "option 1.2.1",
+              "description": "Description du option 1.2.1",
+              "level": 2,
+              "parentId": 3
+            },
+            {
+              "id": 5,
+              "title": "option 1.2.2",
+              "description": "Description du option 1.2.2",
+              "level": 2,
+              "parentId": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "option 2",
+      "description": "Description du option 2",
+      "level": 0,
+      "children": [
+        {
+          "id": 7,
+          "title": "option 2.1",
+          "description": "Description de l'option 2.1",
+          "level": 1,
+          "parentId": 6
+        },
+        {
+          "id": 8,
+          "title": "option 2.2",
+          "description": "Description de l'option 2.2",
+          "level": 1,
+          "parentId": 6,
+          "children": [
+            {
+              "id": 9,
+              "title": "option 2.2.1",
+              "description": "Description du option 2.2.1",
+              "level": 2,
+              "parentId": 8
+            },
+            {
+              "id": 10,
+              "title": "option 2.2.2",
+              "description": "Description du option 2.2.2",
+              "level": 2,
+              "parentId": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "option 3",
+      "description": "Description d'option 3",
+      "level": 0,
+      "children": []
     }
   ]
 }

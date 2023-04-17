@@ -16,12 +16,14 @@ import { ComponentsModule } from './components/components.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './layouts/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './layouts/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullComponent,
-    HeaderComponent
+    HeaderComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

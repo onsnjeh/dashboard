@@ -1,32 +1,8 @@
-<section class="section-intro padding-top-sm">
-    <div class="container">
-  <div class="container">
-    
-                           
-    <div class="row g-2 w-100  ">
-        <div class="col flex-grow ">
-          <div class="input-group  rounded-pill py-3 px-7">
-           
-            
-          <input type="text" placeholder="entrer un mot clé" class="form-control" name="">
-         
-          <div class="input-field second-wrap">
-              <button class="btn-primary  py-3 px-5" type="button"><i class="fa fa-search-plus" aria-hidden="true"></i>chercher</button>
-            </div>
-          </div>
-          <div class="nav-item">
-            <a class="nav-link underline" routerLink="/recherche">Recherche avancé</a>
-          </div>
-          
-        </div>
-    </div>
-  </div>
-  </div>
-  </section>
-  <div class="row" style="margin: 20px;">
-    <div class=" col-lg-10 col-md-6">
-    </div>
-    <div class=" col-lg-2 col-md-6">
+<app-barre-recherche></app-barre-recherche>
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-lg-10 col-md-6"></div>
+        <div class="col-lg-2 col-md-6 mt-4">
         <app-ajouter-tags></app-ajouter-tags>
     </div>
   </div> 
@@ -53,7 +29,7 @@
               <span *ngIf="item.children && item.children.length > 0">
                 <i class="fas fa-caret-right mr-1" [ngClass]="{'rotate-icon': item.expanded}"></i>
               </span>
-              {{ item.name }}
+              {{ item.title }}
             </span>
           </td>
           <td>{{item.description}}</td>
@@ -66,7 +42,7 @@
                   <span *ngIf="child.children && child.children.length > 0">
                     <i class="fas fa-caret-right mr-1" [ngClass]="{'rotate-icon': child.expanded}"></i>
                   </span>
-                  {{ child.name }}
+                  {{ child.title }}
                 </span>
               </td>
               <td>{{child.description}}</td>
@@ -79,7 +55,7 @@
                       <span *ngIf="grandChild.children && grandChild.children.length > 0">
                         <i class="fas fa-caret-right mr-1" [ngClass]="{'rotate-icon': grandChild.expanded}"></i>
                       </span>
-                      {{ grandChild.name }}
+                      {{ grandChild.title }}
                     </span>
                   </td>
                   <td>{{grandChild.description}}</td>
@@ -90,7 +66,7 @@
         </ng-container>
       </ng-container>
     </tbody>
-  </table>
+  </table></div>
   
   
 

@@ -1,6 +1,6 @@
 export class Tag {
   id?: number;
-  name: string='';
+  title: string='';
   description: string='';
   level: number=0;
   children?: Tag[];
