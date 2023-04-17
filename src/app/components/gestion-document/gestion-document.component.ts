@@ -68,7 +68,7 @@ export class GestionDocumentComponent implements OnInit{
     //recupere tag 
     getTagName(tagId: number): string {
       const tag = this.tags.find(t => t.id === tagId);
-      return tag ? tag.name : '';
+      return tag ? tag.title : '';
     }
   }
   

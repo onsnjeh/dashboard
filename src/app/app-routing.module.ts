@@ -28,6 +28,7 @@ import { EditTypeThemeComponent } from './components/gestion-categorie/edit-type
 import { AjouterCompteComponent } from './components/ajouter-compte/ajouter-compte.component';
 import { EditCompteComponent } from './components/edit-compte/edit-compte.component';
 import { DetailCompteComponent } from './components/detail-compte/detail-compte.component';
+import { NavbarComponent } from './layouts/navbar/navbar.component';
 
 
 
@@ -67,6 +68,7 @@ const routes: Routes = [
       { path:'ajouter-compte', component: AjouterCompteComponent },
       { path:'edit-compte/:id', component: EditCompteComponent },
       { path:'detail-compte/:id', component: DetailCompteComponent },
+      {path:'navbar',component:NavbarComponent}
 
       
 
