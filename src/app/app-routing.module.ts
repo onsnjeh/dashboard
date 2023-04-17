@@ -9,8 +9,7 @@ import { GestionCategorieComponent } from './components/gestion-categorie/gestio
 import { GestionClientComponent } from './components/gestion-client/gestion-client.component';
 import { CreationDocumentComponent } from './components/gestion-document/creation-document/creation-document.component';
 import { GestionDocumentComponent } from './components/gestion-document/gestion-document.component';
-import { GestionExpertComponent } from './components/gestion-expert/gestion-expert.component';
-import { GestionManagerComponent } from './components/gestion-manager/gestion-manager.component';
+
 import { CreerOffreComponent } from './components/gestion-offre/creer-offre/creer-offre.component';
 import { GestionOffreComponent } from './components/gestion-offre/gestion-offre.component';
 import { AjouterPartenairesComponent } from './components/gestion-partenaires/ajouter-partenaires/ajouter-partenaires.component';
@@ -28,6 +27,7 @@ import { EditTypeThemeComponent } from './components/gestion-categorie/edit-type
 import { AjouterCompteComponent } from './components/ajouter-compte/ajouter-compte.component';
 import { EditCompteComponent } from './components/edit-compte/edit-compte.component';
 import { DetailCompteComponent } from './components/detail-compte/detail-compte.component';
+import { GestionManagerExpertComponent } from './components/gestion-manager-expert/gestion-manager-expert.component';
 
 
 
@@ -40,8 +40,7 @@ const routes: Routes = [
       {path:"", redirectTo:"/home", pathMatch:"full"},
       {path:"home", component:DashboardComponent},
       {path:"gestion-clt",component:GestionClientComponent},
-      {path:"gestion-expert",component:GestionExpertComponent},
-      {path:"gestion-manager",component:GestionManagerComponent},
+      {path:"gestion-manager-expert",component:GestionManagerExpertComponent},
       {path:"gestion-offre",component:GestionOffreComponent},
       {path:"creer-offre",component:CreerOffreComponent},
       {path:"gestion-doc",component:GestionDocumentComponent},

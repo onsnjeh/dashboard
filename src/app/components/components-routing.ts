@@ -13,8 +13,6 @@ import { GestionTicketComponent } from "./gestion-ticket/gestion-ticket.componen
 import { GestionCategorieComponent } from "./gestion-categorie/gestion-categorie.component";
 import { GestionClientComponent } from "./gestion-client/gestion-client.component";
 import { GestionDocumentComponent } from "./gestion-document/gestion-document.component";
-import { GestionExpertComponent } from "./gestion-expert/gestion-expert.component";
-import { GestionManagerComponent } from "./gestion-manager/gestion-manager.component";
 import { GestionOffreComponent } from "./gestion-offre/gestion-offre.component";
 import { GestionPartenairesComponent } from "./gestion-partenaires/gestion-partenaires.component";
 import { GestionTagsComponent } from "./gestion-tags/gestion-tags.component";
@@ -26,13 +24,13 @@ import { EditTypeThemeComponent } from "./gestion-categorie/edit-type-theme/edit
 import { AjouterCompteComponent } from "./ajouter-compte/ajouter-compte.component";
 import { EditCompteComponent } from "./edit-compte/edit-compte.component";
 import { DetailCompteComponent } from "./detail-compte/detail-compte.component";
+import { GestionManagerExpertComponent } from "./gestion-manager-expert/gestion-manager-expert.component";
 
 
 export const routes: Routes = [
 
  {path:"gestion-clt",component:GestionClientComponent},
- {path:"gestion-expert",component:GestionExpertComponent},
- {path:"gestion-manager",component:GestionManagerComponent},
+ {path:"gestion-manager-expert",component:GestionManagerExpertComponent},
  {path:"gestion-offre",component:GestionOffreComponent},
  {path:"creer-offre",component:CreerOffreComponent},
  {path:"gestion-doc",component:GestionDocumentComponent},

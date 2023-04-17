@@ -46,14 +46,9 @@ export class FullComponent {
       menu: "List Ticket",
     },
     {
-      link: "/gestion-expert",
-      icon: "list",
-      menu: "List Expert",
-    },
-    {
-      link: "/gestion-manager",
+      link: "/gestion-manager-expert",
       icon: "file-text",
-      menu: "List Manager",
+      menu: "List Manager/Expert",
     },
     {
       link: "/gestion-clt",

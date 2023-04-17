@@ -11,8 +11,7 @@ import { GestionCategorieComponent } from "./gestion-categorie/gestion-categorie
 import { GestionClientComponent } from "./gestion-client/gestion-client.component";
 import { CreationDocumentComponent } from "./gestion-document/creation-document/creation-document.component";
 import { GestionDocumentComponent } from "./gestion-document/gestion-document.component";
-import { GestionExpertComponent } from "./gestion-expert/gestion-expert.component";
-import { GestionManagerComponent } from "./gestion-manager/gestion-manager.component";
+
 import { CreerOffreComponent } from "./gestion-offre/creer-offre/creer-offre.component";
 import { DetailOffreComponent } from "./gestion-offre/detail-offre/detail-offre.component";
 import { EditOffreComponent } from "./gestion-offre/edit-offre/edit-offre.component";
@@ -34,14 +33,14 @@ import { AjouterCompteComponent } from './ajouter-compte/ajouter-compte.componen
 
 import { EditCompteComponent } from './edit-compte/edit-compte.component';
 import { DetailCompteComponent } from './detail-compte/detail-compte.component';
+import { GestionManagerExpertComponent } from "./gestion-manager-expert/gestion-manager-expert.component";
 
 
 
 @NgModule({
   declarations: [
     GestionClientComponent,
-    GestionExpertComponent,
-    GestionManagerComponent,
+    GestionManagerExpertComponent,
     GestionOffreComponent,
     CreerOffreComponent,
     GestionDocumentComponent,
@@ -76,8 +75,8 @@ import { DetailCompteComponent } from './detail-compte/detail-compte.component';
      ,NgbRatingModule],
   exports: [
     GestionClientComponent,
-    GestionExpertComponent,
-    GestionManagerComponent,
+    GestionManagerExpertComponent,
+
     GestionOffreComponent,
     
     CreerOffreComponent,

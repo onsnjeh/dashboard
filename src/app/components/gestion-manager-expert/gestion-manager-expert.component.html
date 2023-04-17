@@ -3,7 +3,7 @@
     <div class=" col-lg-9 col-md-6">
     </div>
     <div class=" col-lg-8 col-md-6">
-        <button class="btn btn-lg btn-outline-primary" routerLink="/ajouter-compte">Ajouter manager</button>
+        <button class="btn btn-lg btn-outline-primary" routerLink="/ajouter-compte">Ajouter Compte</button>
     </div>
  </div> 
 
@@ -13,9 +13,14 @@
         <div class="card-header bg-primary text-white px-6">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="me-6">
-                    <h2 class="card-title text-white mb-0">List managers</h2>
+                    <h2 class="card-title text-white mb-0">List managers et experts</h2>
+                    <select [(ngModel)]="selectedRole">
+                        <option value="manager">Manager</option>
+                        <option value="expert">Expert</option>
+                      </select>
                 </div>
             </div>
+            
         </div>
         <div class="card-body p-6">
             <table class="table table-striped">
@@ -25,16 +30,16 @@
                 <th scope="col">Nom</th>
                 <th scope="col">Prénom</th>
                 <th scope="col">Email</th>
-                <th scope="col">Mot de Passe</th>
+                <th scope="col">Rôle</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let items of  comptes | paginate: { itemsPerPage: pageSize, currentPage: page }">
+            <tr *ngFor="let items of (selectedRole === 'manager' ? managerComptes : expertComptes)  | paginate: { itemsPerPage: pageSize, currentPage: page }">
                 <th><a [routerLink]="['/detail-compte', items.id]">{{items.nom}}</a></th>
                 <th>{{items.prenom}}</th>
                 <th>{{items.email}}</th>
-                <th ng-bind="password">{{items.password}}</th>
+                <th >{{items.role}}</th>
                 <td>
                     <button class="btn btn-primary text-uppercase" style="margin-left: 10px;" ngbTooltip="modifier"
                     [routerLink]="['/edit-compte', items.id]"><i
