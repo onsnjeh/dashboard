@@ -1,6 +1,6 @@
 export interface Partenaire {
-    id: number ;
-  nom : string ;
+  id: number ;
+  nom: string ;
   email: string ;
   telephone: string ;
   image: string ;

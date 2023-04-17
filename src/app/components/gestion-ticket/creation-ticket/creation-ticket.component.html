@@ -18,8 +18,8 @@
 
 					<div class="col-lg-6 col-md-4">
 						<h3>Priorité:</h3>
-						<ngb-rating [(rate)]="currentRate">
-							<ng-template let-fill="fill" let-index="index" formControlName="priorite" class="form-control">
+						<ngb-rating [(rate)]="currentRate" formControlName="priorite">
+							<ng-template let-fill="fill" let-index="index"  class="form-control">
 									<i class="star bi-star{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100"
 											[class.low]="index < 5"></i>
 							</ng-template>

@@ -918,12 +918,6 @@
       "id": 3,
       "name": "juridique",
       "description": "Description de Juridique"
-    },
-    {
-      "id": 4,
-      "dateCreate": "2023-04-16T03:40:00.370Z",
-      "name": "sante",
-      "description": "Description de Sante"
     }
   ],
   "type": [
@@ -974,12 +968,6 @@
       "name": "type juridique",
       "categorieId": 3,
       "categorieName": "juridique"
-    },
-    {
-      "name": "medical",
-      "categorieId": 4,
-      "categorieName": "sante",
-      "id": 10
     }
   ],
   "theme": [
@@ -1030,12 +1018,6 @@
       "name": "theme juridique",
       "categorieId": 3,
       "categorieName": "juridique"
-    },
-    {
-      "name": "medical",
-      "categorieId": 4,
-      "categorieName": "sante",
-      "id": 10
     }
   ],
   "offre": [

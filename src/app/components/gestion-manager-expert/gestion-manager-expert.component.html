@@ -1,9 +1,11 @@
 <app-barre-recherche></app-barre-recherche>
-<div class="row" style="margin: 20px;">
-    <div class=" col-lg-9 col-md-6">
-    </div>
-    <div class=" col-lg-8 col-md-6">
-        <button class="btn btn-lg btn-outline-primary" routerLink="/ajouter-compte">Ajouter Compte</button>
+
+
+<div class="container-fluid">
+    <div class="row" style="margin: 20px;">
+        <div class="col-lg-10 col-md-6"></div>
+        <div class="col-lg-2 col-md-6">
+            <button class="btn btn-outline-primary" routerLink="/ajouter-compte">Ajouter Compte</button>
  </div> 
 
 <div class="container-fluid">
@@ -12,11 +14,18 @@
         <div class="card-header bg-primary text-white px-6">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="me-6">
-                    <h2 class="card-title text-white mb-0">List managers et experts</h2>
-                    <select [(ngModel)]="selectedRole">
-                        <option value="manager">Manager</option>
-                        <option value="expert">Expert</option>
-                      </select>
+                    <div class="row">
+                        <div class="col-9">      
+                                          <h2 class="card-title text-white mb-0">List managers et experts</h2>
+                        </div>
+                        <div class="col-3">
+                            <select [(ngModel)]="selectedRole">
+                                <option value="manager">Manager</option>
+                                <option value="expert">Expert</option>
+                              </select>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             
@@ -34,8 +43,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let items of (selectedRole === 'manager' ? managerComptes : expertComptes)  | paginate: { itemsPerPage: pageSize, currentPage: page }">
-                <th><a [routerLink]="['/detail-compte', items.id]">{{items.nom}}</a></th>
+            <tr  *ngFor="let items of (selectedRole === 'manager' ? managerComptes : expertComptes)  | paginate: { itemsPerPage: pageSize, currentPage: page }" [routerLink]="['/detail-compte', items.id]">
+                <th>{{items.nom}}</th>
                 <th>{{items.prenom}}</th>
                 <th>{{items.email}}</th>
                 <th >{{items.role}}</th>

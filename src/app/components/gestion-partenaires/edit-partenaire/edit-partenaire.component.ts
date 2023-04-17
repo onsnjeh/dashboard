@@ -28,19 +28,20 @@ export class EditPartenaireComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-  this.PartenaireService.getById(Number(id))
-    .subscribe(Partenaire => {
-      if (Partenaire) { // add null check here
-        this.Partenaire = Partenaire;
-        this.PartenaireForm.setValue({
-          nom: Partenaire.nom,
-          email: Partenaire.email,
-          telephone: Partenaire.telephone,
-          image: Partenaire.image
-        });
-      }
+this.PartenaireService.getById(Number(id)).subscribe(Partenaire => {
+  if (Partenaire) {
+    this.Partenaire = Partenaire;
+    this.PartenaireForm.setValue({
+      nom: Partenaire.nom,
+      email: Partenaire.email,
+      telephone: Partenaire.telephone,
+      image: '' // clear the value of the file input element
     });
   }
+});
+
+  }
+  
 
   annuler(): void {
     this.router.navigate(['/gestion-partenaires']);
