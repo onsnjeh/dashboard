@@ -1,80 +1,5 @@
 {
-  "profile": [
-    {
-      "id": 1,
-      "role": "admin",
-      "menus": [
-        {
-          "label": "Doc",
-          "sousLabel": [
-            "Consulter doc",
-            "Modifier doc"
-          ]
-        },
-        {
-          "label": "Ticket",
-          "sousLabel": [
-            "Consulter Ticket",
-            "Creer ticket",
-            "Assigner ticket a",
-            "Cloturer ticket"
-          ]
-        },
-        {
-          "label": "Gestion des utilisateurs",
-          "sousLabel": [
-            "Consulter les clients",
-            "Consulter les experts",
-            "Consulter les menagers"
-          ]
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "role": "utilisateur",
-      "menus": [
-        {
-          "label": "Doc",
-          "sousLabel": [
-            "Consulter doc"
-          ]
-        },
-        {
-          "label": "Ticket",
-          "sousLabel": [
-            "Consulter Ticket",
-            "Creer ticket",
-            "Cloturer ticket"
-          ]
-        },
-        {
-          "label": "Gestion du compte",
-          "sousLabel": [
-            "Modifier le mot de passe",
-            "mise a jour les données personnelles"
-          ]
-        }
-      ]
-    }
-  ],
   "compte": [
-    {
-      "id": 2,
-      "nom": "expert1",
-      "prenom": "expert1",
-      "email": "expert1@gmail",
-      "role": "manager",
-      "password": "123456"
-    },
-    {
-      "id": 4,
-      "nom": "expert2",
-      "prenom": "expert2",
-      "email": "expert2@gmail",
-      "role": "manager",
-      "password": "123456"
-    },
     {
       "id": 6,
       "nom": "manager2",
@@ -116,22 +41,6 @@
       "password": "123456"
     },
     {
-      "id": 11,
-      "nom": "manager3",
-      "prenom": "manager3",
-      "email": "manager3@gmail",
-      "role": "manager",
-      "password": "123456"
-    },
-    {
-      "id": 12,
-      "nom": "manager4",
-      "prenom": "manager4",
-      "email": "manager4@gmail",
-      "role": "manager",
-      "password": "123456"
-    },
-    {
       "id": 13,
       "nom": "client5",
       "prenom": "client5",
@@ -156,14 +65,6 @@
       "password": "12345"
     },
     {
-      "id": 16,
-      "nom": "manager5",
-      "prenom": "manager5",
-      "email": "manager5@gmail",
-      "role": "manager",
-      "password": "12345"
-    },
-    {
       "id": 17,
       "nom": "expert6",
       "prenom": "expert6",
@@ -181,12 +82,12 @@
     },
     {
       "id": 19,
-      "nom": "ons",
-      "prenom": "njeh",
-      "email": "ons@gmail.com",
+      "nom": "manager1",
+      "prenom": "manager1",
+      "email": "manager1@gmail.com",
       "role": "manager",
-      "password": "123456789",
-      "dateCreate": "2023-04-16T08:31:28.466Z"
+      "password": "123456",
+      "dateCreate": "2023-04-17T22:42:44.372Z"
     }
   ],
   "article": [
@@ -278,290 +179,31 @@
       ]
     },
     {
-      "titre": "document 1",
-      "reference": 2020,
-      "date_publication": "2023-04-12",
+      "id": 9,
+      "titre": "ticket 25",
+      "reference": 2001,
+      "date_publication": "2001-12-11",
       "abstract": "test 1",
-      "dateCreate": "2023-04-12T21:13:27.614Z",
       "tags": "test1",
-      "categorie": "",
-      "type": "",
-      "theme": "",
-      "fichier": "C:\\fakepath\\BD PFE.docx",
+      "categorie": "fiscal",
+      "type": "type fiscal",
+      "theme": "theme fiscal",
       "textFichier": "",
-      "id": 9
+      "fichier": "C:\\fakepath\\chapitre 2.odt",
+      "date": "2023-04-17T22:24:12.652Z"
     },
     {
       "id": 10,
-      "titre": "test 456",
-      "reference": 22,
-      "date_publication": "2023-04-21",
-      "abstract": "test 456",
-      "tags": "test 456",
-      "categorie": "fiscal",
-      "type": "1",
-      "theme": "1",
-      "textFichier": "",
-      "fichier": "C:\\fakepath\\cahiercharge-prestacode.docx",
-      "date": "2023-04-12T22:49:42.180Z"
-    },
-    {
-      "id": 11,
-      "titre": "test 456789",
-      "reference": 11,
-      "date_publication": "2001-11-11",
-      "abstract": "test 456789",
-      "tags": "test 456789",
-      "categorie": "social",
-      "type": "type social",
-      "theme": "theme social",
-      "textFichier": "",
-      "fichier": "C:\\fakepath\\cas-dutilisation.docx",
-      "date": "2023-04-12T22:51:57.505Z"
-    },
-    {
-      "id": 12,
-      "titre": "",
-      "reference": "",
-      "date_publication": "",
-      "abstract": "",
-      "tags": "",
-      "categorie": "",
-      "type": "",
-      "theme": "",
-      "textFichier": "",
-      "fichier": [],
-      "date": "2023-04-12T23:29:43.229Z"
-    },
-    {
-      "id": 13,
-      "titre": "test 79",
-      "reference": 22,
-      "date_publication": "2023-04-07",
-      "abstract": "test123456",
-      "tags": "tesr789",
-      "categorie": "social",
-      "type": "type social",
-      "theme": "theme social",
-      "textFichier": "",
-      "fichier": "C:\\fakepath\\BD PFE.docx",
-      "date": "2023-04-13T00:12:04.599Z"
-    },
-    {
-      "id": 14,
-      "titre": "yyy",
-      "reference": 22,
-      "date_publication": "2023-04-30",
-      "abstract": "ttttt",
-      "tags": "tttt",
-      "categorie": "juridique",
-      "type": "type juridique",
-      "theme": "theme juridique",
-      "textFichier": "textttt",
-      "fichier": "text",
-      "date": "2023-04-13T00:28:40.608Z"
-    },
-    {
-      "id": 15,
-      "titre": "test 123456789",
-      "reference": 22,
-      "date_publication": "2202-02-11",
-      "abstract": "test 123456789",
-      "tags": "test 123456789",
+      "titre": "test1",
+      "reference": 2001,
+      "date_publication": "2001-12-11",
+      "abstract": "test 1",
+      "tags": "test1",
       "categorie": "fiscal",
       "type": "type fiscal",
       "theme": "theme fiscal",
-      "textFichier": "text",
-      "fichier": "text",
-      "date": "2023-04-13T00:32:02.281Z"
-    },
-    {
-      "id": 16,
-      "titre": "test 789456123",
-      "reference": 22,
-      "date_publication": "2023-04-02",
-      "abstract": "test 789456123",
-      "tags": "test 789456123",
-      "categorie": "fiscal",
-      "type": "type fiscal",
-      "theme": "theme fiscal",
-      "textFichier": "text",
-      "fichier": "text",
-      "date": "2023-04-13T00:34:04.641Z"
-    },
-    {
-      "id": 17,
-      "titre": "nesrin karray ",
-      "reference": 22,
-      "date_publication": "2023-04-01",
-      "abstract": "nesrin karray",
-      "tags": "presatacode",
-      "categorie": "juridique",
-      "type": "type juridique",
-      "theme": "theme juridique",
-      "textFichier": "test&#160;",
-      "fichier": "C:\\fakepath\\cas-dutilisation.docx",
-      "date": "2023-04-13T09:32:59.467Z"
-    },
-    {
-      "id": 18,
-      "titre": "123456789",
-      "reference": 123456789,
-      "date_publication": "2001-11-11",
-      "abstract": "123456789",
-      "tags": "azerty",
-      "categorie": "fiscal",
-      "type": "type fiscal",
-      "theme": "theme fiscal",
-      "textFichier": "123456789",
-      "fichier": null,
-      "date": "2023-04-13T09:33:50.200Z"
-    }
-  ],
-  "themes": [
-    {
-      "id": 1,
-      "nom": "Droit commercial",
-      "description": "de la base",
-      "url": "assets/img/juridique1.jpg",
-      "font": "fa fa-balance-scale fa-4x text-primary mb-4"
-    },
-    {
-      "id": 2,
-      "nom": "Société commerciale",
-      "description": "de la base",
-      "url": "assets/img/social.jpg",
-      "font": "fa fa-users fa-4x text-primary mb-4"
-    },
-    {
-      "id": 3,
-      "nom": "Droits civils",
-      "description": "de la base",
-      "url": "assets/img/legislation.jpg",
-      "font": "fa fa-balance-scale fa-4x"
-    },
-    {
-      "id": 4,
-      "nom": "Statut personnel",
-      "description": "de la base",
-      "url": "assets/img/sante.jpg",
-      "font": ""
-    },
-    {
-      "id": 5,
-      "nom": "Arbitrage",
-      "description": "de la base",
-      "url": "assets/img/droit-homme.png",
-      "font": "fa fa-balance-scale fa-4x"
-    },
-    {
-      "id": 6,
-      "nom": "Droit pénal",
-      "description": "de la base",
-      "url": "assets/img/finance1.png",
-      "font": "fa fa-university  fa-4x text-primary mb-4"
-    },
-    {
-      "id": 7,
-      "nom": "fiscal",
-      "description": "de la base",
-      "url": "assets/img/foncier.jpg",
-      "font": "fa fa-balance-scale fa-4x"
-    },
-    {
-      "id": 8,
-      "nom": "Droit international privé",
-      "description": "de la base",
-      "url": "assets/img/investissement.jpg",
-      "font": "fa fa-balance-scale fa-4x"
-    }
-  ],
-  "abonnement": [
-    {
-      "id": 1,
-      "nom": "Diamond",
-      "duree": "un mois",
-      "nbre_question": 5,
-      "solde": 100,
-      "url": "assets/img/diamond.png"
-    },
-    {
-      "id": 2,
-      "nom": "Platinium",
-      "duree": "un mois",
-      "nbre_question": 7,
-      "solde": 120,
-      "url": "assets/img/platinim.jpg"
-    },
-    {
-      "id": 3,
-      "nom": "GOLD",
-      "duree": "un mois",
-      "nbre_question": 5,
-      "solde": 100,
-      "url": "assets/img/gold.png"
-    },
-    {
-      "id": 4,
-      "nom": "Silver",
-      "duree": "un mois",
-      "nbre_question": 8,
-      "solde": 150,
-      "url": "assets/img/silver.png"
-    },
-    {
-      "id": 5,
-      "nom": "Bronze",
-      "duree": "un mois",
-      "nbre_question": 7,
-      "solde": 120,
-      "url": "assets/img/bronze.jpg"
-    },
-    {
-      "id": 6,
-      "nom": "Bronze",
-      "duree": "un mois",
-      "nbre_question": 7,
-      "solde": 120,
-      "url": "assets/img/bronze.jpg"
-    }
-  ],
-  "utilisateur": [
-    {
-      "id": 1,
-      "firstname": "Mr Akram",
-      "lastname": "ddd",
-      "birthdate": "",
-      "profile": "assets/img/testimonial-1.jpg",
-      "job": "profession",
-      "message": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit."
-    },
-    {
-      "id": 2,
-      "firstname": "Mr Yessine",
-      "lastname": "",
-      "birthdate": "",
-      "profile": "assets/img/testimonial-2.jpg",
-      "job": "profession",
-      "message": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit."
-    },
-    {
-      "id": 3,
-      "firstname": "Mr Salmen",
-      "lastname": "AAA",
-      "birthdate": "",
-      "profile": "assets/img/testimonial-3.jpg",
-      "job": "profession",
-      "message": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit."
-    },
-    {
-      "id": 4,
-      "firstname": "Mme Hazar",
-      "lastname": "BBB",
-      "birthdate": "",
-      "profile": "assets/img/testimonial-4.jpg",
-      "job": "profession",
-      "message": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit."
+      "fichier": "C:\\fakepath\\chapitre 2.odt",
+      "date": "2023-04-17T22:27:38.407Z"
     }
   ],
   "partenaires": [
@@ -900,13 +542,21 @@
       "status": "Fermer",
       "date": "2023-04-11T11:03:12.138Z",
       "assignee": "nesrin"
+    },
+    {
+      "id": 30,
+      "categorie": "fiscal",
+      "priorite": 10,
+      "question": "test1",
+      "fichier": "C:\\fakepath\\rapport PFE 2.odt",
+      "status": "En attente",
+      "date": "2023-04-17T22:32:37.320Z"
     }
   ],
-  "send-email": [],
   "categorie": [
     {
       "id": 1,
-      "name": "Fiscal",
+      "name": "fiscal",
       "description": "Description de Fiscal"
     },
     {
@@ -918,6 +568,12 @@
       "id": 3,
       "name": "juridique",
       "description": "Description de Juridique"
+    },
+    {
+      "id": 4,
+      "dateCreate": "2023-04-24T13:02:53.689Z",
+      "name": "sante",
+      "description": "description de sante"
     }
   ],
   "type": [
@@ -968,6 +624,12 @@
       "name": "type juridique",
       "categorieId": 3,
       "categorieName": "juridique"
+    },
+    {
+      "name": "medical",
+      "categorieId": 4,
+      "categorieName": "sante",
+      "id": 10
     }
   ],
   "theme": [
@@ -1018,6 +680,12 @@
       "name": "theme juridique",
       "categorieId": 3,
       "categorieName": "juridique"
+    },
+    {
+      "name": "medical",
+      "categorieId": 4,
+      "categorieName": "sante",
+      "id": 10
     }
   ],
   "offre": [
@@ -1056,15 +724,6 @@
       "description": "Description de l'offre 4",
       "dateDebut": "2022-01-01",
       "dateFin": "2022-12-31"
-    },
-    {
-      "id": 5,
-      "titre": "Offre5",
-      "periode": "2 mois",
-      "prix": 150,
-      "description": "Description de l'offre 5",
-      "dateDebut": "2022-07-01",
-      "dateFin": "2022-09-30"
     }
   ],
   "tags": [
@@ -1131,7 +790,17 @@
               "title": "option 2.2.1",
               "description": "Description du option 2.2.1",
               "level": 2,
-              "parentId": 8
+              "parentId": 8,
+              "children": [
+                {
+                  "id": 12,
+                  "title": "option 2.2.1.1",
+                  "description": "Description du option 2.2.1.1",
+                  "level": 3,
+                  "parentId": 8,
+                  "children": []
+                }
+              ]
             },
             {
               "id": 10,

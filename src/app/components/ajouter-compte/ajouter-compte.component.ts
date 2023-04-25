@@ -14,10 +14,10 @@ export class AjouterCompteComponent implements OnInit {
   compteForm!: FormGroup;
 
 
-  constructor( 
+  constructor(
     private compteService: CompteService,
     private fb: FormBuilder,
-    private router:Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.compteForm = this.fb.group({
@@ -28,26 +28,26 @@ export class AjouterCompteComponent implements OnInit {
       password: ['', Validators.required],
 
 
-  });
+    });
   }
-  selectedFile!: File ;
+  selectedFile!: File;
 
   onSubmit() {
-   
-		const compte: Compte = {
+
+    const compte: Compte = {
       id: 0,
       ...this.compteForm.value,
       dateCreate: new Date(),
     };
 
-		this.compteService.create(compte).subscribe();
-		this.compteForm.reset();
-		alert('Le compte a été créé avec succès');
-    this.router.navigate(['/home'])
+    this.compteService.create(compte).subscribe();
+    this.compteForm.reset();
+    alert('Le compte a été créé avec succès');
+    this.router.navigate(['/gestion-manager-experte'])
 
-		// this.toastr.success("Le ticket a été créé avec succès.")
+    // this.toastr.success("Le ticket a été créé avec succès.")
 
-	}
+  }
 
 
 

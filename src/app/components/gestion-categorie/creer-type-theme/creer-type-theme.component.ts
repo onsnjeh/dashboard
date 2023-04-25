@@ -68,7 +68,7 @@ export class CreerTypeThemeComponent {
       }
     );
 
-    this.categorieService.createTheme(newType).subscribe(
+    this.categorieService.createTheme(newTheme).subscribe(
       (response) => {
         console.log('Theme added successfully');
         console.log(response);

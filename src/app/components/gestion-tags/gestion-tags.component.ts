@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { Tag } from 'src/app/core/models/article.model';
-import { ArticleService } from 'src/app/core/services/article.service';
+
 
 // interface Item {
 //   title: string;
@@ -10,21 +8,25 @@ import { ArticleService } from 'src/app/core/services/article.service';
 //   expanded?: boolean;
 // }
 
+import { Component } from "@angular/core";
+import { Tag } from "src/app/core/models/article.model";
+import { TagService } from "src/app/core/services/tags.service";
+
 @Component({
   selector: 'app-gestion-tags',
   templateUrl: './gestion-tags.component.html',
   styleUrls: ['./gestion-tags.component.css']
 })
 export class GestionTagsComponent {
-  items!: Tag[];
+  items: Tag[]=[];
 
-  constructor(private articleService: ArticleService) {}
+  constructor(private TagService:TagService) {}
 
-  ngOnInit(): void {
-    this.articleService.getTags().subscribe(items => this.items = items);
+  ngOnInit() {
+    this.TagService.getTags().subscribe((items: Tag[]) => this.items = items);
   }
 
-  toggleExpand(item: Tag): void {
+  toggleExpand(item: Tag) {
     if (item.children && item.children.length > 0) {
       item.expanded = !item.expanded;
     }

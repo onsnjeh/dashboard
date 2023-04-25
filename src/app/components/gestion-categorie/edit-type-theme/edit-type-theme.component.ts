@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Theme, Type } from 'src/app/core/models/categorie.model';
 import { CategorieService } from 'src/app/core/services/categorie.service';
@@ -9,55 +9,59 @@ import { CategorieService } from 'src/app/core/services/categorie.service';
   templateUrl: './edit-type-theme.component.html',
   styleUrls: ['./edit-type-theme.component.scss']
 })
-export class EditTypeThemeComponent implements OnInit {
-  categorieId!: number;
-  types!: Type;
-  themes!: Theme;
-  typeForm = this.formBuilder.group({
-    name: ['', Validators.required],
-    categorieName: ['', Validators.required]
-  });
-  themeForm = this.formBuilder.group({
-    name: ['', Validators.required],
-    categorieName: ['', Validators.required]
-  });
+export class EditTypeThemeComponent {}
+// implements OnInit {
+//   typeForm!: FormGroup;
+//   themeForm!: FormGroup;
+//   type!: Type;
+//   theme!: Theme;
 
-  constructor(
-    private route: ActivatedRoute,
-    private categorieService: CategorieService,
-    private formBuilder: FormBuilder,
-    private router:Router
-  ) {}
+//   constructor(private typeService: CategorieService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit(): void {
-    this.categorieId = Number(this.route.snapshot.paramMap.get('id'));
-    this.categorieService.getTypeBycategorieId(this.categorieId).subscribe((types) => {
-      this.types = types;
-    });
-    this.categorieService.getThemeBycategorieId(this.categorieId).subscribe((themes) => {
-      this.themes = themes;
-    });
-  }
+//   ngOnInit() {
+//     this.getTypeById();
+//     this.getThemeById();
+//     this.typeForm = this.fb.group({
+//       name: ['', Validators.required],
+//     });
+//     this.themeForm = this.fb.group({
+//       name: ['', Validators.required],
+//     });
+//   }
 
-  // onSubmit(): void {
-  //   const updatedType: Type = {
-  //     id: 0,
-  //     name: this.typeForm.value.name ?? '',
-     
-  //   };
-  //   this.categorieService.updateType(this.categorieId, updatedType).subscribe(() => {
-  //     console.log('Types updated');
-  //   });
-  //   const updatedTheme: Theme = {
-  //     id: 0,
-  //     name: this.themeForm.value.name ?? '',
-     
-  //   };
-  //   this.categorieService.updateTheme(this.categorieId, updatedTheme).subscribe(() => {
-  //     console.log('Themes updated');
-  //   });
-  // }
-  //    annuler(): void {
-  //    this.router.navigate(['/gestion-categorie']);
-  //  }
-}
+//   getTypeById() {
+//     const id = this.route.snapshot.paramMap.get('id');
+//     this.typeService.getTypeBycategorieId(Number(id)).subscribe((data: any) => {
+//       this.type = data;
+//       this.typeForm.patchValue({
+//         name: data.name,
+//       });
+//     });
+//   }
+
+//   getThemeById() {
+//     const id = this.route.snapshot.paramMap.get('id');
+//     this.typeService.getThemeBycategorieId(Number(id)).subscribe((data: any) => {
+//       this.theme = data;
+//       this.themeForm.patchValue({
+//         name: data.name,
+//       });
+//     });
+//   }
+
+//   onSubmitType() {
+//     const id = this.route.snapshot.paramMap.get('id');
+//     this.typeService.updateType(Number(id), this.typeForm.value).subscribe((data: any) => {
+//       console.log('Type updated successfully');
+//       this.router.navigate(['/types']);
+//     });
+//   }
+
+//   onSubmitTheme() {
+//     const id = this.route.snapshot.paramMap.get('id');
+//     this.typeService.updateTheme(Number(id), this.themeForm.value).subscribe((data: any) => {
+//       console.log('Theme updated successfully');
+//       this.router.navigate(['/themes']);
+//     });
+//   }
+// }

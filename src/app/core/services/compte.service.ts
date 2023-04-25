@@ -40,5 +40,25 @@ export class CompteService {
     return this.http.delete<Compte>(`${this.baseUrl}/${id}`);
   }
 
+
+
+  getProfil(nom:string){
+    return this.http.get< Compte>(`http://localhost:3000/compte?role=${nom}`);
+
+  }
+
+  
+  chercherCompte(variable: string): Promise<string> {
+    return this.http.get<Compte>(this.baseUrl).toPromise()
+      .then((data: any) => {
+        const obj = data.find((item: any) => item.role === variable);
+        return obj ? obj.nom : null;
+      })
+      .catch((err: any) => {
+        console.error(err);
+        return null;
+      });
+  }
+
 }
 

@@ -8,6 +8,7 @@ import { ListDocComponent } from "./dashboard-components/list-doc/list-doc.compo
 import { TicketComponent } from "./dashboard-components/ticket/ticket.component";
 import { DashboardComponent } from "./dashboard.component";
 import { NgxPaginationModule } from "ngx-pagination";
+import { RouterModule } from "@angular/router";
 
 
 
@@ -25,7 +26,8 @@ import { NgxPaginationModule } from "ngx-pagination";
     DemoFlexyModule,
     FormsModule,
     NgApexchartsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RouterModule
 
   ],
   exports: [

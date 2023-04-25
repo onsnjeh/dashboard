@@ -17,7 +17,7 @@
 									<div class="col-lg-8 col-md-12">
 										<label>Titre:</label>
 										<input type="text" name="Titre" class="form-control" placeholder="Entrer Titre"
-											id="titre" formControlName="titre" name="titre" required>
+											id="titre" formControlName="titre"  required>
 									</div>
 								</div>
 							</div>
@@ -34,7 +34,7 @@
 								<div class="col-lg-6 col-md-12">
 									<label>Categorie :</label>
 									<select class="form-select" name="categories" [(ngModel)]="selectedCategorieName"
-										(change)="onCategorieChange()" id="categorie" formControlName="categorie" name="categorie">
+										(change)="onCategorieChange()" id="categorie" formControlName="categorie" >
 										<option selected="true">--Select Categorie--</option>
 										<option *ngFor="let categorie of categories" [value]="categorie.name">
 											{{categorie.name}}</option>
@@ -44,7 +44,7 @@
 									<div class="col-lg-6 col-md-6">
 										<label>Type :</label>
 										<select class="form-select" name="types" [(ngModel)]="selectedThemeName"
-											id="type" formControlName="type" name="type">
+											id="type" formControlName="type" >
 											<option selected="true">--Select Type--</option>
 											<option *ngFor="let type of types" [value]="type.name">{{type.name}}
 											</option>
@@ -53,7 +53,7 @@
 									<div class="col-lg-6 col-md-6">
 										<label>Thème :</label>
 										<select class="form-select" name="themes" [(ngModel)]="selectedTypeName"
-											id="theme" formControlName="theme" name="theme">
+											id="theme" formControlName="theme" >
 											<option selected="true">--Select Thème--</option>
 											<option *ngFor="let theme of themes" [value]="theme.name">{{theme.name}}
 											</option>
@@ -62,7 +62,7 @@
 									<div class="col-lg-6 col-md-6">
 										<label>Tags</label>
 										<input type="text" name="Tags" class="form-control" placeholder="Entrer Tags"
-											id="tags" formControlName="tags" name="tags" required>
+											id="tags" formControlName="tags"  required>
 									</div>
 								</div>
 							</div>
@@ -79,7 +79,7 @@
 									<div class="col-lg-6 col-md-12">
 										<label>Date : </label>
 										<input type="date" placeholder="Entrer Date" class="form-control"
-											id="date_publication" formControlName="date_publication" name="date_publication">
+											id="date_publication" formControlName="date_publication" >
 									</div>
 								</div>
 							</div>
@@ -97,7 +97,7 @@
 										<div class="form-group">
 											<label for="exampleNumber">Référence :</label>
 											<input type="number" class="form-control" id="exampleNumber"
-												placeholder="Entrer réference" id="reference" name="reference"
+												placeholder="Entrer réference" id="reference" 
 												formControlName="reference">
 										</div>
 									</div>
@@ -117,7 +117,7 @@
 										<div class="form-group">
 											<label for="exampleNumber">Abstract :</label>
 											<textarea class="form-control" rows="4" class="form-control"
-												id="exampleInputName" id="abstract" formControlName="abstract" name="abstract"
+												id="exampleInputName" id="abstract" formControlName="abstract" 
 												placeholder="écrire ici ..."></textarea>
 										</div>
 									</div>
@@ -126,22 +126,20 @@
 						</div>
 					</div>
 					<!-- article -->
-					<div class="container" style="margin-top: 50px;">
+					<div class="container mt-5">
 						<div class="card">
 							<div class="card-header">
 								<h3>Article</h3>
 							</div>
 							<div class="card-body">
-								<div class="form-group mt-3">
-									<h3>Créer un document</h3>
-									
-								<div *ngIf="inputType === 'file'">
-										<input type="file" >
-								</div>
-								<div *ngIf="inputType === 'text'">
-										<textarea [(ngModel)]="textInput"></textarea>
-								</div>
+								<div class="row">
+									<div class="col-lg-6 col-md-12">
+										<div class="form-group">
+											<label for="exampleNumber">Créer un document :</label>
+											<input type="file" id="fichier" formControlName="fichier" >
 
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

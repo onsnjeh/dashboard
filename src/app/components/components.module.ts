@@ -34,6 +34,7 @@ import { AjouterCompteComponent } from './ajouter-compte/ajouter-compte.componen
 import { EditCompteComponent } from './edit-compte/edit-compte.component';
 import { DetailCompteComponent } from './detail-compte/detail-compte.component';
 import { GestionManagerExpertComponent } from "./gestion-manager-expert/gestion-manager-expert.component";
+import { DetailCategorieComponent } from './gestion-categorie/detail-categorie/detail-categorie.component';
 
 
 
@@ -65,7 +66,8 @@ import { GestionManagerExpertComponent } from "./gestion-manager-expert/gestion-
     AjouterCompteComponent,
 
     EditCompteComponent,
-     DetailCompteComponent   
+     DetailCompteComponent,
+     DetailCategorieComponent   
   ],
   imports: [
     CommonModule,

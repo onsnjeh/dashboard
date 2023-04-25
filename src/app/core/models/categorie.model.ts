@@ -2,8 +2,7 @@ export interface Categorie {
   id: number;
   name: string ;
   description: string;
-  dateCreate?: Date;
-  
+  dateCreate?: Date; 
 }
 
 export interface Type {
@@ -18,5 +17,4 @@ export interface Theme {
   name: string ;
   categorieId?: number;
   categorieName?: string;
-
 }

@@ -13,15 +13,11 @@ export class HeaderComponent implements OnInit {
 
   TicketCount = 0;
   Tickets: Ticket[] = [];
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+
 
 
   constructor(private ticketService: TicketService,
-    private breakpointObserver: BreakpointObserver) {}
+    ) {}
 
   ngOnInit() {
     this.getInitialTickets();

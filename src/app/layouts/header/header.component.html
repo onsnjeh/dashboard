@@ -1,62 +1,46 @@
-
 <!-- Top app bar navigation menu-->
-<nav class="top-app-bar navbar navbar-expand navbar-dark">
- <div class="container-fluid px-4">
-     <!-- Drawer toggle button-->
-     <button class="btn btn-lg btn-icon order-1 order-lg-0" id="drawerToggle" href="javascript:void(0);"><i
-             class="fa fa-bars"></i></button>
-     <!-- Navbar brand-->
-     <a class="navbar-brand me-auto" href="#">
-         <div class="text-uppercase font-monospace">CLIENT</div>
+<nav class="p-2 d-flex justify-content-end">
 
-     </a>
-     <!-- Navbar items-->
-     <div class="d-flex align-items-center mx-3 me-lg-0">
+    <!-- Navbar buttons-->
+    <!-- Notifications dropdown-->
+    <div class="dropdown">
 
-         <!-- Navbar buttons-->
-         <div class="d-flex">
+        <div class="dropdown dropdown-notifications">
 
+            <div ngbDropdown class="d-inline-block">
+                <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                    <i class="fa fa-bell"></i> {{TicketCount}}</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button *ngFor="let Ticket of Tickets" ngbDropdownItem
+                        [routerLink]="['/detail-ticket', Ticket.id]">{{ Ticket.status}}
 
-             <!-- Notifications and alerts dropdown-->
-             <div class="dropdown ">
+                    </button>
 
-                 <div class="dropdown dropdown-notifications  ">
-
-                     <div ngbDropdown class="d-inline-block">
-                         <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-                             <i class="fa fa-bell"></i> {{TicketCount}}</button>
-                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
-                             <button *ngFor="let Ticket of Tickets" ngbDropdownItem
-                             [routerLink]="['/detail-ticket', Ticket.id]"
-                             >{{ Ticket.status}}
-                             
-                         </button>
-
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <!--  -->
-<div class="m-3"></div>
-             <!-- User profile dropdown-->
-             <div ngbDropdown class="d-inline-block">
-                <button  type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-                             <i class="fa fa-user"></i></button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
-                    <button  ngbDropdownItem> <i class="fa fa-user-plus"></i>Profile</button>
-                    <button  ngbDropdownItem> <i class="fa fa-cog"></i>Paramètres</button>
-                    <button  ngbDropdownItem> <i class="fa fa-question-circle"></i>Help</button>
-                    <hr class="dropdown-divider" />
-                    <button  ngbDropdownItem> <i class="fa fa-sign-out"></i>Déconnexion</button>
-        
-        
                 </div>
             </div>
-        
-         </div>
-     </div>
- </div>
-</nav>
-<div class="dropdown dropdown-notifications  ">
+        </div>
+    </div>
+    <!--  -->
+    <div class="m-2"></div>
+    <!-- User profile dropdown-->
+    <div class="dropdown">
 
-    
+        <div class="dropdown dropdown-profile">
+
+            <div ngbDropdown class="d-inline-block">
+                <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                    <i class="fa fa-user"></i></button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem routerLink="/profil"> <i class="fa fa-user-plus"></i>Profile</button>
+                    <button ngbDropdownItem> <i class="fa fa-cog"></i>Paramètres</button>
+                    <button ngbDropdownItem> <i class="fa fa-question-circle"></i>Help</button>
+                    <hr class="dropdown-divider" />
+                    <button ngbDropdownItem> <i class="fa fa-sign-out"></i>Déconnexion</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</nav>

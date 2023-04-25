@@ -28,6 +28,8 @@ import { AjouterCompteComponent } from './components/ajouter-compte/ajouter-comp
 import { EditCompteComponent } from './components/edit-compte/edit-compte.component';
 import { DetailCompteComponent } from './components/detail-compte/detail-compte.component';
 import { GestionManagerExpertComponent } from './components/gestion-manager-expert/gestion-manager-expert.component';
+import { ProfilComponent } from './layouts/profil/profil.component';
+import { DetailCategorieComponent } from './components/gestion-categorie/detail-categorie/detail-categorie.component';
 
 
 
@@ -39,20 +41,27 @@ const routes: Routes = [
     children: [
       {path:"", redirectTo:"/home", pathMatch:"full"},
       {path:"home", component:DashboardComponent},
-      {path:"gestion-clt",component:GestionClientComponent},
+      {path:"gestion-client",component:GestionClientComponent},
       {path:"gestion-manager-expert",component:GestionManagerExpertComponent},
-      {path:"gestion-offre",component:GestionOffreComponent},
-      {path:"creer-offre",component:CreerOffreComponent},
-      {path:"gestion-doc",component:GestionDocumentComponent},
-      {path:"creation-offre",component:CreerOffreComponent},
-      {path:"gestion-ticket",component:GestionTicketComponent},
-      {path:"creation-Document",component:CreationDocumentComponent},
-      {path:"ajouter-type-theme",component:CreerTypeThemeComponent},
+      { path: 'ajouter-compte', component: AjouterCompteComponent },
+      { path: 'edit-compte/:id', component: EditCompteComponent },
+      { path:'detail-compte/:id', component: DetailCompteComponent },
      
-      {path:"creation-ticket",component:CreationTicketComponent},
+      {path:"gestion-offre",component:GestionOffreComponent},
+      {path:"ajouter-offre",component:CreerOffreComponent},
+      { path:'detail-offre/:id', component: DetailOffreComponent },
+     
+      {path:"gestion-document",component:GestionDocumentComponent},
+      {path:"ajouter-Document",component:CreationDocumentComponent},
+     
+      {path:"ajouter-offre",component:CreerOffreComponent},
+      {path:"gestion-ticket",component:GestionTicketComponent},
+      {path:"ajouter-type-theme",component:CreerTypeThemeComponent},
+      {path:"ajouter-ticket",component:CreationTicketComponent},
       {path:"gestion-categorie",component:GestionCategorieComponent},
       {path:"ajouter-categorie",component:CreationCategorieComponent},
-      
+      { path: 'edit-categorie/:id', component: EditCategorieComponent },
+     
       {path:"gestion-tags" ,component:GestionTagsComponent},
       {path:"ajouter-tags" ,component:AjouterTagsComponent},
       {path:"gestion-partenaires" ,component:GestionPartenairesComponent},
@@ -60,13 +69,13 @@ const routes: Routes = [
       {path:"detail-ticket/:id",component:DetailTicketComponent},
       { path:'edit-partenaire/:id', component: EditPartenaireComponent },
       { path:'edit-offre/:id', component: EditOffreComponent},
-      { path:'detail-offre/:id', component: DetailOffreComponent },
-      { path:'edit-categorie/:id', component: EditCategorieComponent },
-      { path:'edit-type-theme/:id', component: EditTypeThemeComponent },
-      { path:'ajouter-compte', component: AjouterCompteComponent },
-      { path:'edit-compte/:id', component: EditCompteComponent },
-      { path:'detail-compte/:id', component: DetailCompteComponent },
-
+      
+      { path: 'edit-type-theme/:id', component: EditTypeThemeComponent },
+     
+      { path:'detail-categorie/:id', component: DetailCategorieComponent },
+     
+     
+     
       
 
 

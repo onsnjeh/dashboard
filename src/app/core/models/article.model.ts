@@ -1,8 +1,8 @@
-export class Tag {
-  id?: number;
-  title: string='';
-  description: string='';
-  level: number=0;
+export interface Tag {
+  id: number;
+  title: string;
+  description: string;
+  level: number;
   children?: Tag[];
   expanded?: boolean;
 }

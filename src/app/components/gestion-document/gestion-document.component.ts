@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Article, Tag } from 'src/app/core/models/article.model';
 import { ArticleService } from 'src/app/core/services/article.service';
+import { TagService } from 'src/app/core/services/tags.service';
 
 
 @Component({
@@ -10,12 +11,13 @@ import { ArticleService } from 'src/app/core/services/article.service';
   styleUrls: ['./gestion-document.component.css']
 })
 export class GestionDocumentComponent implements OnInit{
-  articles: Article[] = []; // Les Articles affichés
+  articles: Article[] =[] ; // Les Articles affichés
     page = 1; // La page courante
     pageSize = 5; // Nombre de Articles par page
     tags: Tag[] = []; // Les tags affichés
 
-    constructor(private ArticleService: ArticleService) { }
+    constructor(private ArticleService: ArticleService,
+      private TagService : TagService) { }
   
     ngOnInit() {
       this.loadArticles();
@@ -34,7 +36,7 @@ export class GestionDocumentComponent implements OnInit{
 
     // Charge les Articles depuis le serveur
     loadTags() {
-      this.ArticleService.getTags() .subscribe(tags => {
+      this.TagService.getTags().subscribe(tags => {
         this.tags = tags;
       });
     }

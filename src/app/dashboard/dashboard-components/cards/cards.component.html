@@ -1,66 +1,64 @@
 <div class="row gx-3">
-  <div class="col-xxl-3 col-md-3 mb-5">
-      <div class="card card-raised">
-          <div class="card-body px-4">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div class="me-2">
-                      <div class="display-5 ">100</div>
-                      <div >Nombre de ticket total</div>
-                  </div>
-                  <div class="icon-circle bg-white-50 text-primary"><i class="fa fa-th" ></i></div>
-              </div>
-             
-                  
-                      <div class="caption">depuis un mois</div>
-              </div>
-      </div>
-  </div>
-  <div class="col-xxl-3 col-md-3 mb-5">
-      <div class="card card-raised  ">
-          <div class="card-body px-4">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div class="me-2">
-                      <div class="display-5 ">100</div>
-                      <div >Nombre de ticket fermé</div>
-                  </div>
-                  <div class="icon-circle bg-white-50 text-primary"><i class="fa fa-list-alt" ></i></div>
-              </div>
-              <div >
-                  
-                      <div class="caption">depuis 10 jours</div>
-              </div></div>
-      </div>
-  </div>
-  <div class="col-xxl-3 col-md-3 mb-5">
-      <div class="card card-raised">
-          <div class="card-body px-4">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div class="me-2">
-                      <div class="display-5 ">100</div>
-                      <div>Nombre de ticket ouvert</div>
-                  </div>
-                  <div class="icon-circle bg-white-50  text-primary"><i class="fa fa-indent" ></i></div>
-              </div>
-              <div >
-                  
-                      <div class="caption">depuis 2 jours</div>
-              </div></div>
-      </div>
-  </div>
-  <div class="col-xxl-3 col-md-3 mb-5">
-      <div class="card card-raised ">
-          <div class="card-body px-4">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div class="me-2">
-                      <div class="display-5">100</div>
-                      <div >Nombre de document</div>
-                  </div>
-                  <div class="icon-circle bg-white-50 text-primary"><i class="fa fa-list-ul" ></i></div>
-              </div>
-           
-                  
-                      <div class="caption">depuis 1 heure</div>
-              </div>
-      </div>
-  </div>
+    <div class="col-xxl-3 col-md-3 mb-5">
+        <div class="card card-raised">
+            <div class="card-body px-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="me-2">
+                        <div class="display-5 ">{{TicketCountTotal}}</div>
+                        <div>Nombre de ticket total</div>
+                    </div>
+                    <div class="icon-circle bg-white-50 text-primary"><i class="fa fa-th"></i></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-md-3 mb-5">
+        <div class="card card-raised  ">
+            <div class="card-body px-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="me-2">
+                        <div class="display-5 ">{{TicketCountFermer}}</div>
+                        <div>Nombre de ticket fermé</div>
+                    </div>
+                    <div class="icon-circle bg-white-50 text-primary"><i class="fa fa-list-alt"></i></div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-md-3 mb-5">
+        <div class="card card-raised">
+            <div class="card-body px-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="me-2">
+                        <div class="display-5 ">{{TicketCountAttent}}</div>
+                        <div>Nombre de ticket ouvert</div>
+                    </div>
+                    <div class="icon-circle bg-white-50  text-primary"><i class="fa fa-indent"></i></div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-md-3 mb-5">
+        <div class="card card-raised ">
+            <div class="card-body px-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="me-2">
+                        <div class="display-5">{{ArticleCountTotal}}</div>
+                        <div>Nombre de document</div>
+                    </div>
+                    <div class="icon-circle bg-white-50 text-primary"><i class="fa fa-list-ul"></i></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 </div>

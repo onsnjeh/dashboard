@@ -51,11 +51,7 @@ export class AjouterPartenairesComponent implements OnInit {
   openModalDialogCustomClass(content:any) {
 		this.modalService.open(content, {size: 'lg' });
 	}
-//image 
 
-onFileSelected(event:any) {
-  this.selectedFile = event.target.files[0];
-}
 
 
 

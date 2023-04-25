@@ -18,14 +18,12 @@ interface sidebarMenu {
 export class FullComponent {
 
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+ isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+   .pipe(
+     map(result => result.matches)
+   );
 
-  constructor(private breakpointObserver: BreakpointObserver,
-    ) { }
+ constructor(private breakpointObserver: BreakpointObserver) { }
 
   routerActive: string = "activelink";
 
@@ -36,7 +34,7 @@ export class FullComponent {
       menu: "Home",
     },
     {
-      link: "/gestion-doc",
+      link: "/gestion-document",
       icon: "file-text",
       menu: "List Article ",
     },
@@ -51,7 +49,7 @@ export class FullComponent {
       menu: "List Manager/Expert",
     },
     {
-      link: "/gestion-clt",
+      link: "/gestion-client",
       icon: "users",
       menu: "List Client",
     },

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin, switchMap } from 'rxjs';
+import { Observable, forkJoin, map, of, switchMap } from 'rxjs';
 import { Categorie, Theme, Type } from '../models/categorie.model';
 
 @Injectable({
@@ -17,6 +17,18 @@ export class CategorieService {
   getCategories(): Observable<Categorie[]> {
     const url = `${this.baseUrl}categorie`;
     return this.http.get<Categorie[]>(url);
+  }
+
+    // Récupérer toutes les catégories
+    getTypes(): Observable<Type[]> {
+      const url = `${this.baseUrl}type`;
+      return this.http.get<Type[]>(url);
+    }
+
+      // Récupérer toutes les catégories
+      getThemes(): Observable<Theme[]> {
+    const url = `${this.baseUrl}theme`;
+    return this.http.get<Theme[]>(url);
   }
 
   // Récupérer les thèmes par rapport à l'id de la catégorie
@@ -73,13 +85,13 @@ export class CategorieService {
   }
 
   //  Récupérer une type par son id de categorie
-  getTypeBycategorieId(categorieId: number): Observable<Type> {
-    return this.http.get<Type>(`${this.baseUrl}type?categorieId=${categorieId}`);
+  getTypeBycategorieId(categorieId: number): Observable<Type[]> {
+    return this.http.get<Type[]>(`${this.baseUrl}type?categorieId=${categorieId}`);
   }
 
   //  Récupérer une theme par son id de categorie
-  getThemeBycategorieId(categorieId: number): Observable<Theme> {
-    return this.http.get<Theme>(`${this.baseUrl}theme?categorieId=${categorieId}`);
+  getThemeBycategorieId(categorieId: number): Observable<Theme[]> {
+    return this.http.get<Theme[]>(`${this.baseUrl}theme?categorieId=${categorieId}`);
   }
 
   // Supprime en meme temps
@@ -125,61 +137,44 @@ export class CategorieService {
   
 
   // Mettez à jour un type
-  updateCategorie(categorie: Categorie): Observable<any> {
-    // Mettre à jour la catégorie elle-même
-    const updateCategorie = this.http.put<Categorie>(
-      `${this.baseUrl}categorie/${categorie.id}`,
-      categorie
-    );
   
-    // Récupérer les types associés à la catégorie
-    const getTypes = this.http.get<Type[]>(
-      `${this.baseUrl}type?categorieId=${categorie.id}`
-    );
-  
-    // Récupérer les thèmes associés à la catégorie
-    const getThemes = this.http.get<Theme[]>(
-      `${this.baseUrl}theme?categorieId=${categorie.id}`
-    );
-  
-    // Mettre à jour les types associés à la catégorie
-    const updateTypes = getTypes.pipe(
-      switchMap((types: Type[]) => {
-        const updateTypeObservables = types.map((type) =>
-          this.http.put(`${this.baseUrl}type/${type.id}`, {
-            ...type,
-            categorieName: categorie.name // mettre à jour le nom de la catégorie dans les types
-          })
-        );
-        return forkJoin(updateTypeObservables);
-      })
-    );
-  
-    // Mettre à jour les thèmes associés à la catégorie
-    const updateThemes = getThemes.pipe(
-      switchMap((themes: Theme[]) => {
-        const updateThemeObservables = themes.map((theme) =>
-          this.http.put(`${this.baseUrl}theme/${theme.id}`, {
-            ...theme,
-            categorieName: categorie.name // mettre à jour le nom de la catégorie dans les thèmes
-          })
-        );
-        return forkJoin(updateThemeObservables);
-      })
-    );
-  
-    // Combiner les requêtes de mise à jour en une seule
-    return forkJoin([updateCategorie, updateTypes, updateThemes]);
+  updateType(type: Type): Observable<Type> {
+    const url = `${this.baseUrl}type/${type.id}`;
+    return this.http.put<Type>(url, type);
   }
-  
-}
 
+  updateTheme(theme: Theme): Observable<Theme> {
+    const url = `${this.baseUrl}theme/${theme.id}`;
+    return this.http.put<Theme>(url, theme);
+  }
 
- // Supprime un type existant
-  // deleteType(categorieId: number): Observable<Type> {
-  //   return this.http.delete<Type>(`${this.baseUrl}type?categorieId=${categorieId}`);
-  // }
-  // Supprime un theme existant
-  // deleteTheme(categorieId: number): Observable<Theme> {
-  //   return this.http.delete<Theme>(`${this.baseUrl}theme?categorieId=${categorieId}`);
-  // }
+  updateCategorie(categorie: Categorie): Observable<Categorie> {
+    const url =` ${this.baseUrl}categorie/${categorie.id}`;
+    return this.http.put<Categorie>(url, categorie).pipe(
+    switchMap((updatedCategorie) => {
+    // Mettre à jour les types associés à la catégorie
+    const updateTypes = this.getTypeBycategorieId(categorie.id).pipe(
+    switchMap((types: Type[]) => {
+    const updateTypeObservables = types.map((type) =>
+    this.updateType({ ...type, categorieName: categorie.name })
+    );
+    return forkJoin(updateTypeObservables);
+    })
+    );
+        // Mettre à jour les thèmes associés à la catégorie
+        const updateThemes = this.getThemeBycategorieId(categorie.id).pipe(
+          switchMap((themes: Theme[]) => {
+            const updateThemeObservables = themes.map((theme) =>
+              this.updateTheme({ ...theme, categorieName: categorie.name })
+            );
+            return forkJoin(updateThemeObservables);
+          })
+        );
+    
+        // Combiner les requêtes de mise à jour en une seule
+        return forkJoin([updateTypes, updateThemes]).pipe(
+          map(() => updatedCategorie)
+        );
+      })
+    );
+    }}    

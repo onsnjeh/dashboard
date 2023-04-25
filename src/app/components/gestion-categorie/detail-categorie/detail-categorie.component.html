@@ -1,0 +1,41 @@
+<div class="container-xxl bg-light my-3 py-5 ">
+  <div class="card">
+    <div class="container my-2 py-2 ">
+      <form *ngIf="categorie">
+        <div class="row g-3">
+          <div class="col-12 mb-2">
+            <h2>Detail Categorie</h2>
+          </div>
+
+          <div class="container my-2 py-2">
+
+            <div class="row g-3">
+              <div class="col-lg-12 col-md-4">
+                <h3>Nom de Categorie:</h3>
+                <input type="text" placeholder="Enter Nom" class="form-control" id="name" [value]="categorie.name" name="name"
+                  [readonly]="true">
+              </div>
+              <div class=" col-12">
+                <h3>Description de Categorie:</h3>
+                <textarea class="form-control" rows="4" class="form-control" id="exampleInputName" id="description"
+                [readonly]="true" [value]="categorie.description" name="description" required placeholder="écrire ici ..."></textarea>
+                <br>
+            </div>
+          </div>
+<div *ngIf="types && types.length > 0" >
+  <h3>Types associés</h3>
+  <ul class="form-control">
+    <li *ngFor="let type of types" >{{ type.name }}</li>
+  </ul>
+</div>
+
+<div *ngIf="themes && themes.length > 0" >
+  <h3>Thèmes associés</h3>
+  <ul class="form-control">
+    <li *ngFor="let theme of themes" >{{ theme.name }}</li>
+  </ul>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="annuler()">Annuler</button>
+</div>

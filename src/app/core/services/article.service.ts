@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 export class ArticleService {
 
   private baseUrl = 'http://localhost:3000/article'; // URL de l'API json-server
-  private apiUrl = 'http://localhost:3000/tags';
 
   constructor(private http: HttpClient) { }
 
@@ -19,10 +18,6 @@ getArticles(): Observable<Article[]> {
 }
 
 
-  // Récupère tous les Articles
-  getTags(): Observable<Tag[]> {
-    return this.http.get<Tag[]>(this.apiUrl);
-  }
 
   // Récupère un Article par son id
   getById(id: number): Observable<Article> {

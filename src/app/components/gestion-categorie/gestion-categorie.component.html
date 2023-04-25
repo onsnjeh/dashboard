@@ -17,8 +17,7 @@
                 <thead>
                     <tr>
 
-                        <th scope="col">ID</th>
-                        <th scope="col">Category</th>
+                        <th scope="col">Categorie</th>
                         <th scope="col">Description</th>
                         <th scope="col">Action</th>
 
@@ -28,10 +27,8 @@
                 <tbody>
                     <tr *ngFor="let item1 of item1">
 
-                        <td>
-                            {{item1.id}}
-                        </td>
-                        <td>{{item1.name}}</td>
+                       
+                        <td><a [routerLink]="['/detail-categorie', item1.id]">{{item1.name}}</a></td>
                         <td>{{item1.description}}</td>
 
                         <td>
