@@ -10,10 +10,9 @@ export interface Ticket {
   status: string ;
   dateCreate: Date ;
   assignee?: string;
-  responseText: string[] ;
-  responseFile: File[] ;
+  responseText: string ;
+  responseFile: File;
   createdUp: Date ;
-  responses: any;
   dateFermer: Date ;
 
 

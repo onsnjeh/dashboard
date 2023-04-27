@@ -1,0 +1,75 @@
+<div class="container-xxl bg-light my-3 py-5 ">
+ <div class="card">
+   <div class="container my-2 py-2 ">
+     <form *ngIf="Article">
+       <div class="row g-3">
+         <div class="col-12 mb-2">
+           <h2>Detail Article</h2>
+         </div>
+
+         <div class="container my-2 py-2">
+
+           <div class="row g-3">
+             <div class="col-lg-6 col-md-4">
+               <h3>Titre de document :</h3>
+               <input type="text"  class="form-control" id="titre" [value]="Article.titre" name="titre"
+                 [readonly]="true">
+             </div>
+           </div>
+             <div class="row g-3">
+             <div class="col-4">
+               <h3>Categorie de document :</h3>
+               <input type="text" class="form-control" id="categorie" [value]="Article.categorie"
+                 name="categorie" [readonly]="true">
+             </div>
+          
+       
+         <div class="col-4">
+           <h3>Type de document :</h3>
+           <input type="text"class="form-control" id="type" [value]="Article.type"
+             name="type" [readonly]="true">
+         </div>
+         <div class="col-4">
+           <h3>Thème de document :</h3>
+           <input type="text" class="form-control" id="theme" [value]="Article.theme"
+             name="theme" [readonly]="true">
+         </div>
+        </div></div>
+        <div class="row g-3">
+         <div class="col-6">
+           <h3>Référence de texte :</h3>
+           <input type="text" class="form-control" id="reference" [value]="Article.reference"
+             name="reference" [readonly]="true">
+         </div>
+      
+       
+     <div class="col-6">
+       <h3>Date de publication :</h3>
+       <input type="text"class="form-control" id="date_publication" [value]="Article.date_publication"
+         name="date_publication" [readonly]="true">
+     </div>
+     <div class="col-6">
+      <h3>Tags de document :</h3>
+      <input type="text"class="form-control" id="tags" [value]="Article.tags"
+        name="tags" [readonly]="true">
+    </div>
+    </div>
+
+         <div class="col-lg-12 col-md-12">
+           <h3>Abstract de document :</h3>
+           <textarea type="text" class="form-control" id="abstract" rows="4"
+             [value]="Article.abstract" name="abstract" [readonly]="true"></textarea>
+         </div>
+         <div class="col-lg-12 col-md-12">
+          <h3>Article :</h3>
+          <input type="text" class="form-control" id="fichier" [value]="Article.fichier" [readonly]="true">
+         </div>
+         <br>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-primary" (click)="annuler()">Annuler</button>
+         </div>
+       </div>
+     </form>
+   </div>
+ </div>
+</div>

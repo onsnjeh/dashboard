@@ -6,20 +6,20 @@ export interface Tag {
   children?: Tag[];
   expanded?: boolean;
 }
-export class Article {
+export interface  Article {
 
-  id?: number;
-  titre: string = '';
-  reference: number = 0;
-  date_publication: string = '';
-  abstract: string = '';
-  dateCreate: string = new Date().toISOString()
-  tags: number[] = [];
-  categorie: string = '';
-  type: string = '';
-  theme: string = '';
-  fichier: File[] = [];
-  textFichier: string = ''
+  id: number;
+  titre: string ;
+  reference: number ;
+  date_publication: string ;
+  abstract: string ;
+  dateCreate: Date;
+  tags: string[] ;
+  categorie: string ;
+  type: string ;
+  theme: string;
+  fichier: File ;
+  textFichier: string ;
 
 
 }

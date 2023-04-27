@@ -1,12 +1,13 @@
 <mat-sidenav-container class="sidenav-container">
 
   <!-- Sidebar -->
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport 
+  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+  [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <div class="p-16">
       <div class="mb-16">
-        <a href="javascript:void(0)" class="d-flex align-items-center">
-          <span class="ms-16 fw-medium fs-26">Flexy</span>
+        <a [routerLink]="['/home']" class="d-flex align-items-center">
+          <span class="ms-16 fw-medium fs-26">User</span>
         </a>
 
       </div>
@@ -28,8 +29,8 @@
   <mat-sidenav-content>
     <!-- Header -->
    
-    <button class="btn btn-lg me-3" (click)="drawer.toggle()">
-      <i class="fa fa-bars"></i></button>
+    <button type="button" class="ms-4" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+    >      <i class="fa fa-bars"></i></button>
     <app-header></app-header>
     <!-- Content -->
     <div class="body-wrapper">

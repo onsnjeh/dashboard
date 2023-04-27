@@ -28,15 +28,11 @@
                 <tbody>
                     <tr *ngFor="let item of tickets | paginate: { itemsPerPage: pageSize, currentPage: page }">
 
-                        <td>{{ item.categorie }}</td>
+                        <td><a [routerLink]="['/detail-ticket', item.id]">{{ item.categorie }}</a></td>
                         <td>{{ item.priorite }}</td>
                         <td>{{ item.status }}</td>
                         <td>
-                            
-                           <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"
-                            ngbTooltip="Repondre">
-                            <i class="fa fa-question"></i>
-                        </button>
+                         
                             <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"
                                 ngbTooltip="Fermer">
                                 <i class="fa fa-times"></i>

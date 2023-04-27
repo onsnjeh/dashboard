@@ -38,7 +38,7 @@ export class CreationDocumentComponent {
     });
     this.documentForm = this.fb.group({
       titre: ['', Validators.required],
-      reference: ['', Validators.required],
+      reference: [0, Validators.required],
       date_publication: ['', Validators.required],
       abstract: ['', Validators.required],
       tags: ['', Validators.required],
@@ -63,9 +63,7 @@ export class CreationDocumentComponent {
     });
   }
   //creation un document 
-  inputType = 'text';
-  textInput!: string;
-  fileContent!: string;
+
   onSubmit() {
 
     const document: Article = {

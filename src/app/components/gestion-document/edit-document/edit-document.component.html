@@ -1,0 +1,57 @@
+<div class="container-xxl bg-light my-3 py-5 ">
+ <div class="card">
+   <div class="container my-2 py-2 ">
+     <form (ngSubmit)="onSubmit()" *ngIf="article">
+       <div class="row g-3">
+         <div class="col-12 mb-2">
+           <h2>Modifier Article</h2>
+         </div>
+ <div class="form-group">
+   <h3 >Titre :</h3>
+   <input type="text" [(ngModel)]="article.titre" name="titre" class="form-control" id="titre" required>
+ </div>
+ 
+ <div class="form-group">
+   <h3 >Référence :</h3>
+   <input type="text" [(ngModel)]="article.reference" name="reference" class="form-control" id="reference" required>
+ </div>
+ 
+ <div class="form-group">
+   <h3 >Date de publication :</h3>
+   <input type="date" [(ngModel)]="article.date_publication" name="date_publication" class="form-control" id="date_publication" required>
+ </div>
+ 
+ <div class="form-group">
+   <h3 >Abstract :</h3>
+   <textarea [(ngModel)]="article.abstract" name="abstract" class="form-control" id="abstract" rows="3" required></textarea>
+ </div>
+ 
+ <div class="form-group">
+   <h3>Tags :</h3>
+   <input type="text" [(ngModel)]="article.tags" name="tags" class="form-control" id="tags" required>
+ </div>
+ 
+ <div class="form-group">
+   <h3>Catégorie :</h3>
+   <input type="text" [(ngModel)]="article.categorie" name="categorie" class="form-control" id="categorie" required>
+ </div>
+ 
+ <div class="form-group">
+   <h3>Type :</h3>
+   <input type="text" [(ngModel)]="article.type" name="type" class="form-control" id="type" required>
+ </div>
+ 
+ <div class="form-group">
+   <h3 >Thème :</h3>
+   <input type="text" [(ngModel)]="article.theme" name="theme" class="form-control" id="theme" required>
+ </div>
+       </div>
+       <br>
+       <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <button type="button" class="btn btn-primary" (click)="annuler()">Annuler</button>
+      </div>n>
+</form>
+</div>
+</div>
+</div>

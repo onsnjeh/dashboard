@@ -52,7 +52,7 @@ export class CardsComponent implements OnInit {
   getTickets() {
     this.ticketService.getTickets().subscribe((tickets) => {
       this.TicketCountFermer = tickets.filter((ticket) =>ticket.status === 'Fermer').length;
-      this.TicketCountAttent = tickets.filter((ticket) =>ticket.status === 'En attente').length;
+      this.TicketCountAttent = tickets.filter((ticket) =>ticket.status === 'En attente' || ticket.status === 'Repondu' || ticket.status === 'initial').length;
       this.TicketCountTotal = tickets.length
       ;
     });

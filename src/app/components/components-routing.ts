@@ -26,6 +26,9 @@ import { DetailCompteComponent } from "./detail-compte/detail-compte.component";
 import { GestionManagerExpertComponent } from "./gestion-manager-expert/gestion-manager-expert.component";
 import { DetailCategorieComponent } from "./gestion-categorie/detail-categorie/detail-categorie.component";
 import { RepondreTicketComponent } from "./gestion-ticket/repondre-ticket/repondre-ticket.component";
+import { DetailTicketComponent } from "./gestion-ticket/detail-ticket/detail-ticket.component";
+import { EditDocumentComponent } from "./gestion-document/edit-document/edit-document.component";
+import { DetailDocumentComponent } from "./gestion-document/detail-document/detail-document.component";
 
 
 export const routes: Routes = [
@@ -62,7 +65,11 @@ export const routes: Routes = [
  { path: 'edit-type-theme/:id', component: EditTypeThemeComponent },
 
  { path:'detail-categorie/:id', component: DetailCategorieComponent },
+ { path:'detail-ticket/:id', component: DetailTicketComponent },
+ { path:'edit-document/:id', component: EditDocumentComponent },
 
+
+ { path:'detail-document/:id', component: DetailDocumentComponent },
 
 
 

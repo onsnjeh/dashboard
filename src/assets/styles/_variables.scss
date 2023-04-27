@@ -1,3 +1,64 @@
 @use '@angular/material'as mat;
 @include mat.core();
 
+$flexy-primary: (
+  100: #fcf1ed,
+  500: #03c9d7,
+  700: #425a61,
+  contrast: (
+    100: #393939,
+    500: #ffffff,
+    700: #ffffff,
+  ),
+);
+
+$flexy-accent: (
+  100: #fcf1ed,
+  500: #fb9678,
+  700: #425a61,
+  contrast: (
+    100: #393939,
+    500: #ffffff,
+    700: #ffffff,
+  ),
+);
+
+$flexy-warn: (
+  100: #fcf1ed,
+  500: #e46a76,
+  700: #5d363a,
+  contrast: (
+    100: #393939,
+    500: #ffffff,
+    700: #ffffff,
+  ),
+);
+
+$flexy-angular-primary: mat.define-palette($flexy-primary);
+$flexy-angular-accent: mat.define-palette($flexy-accent);
+
+$flexy-angular-warn: mat.define-palette($flexy-warn);
+
+$flexy-angular-theme: mat.define-light-theme((
+  color: (
+    primary: $flexy-angular-primary,
+    accent: $flexy-angular-accent,
+    warn: $flexy-angular-warn,
+  )
+));
+
+
+
+
+@include mat.all-component-themes($flexy-angular-theme);
+
+
+
+
+
+
+
+
+
+
+

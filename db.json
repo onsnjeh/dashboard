@@ -95,13 +95,16 @@
       "id": 1,
       "titre": "article 1",
       "reference": "2222",
-      "date_publication": "12/2/2021",
+      "date_publication": "2023-12-22",
       "abstract": "No matter how far along you are in your sophistication as an amateur astronomer, there is always one.",
       "tags": [
         1,
         3,
         4
-      ]
+      ],
+      "categorie": "juridique",
+      "type": "juridique",
+      "theme": "juridique"
     },
     {
       "id": 2,
@@ -204,6 +207,20 @@
       "theme": "theme fiscal",
       "fichier": "C:\\fakepath\\chapitre 2.odt",
       "date": "2023-04-17T22:27:38.407Z"
+    },
+    {
+      "id": 11,
+      "titre": "test 2023",
+      "reference": 2323,
+      "date_publication": "2023-12-22",
+      "abstract": "test 2023",
+      "tags": "test 2023",
+      "categorie": "sante",
+      "type": "medical",
+      "theme": "medical",
+      "textFichier": "test 2023",
+      "fichier": "C:\\fakepath\\chapitre 3.odt",
+      "date": "2023-04-27T21:51:29.097Z"
     }
   ],
   "partenaires": [
@@ -233,51 +250,52 @@
     {
       "id": 1,
       "categorie": "fiscal",
-      "priorite": 10,
-      "question": "question sur fiscal?",
-      "fichier": "C:\\fakepath\\rapport PFE 2.odt",
+      "priorite": "urgent",
+      "question": "question de fiscal",
+      "fichier": "C:\\fakepath\\chapitre 2.odt",
       "status": "Fermer",
-      "dateCreate": "2023-04-25T08:56:58.601Z",
-      "assignee": "Expert A",
-      "responses": [
-        "réponse",
-        "C:\\fakepath\\introduction et conslison genral.odt"
-      ],
-      "dateFermer": "2023-04-25T20:30:22.689Z"
+      "dateCreate": "2023-04-27T17:04:00.445Z",
+      "assignee": "expert4",
+      "responseText": "réponse fiscal",
+      "responseFile": "C:\\fakepath\\chapitre 2.odt",
+      "dateFermer": "2023-04-27T17:55:31.401Z"
+    },
+    {
+      "id": 2,
+      "categorie": "social",
+      "priorite": "normal",
+      "question": "question de social",
+      "fichier": "C:\\fakepath\\introduction et conslison genral.odt",
+      "status": "Fermer",
+      "dateCreate": "2023-04-27T17:04:42.090Z",
+      "responseText": "réponse social",
+      "responseFile": "C:\\fakepath\\introduction et conslison genral.odt",
+      "dateFermer": "2023-04-27T17:34:49.828Z"
     },
     {
       "id": 3,
       "categorie": "juridique",
-      "priorite": 7,
-      "question": "question sur juridique?",
+      "priorite": "normale",
+      "question": "question juridique",
       "fichier": "C:\\fakepath\\rapport PFE 2.odt",
-      "status": "Fermer",
-      "dateCreate": "2023-04-25T09:00:25.414Z",
-      "dateFermer": "2023-04-25T20:51:16.154Z"
+      "status": "Repondu",
+      "dateCreate": "2023-04-27T17:56:05.164Z",
+      "assignee": "expert3",
+      "responseText": "réponse juridique",
+      "responseFile": "C:\\fakepath\\rapport PFE 2.odt"
     },
     {
-      "id": 6,
-      "categorie": "fiscal",
-      "priorite": 5,
-      "question": "test 1",
-      "fichier": "C:\\fakepath\\ti.txt",
-      "status": "En attente",
-      "date": "2023-04-27T11:31:55.623Z",
-      "responses": [
-        "test1",
-        "C:\\fakepath\\ti.txt"
-      ],
-      "dateFermer": "2023-04-27T11:36:16.710Z"
-    },
-    {
-      "id": 7,
+      "id": 4,
       "categorie": "sante",
       "priorite": "urgent",
-      "question": "test 3",
-      "fichier": "C:\\fakepath\\Nouveau Microsoft Access Database.accdb",
-      "status": "En attente",
-      "date": "2023-04-27T11:39:16.946Z",
-      "assignee": "expert3"
+      "question": "question de sante",
+      "fichier": "C:\\fakepath\\rapport de service de rapport .pdf",
+      "status": "Fermer",
+      "dateCreate": "2023-04-27T19:26:18.246Z",
+      "assignee": "expert3",
+      "responseText": "test 1",
+      "responseFile": "C:\\fakepath\\rapport de service de rapport .pdf",
+      "dateFermer": "2023-04-27T19:34:50.412Z"
     }
   ],
   "categorie": [

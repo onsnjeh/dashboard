@@ -27,7 +27,7 @@ export class GestionDocumentComponent implements OnInit{
     loadArticles() {
       this.ArticleService.getArticles().subscribe(articles => {
         this.articles = articles;
-        this.loadTags();
+        // this.loadTags();
      
 
       });
@@ -35,11 +35,11 @@ export class GestionDocumentComponent implements OnInit{
   
 
     // Charge les Articles depuis le serveur
-    loadTags() {
-      this.TagService.getTags().subscribe(tags => {
-        this.tags = tags;
-      });
-    }
+    // loadTags() {
+    //   this.TagService.getTags().subscribe(tags => {
+    //     this.tags = tags;
+    //   });
+    // }
 
 
     // Retourne les Articles à afficher pour la page courante
@@ -68,9 +68,9 @@ export class GestionDocumentComponent implements OnInit{
     }
 
     //recupere tag 
-    getTagName(tagId: number): string {
-      const tag = this.tags.find(t => t.id === tagId);
-      return tag ? tag.title : '';
-    }
+    // getTagName(title: string): string {
+    //   const tag = this.tags.find(t => t.title === title);
+    //   return tag ? tag.title : '';
+    // }
   }
   

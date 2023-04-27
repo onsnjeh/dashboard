@@ -12,7 +12,7 @@
                     <i class="fa fa-bell"></i> {{TicketCount}}</button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                     <button *ngFor="let Ticket of Tickets" ngbDropdownItem
-                        [routerLink]="['/detail-ticket', Ticket.id]">{{ Ticket.status}}
+                        [routerLink]="['/repondre-ticket', Ticket.id]">{{ Ticket.status}}
 
                     </button>
 

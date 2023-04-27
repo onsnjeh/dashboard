@@ -35,6 +35,9 @@ import { DetailCompteComponent } from './detail-compte/detail-compte.component';
 import { GestionManagerExpertComponent } from "./gestion-manager-expert/gestion-manager-expert.component";
 import { DetailCategorieComponent } from './gestion-categorie/detail-categorie/detail-categorie.component';
 import { RepondreTicketComponent } from "./gestion-ticket/repondre-ticket/repondre-ticket.component";
+import { DetailTicketComponent } from './gestion-ticket/detail-ticket/detail-ticket.component';
+import { DetailDocumentComponent } from './gestion-document/detail-document/detail-document.component';
+import { EditDocumentComponent } from './gestion-document/edit-document/edit-document.component';
 
 
 
@@ -67,7 +70,10 @@ import { RepondreTicketComponent } from "./gestion-ticket/repondre-ticket/repond
     EditCompteComponent,
      DetailCompteComponent,
      DetailCategorieComponent   ,
-     RepondreTicketComponent
+     RepondreTicketComponent,
+     DetailTicketComponent,
+     DetailDocumentComponent,
+     EditDocumentComponent
   ],
   imports: [
     CommonModule,

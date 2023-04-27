@@ -67,7 +67,7 @@ export class CreationTicketComponent {
 				...this.ticketForm.value,
 				priorite: this.currentRate,
 				status: 'initial',
-								date:new Date()
+				dateCreate:new Date()
 		};
 		this.ticketService.create(ticket).subscribe();
 		this.ticketForm.reset();
