@@ -8,7 +8,6 @@ import { CreerOffreComponent } from "./gestion-offre/creer-offre/creer-offre.com
 import { AjouterPartenairesComponent } from "./gestion-partenaires/ajouter-partenaires/ajouter-partenaires.component";
 import { AjouterTagsComponent } from "./gestion-tags/ajouter-tags/ajouter-tags.component";
 import { CreationTicketComponent } from "./gestion-ticket/creation-ticket/creation-ticket.component";
-import { DetailTicketComponent } from "./gestion-ticket/detail-ticket/detail-ticket.component";
 import { GestionTicketComponent } from "./gestion-ticket/gestion-ticket.component";
 import { GestionCategorieComponent } from "./gestion-categorie/gestion-categorie.component";
 import { GestionClientComponent } from "./gestion-client/gestion-client.component";
@@ -26,6 +25,7 @@ import { EditCompteComponent } from "./edit-compte/edit-compte.component";
 import { DetailCompteComponent } from "./detail-compte/detail-compte.component";
 import { GestionManagerExpertComponent } from "./gestion-manager-expert/gestion-manager-expert.component";
 import { DetailCategorieComponent } from "./gestion-categorie/detail-categorie/detail-categorie.component";
+import { RepondreTicketComponent } from "./gestion-ticket/repondre-ticket/repondre-ticket.component";
 
 
 export const routes: Routes = [
@@ -55,7 +55,7 @@ export const routes: Routes = [
  {path:"ajouter-tags" ,component:AjouterTagsComponent},
  {path:"gestion-partenaires" ,component:GestionPartenairesComponent},
  {path:"ajouter-partenaires  " ,component:AjouterPartenairesComponent},
- {path:"detail-ticket/:id",component:DetailTicketComponent},
+ {path:"repondre-ticket/:id",component:RepondreTicketComponent},
  { path:'edit-partenaire/:id', component: EditPartenaireComponent },
  { path:'edit-offre/:id', component: EditOffreComponent},
  

@@ -232,325 +232,52 @@
   "ticket": [
     {
       "id": 1,
-      "titre": "Ticket1",
-      "priorite": "normale",
-      "categorie": "juridique",
-      "question": "",
-      "fichier": "",
-      "date": "12/11/2023"
-    },
-    {
-      "id": 2,
-      "titre": "Ticket2",
-      "priorite": "urgent",
       "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
-      "date": "12/11/2023"
+      "priorite": 10,
+      "question": "question sur fiscal?",
+      "fichier": "C:\\fakepath\\rapport PFE 2.odt",
+      "status": "Fermer",
+      "dateCreate": "2023-04-25T08:56:58.601Z",
+      "assignee": "Expert A",
+      "responses": [
+        "réponse",
+        "C:\\fakepath\\introduction et conslison genral.odt"
+      ],
+      "dateFermer": "2023-04-25T20:30:22.689Z"
     },
     {
       "id": 3,
-      "titre": "Ticket3",
-      "priorite": "urgent",
-      "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
-      "date": "12/11/2023"
-    },
-    {
-      "id": 4,
-      "titre": "Ticket4",
-      "priorite": "urgent",
-      "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
-      "date": "12/11/2023"
-    },
-    {
-      "id": 5,
-      "titre": "Ticket5",
-      "priorite": "urgent",
-      "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
-      "date": "12/11/2023"
+      "categorie": "juridique",
+      "priorite": 7,
+      "question": "question sur juridique?",
+      "fichier": "C:\\fakepath\\rapport PFE 2.odt",
+      "status": "Fermer",
+      "dateCreate": "2023-04-25T09:00:25.414Z",
+      "dateFermer": "2023-04-25T20:51:16.154Z"
     },
     {
       "id": 6,
-      "titre": "Ticket6",
-      "priorite": "urgent",
       "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
-      "date": "12/11/2023"
+      "priorite": 5,
+      "question": "test 1",
+      "fichier": "C:\\fakepath\\ti.txt",
+      "status": "En attente",
+      "date": "2023-04-27T11:31:55.623Z",
+      "responses": [
+        "test1",
+        "C:\\fakepath\\ti.txt"
+      ],
+      "dateFermer": "2023-04-27T11:36:16.710Z"
     },
     {
       "id": 7,
-      "titre": "Ticket7",
+      "categorie": "sante",
       "priorite": "urgent",
-      "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
-      "date": "12/11/2023"
-    },
-    {
-      "id": 8,
-      "titre": "Ticket8",
-      "priorite": "urgent",
-      "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
-      "date": "12/11/2023"
-    },
-    {
-      "id": 9,
-      "titre": "Ticket9",
-      "priorite": "urgent",
-      "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
+      "question": "test 3",
+      "fichier": "C:\\fakepath\\Nouveau Microsoft Access Database.accdb",
       "status": "En attente",
-      "date": "12/11/2023",
-      "response": ""
-    },
-    {
-      "id": 10,
-      "titre": "Ticket10",
-      "priorite": "urgent",
-      "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
-      "status": "En attente",
-      "date": "12/11/2023"
-    },
-    {
-      "id": 11,
-      "titre": "Ticket11",
-      "priorite": "urgent",
-      "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
-      "status": "En attente",
-      "date": "12/11/2023",
-      "responses": [
-        {
-          "createdUp": "2023-04-11T09:56:29.527Z",
-          "responseText": "test ",
-          "responseFile": ""
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "titre": "Ticket12",
-      "priorite": "urgent",
-      "categorie": "fiscal",
-      "question": "",
-      "fichier": "",
-      "status": "Fermer",
-      "date": "12/11/2023",
-      "responses": []
-    },
-    {
-      "id": 15,
-      "categorie": "juridique",
-      "priority": 10,
-      "question": "zzzzzzzzzzz",
-      "fichier": [],
-      "status": "En attente",
-      "date": "2023-04-04T00:02:48.664Z",
-      "response": ""
-    },
-    {
-      "id": 16,
-      "categorie": "juridique",
-      "priority": 3,
-      "question": "bonjour , test 1 ",
-      "fichier": "C:\\fakepath\\BD PFE.docx",
-      "status": "En attente",
-      "date": "2023-04-04T00:03:25.824Z"
-    },
-    {
-      "id": 17,
-      "categorie": "fiscal",
-      "priorite": 7,
-      "question": "gfjhtgu,bv",
-      "fichier": "C:\\fakepath\\Descriptions-Textuelles-des-uc.pdf",
-      "status": "En attente",
-      "date": "2023-04-05T11:01:01.263Z",
-      "responses": [
-        {
-          "createdUp": "2023-04-11T10:05:03.127Z",
-          "responseText": "",
-          "responseFile": [
-            []
-          ]
-        },
-        {
-          "createdUp": "2023-04-11T10:20:16.993Z",
-          "responseText": "",
-          "responseFile": []
-        }
-      ]
-    },
-    {
-      "id": 18,
-      "categorie": "fiscal",
-      "priorite": 7,
-      "question": "gfjhtgu,bv",
-      "fichier": "C:\\fakepath\\Descriptions-Textuelles-des-uc.pdf",
-      "status": "En attente",
-      "date": "2023-04-05T11:01:01.263Z",
-      "assignee": "nesrin"
-    },
-    {
-      "id": 19,
-      "categorie": "fiscal",
-      "priorite": 7,
-      "question": "gfjhtgu,bv",
-      "fichier": "C:\\fakepath\\Descriptions-Textuelles-des-uc.pdf",
-      "status": "En attente",
-      "date": "2023-04-05T11:01:01.263Z",
-      "assignee": "nesrin"
-    },
-    {
-      "id": 20,
-      "categorie": "social",
-      "priorite": 7,
-      "question": "gfjhtgu,bv",
-      "fichier": "C:\\fakepath\\Descriptions-Textuelles-des-uc.pdf",
-      "status": "En attente",
-      "date": "2023-04-05T11:01:01.263Z",
-      "assignee": "sirine"
-    },
-    {
-      "id": 21,
-      "categorie": "social",
-      "priorite": 10,
-      "question": "test 123456789",
-      "files": "C:\\fakepath\\cahiercharge-prestacode.docx",
-      "status": "En attente",
-      "date": "2023-04-11T09:07:12.215Z",
-      "assignee": "nesrin",
-      "responses": [
-        "test12346"
-      ]
-    },
-    {
-      "id": 22,
-      "categorie": "fiscal",
-      "priorite": 10,
-      "question": "sa3iiiid",
-      "files": [],
-      "status": "Ferme",
-      "date": "2023-04-11T09:53:30.891Z",
-      "responses": [
-        {
-          "createdUp": "2023-04-11T10:21:44.359Z",
-          "responseText": "ggg",
-          "responseFile": []
-        }
-      ]
-    },
-    {
-      "id": 23,
-      "categorie": "fiscal",
-      "priorite": 10,
-      "question": "nesrin",
-      "files": "C:\\fakepath\\chapitre1.docx",
-      "status": "Repondu",
-      "date": "2023-04-11T10:01:01.283Z",
-      "responses": [
-        {
-          "createdUp": "2023-04-11T10:01:22.031Z",
-          "responseText": "aya",
-          "responseFile": [
-            []
-          ]
-        }
-      ]
-    },
-    {
-      "id": 24,
-      "categorie": "juridique",
-      "priorite": 3,
-      "question": "sirine",
-      "files": "C:\\fakepath\\BD PFE.docx",
-      "status": "En attente",
-      "date": "2023-04-11T10:30:36.214Z",
-      "responses": [
-        {
-          "createdUp": "2023-04-11T10:35:48.360Z",
-          "responseText": "h",
-          "responseFile": ""
-        }
-      ],
-      "dateFermer": "2023-04-12T11:20:07.217Z"
-    },
-    {
-      "id": 25,
-      "categorie": "juridique",
-      "priorite": 10,
-      "question": "azerty123456789",
-      "fichier": "C:\\fakepath\\BD PFE.docx",
-      "status": "En attente",
-      "date": "2023-04-11T10:37:14.857Z"
-    },
-    {
-      "id": 26,
-      "categorie": "juridique",
-      "priorite": 10,
-      "question": "wxcvbn",
-      "fichier": "C:\\fakepath\\Descriptions-Textuelles-des-uc.pdf",
-      "status": "En attente",
-      "date": "2023-04-11T10:47:25.787Z",
-      "responses": [
-        "ggg",
-        "C:\\fakepath\\cas-dutilisation.docx"
-      ]
-    },
-    {
-      "id": 27,
-      "categorie": "juridique",
-      "priorite": 10,
-      "question": "test  assignee",
-      "fichier": [],
-      "status": "En attente",
-      "date": "2023-04-11T10:56:17.690Z",
-      "assignee": "nizar"
-    },
-    {
-      "id": 28,
-      "categorie": "social",
-      "priorite": 10,
-      "question": "test 2  assignee",
-      "fichier": [],
-      "status": "En attente",
-      "date": "2023-04-11T10:57:59.112Z",
-      "assignee": "nizar123",
-      "responses": [
-        "",
-        "C:\\fakepath\\BD PFE.docx"
-      ]
-    },
-    {
-      "id": 29,
-      "categorie": "juridique",
-      "priorite": 10,
-      "question": "test 3 assignee \n\n",
-      "fichier": [],
-      "status": "Fermer",
-      "date": "2023-04-11T11:03:12.138Z",
-      "assignee": "nesrin"
-    },
-    {
-      "id": 30,
-      "categorie": "fiscal",
-      "priorite": 10,
-      "question": "test1",
-      "fichier": "C:\\fakepath\\rapport PFE 2.odt",
-      "status": "En attente",
-      "date": "2023-04-17T22:32:37.320Z"
+      "date": "2023-04-27T11:39:16.946Z",
+      "assignee": "expert3"
     }
   ],
   "categorie": [

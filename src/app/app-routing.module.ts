@@ -17,7 +17,6 @@ import { GestionPartenairesComponent } from './components/gestion-partenaires/ge
 import { AjouterTagsComponent } from './components/gestion-tags/ajouter-tags/ajouter-tags.component';
 import { GestionTagsComponent } from './components/gestion-tags/gestion-tags.component';
 import { CreationTicketComponent } from './components/gestion-ticket/creation-ticket/creation-ticket.component';
-import { DetailTicketComponent } from './components/gestion-ticket/detail-ticket/detail-ticket.component';
 import { GestionTicketComponent } from './components/gestion-ticket/gestion-ticket.component';
 import { EditPartenaireComponent } from './components/gestion-partenaires/edit-partenaire/edit-partenaire.component';
 import { EditOffreComponent } from './components/gestion-offre/edit-offre/edit-offre.component';
@@ -28,8 +27,8 @@ import { AjouterCompteComponent } from './components/ajouter-compte/ajouter-comp
 import { EditCompteComponent } from './components/edit-compte/edit-compte.component';
 import { DetailCompteComponent } from './components/detail-compte/detail-compte.component';
 import { GestionManagerExpertComponent } from './components/gestion-manager-expert/gestion-manager-expert.component';
-import { ProfilComponent } from './layouts/profil/profil.component';
 import { DetailCategorieComponent } from './components/gestion-categorie/detail-categorie/detail-categorie.component';
+import { RepondreTicketComponent } from './components/gestion-ticket/repondre-ticket/repondre-ticket.component';
 
 
 
@@ -66,7 +65,7 @@ const routes: Routes = [
       {path:"ajouter-tags" ,component:AjouterTagsComponent},
       {path:"gestion-partenaires" ,component:GestionPartenairesComponent},
       {path:"ajouter-partenaires  " ,component:AjouterPartenairesComponent},
-      {path:"detail-ticket/:id",component:DetailTicketComponent},
+      {path:"repondre-ticket/:id",component:RepondreTicketComponent},
       { path:'edit-partenaire/:id', component: EditPartenaireComponent },
       { path:'edit-offre/:id', component: EditOffreComponent},
       

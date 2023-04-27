@@ -46,10 +46,6 @@ export class TicketService {
   updateTicket(id: number, ticket: Ticket): Observable<Ticket> {
     return this.http.put<Ticket>(`${this.baseUrl}/${id}`, ticket)
   }
-  // Supprime un ticket existant
-  delete(id: number): Observable<Ticket> {
-    return this.http.delete<Ticket>(`${this.baseUrl}/${id}`);
-  }
 
   //changer un ticket en attente 
   updateTicketStatus(id: number, status: string): Observable<Ticket> {
@@ -64,28 +60,12 @@ export class TicketService {
     return this.http.patch<Ticket>(url, body);
   }
 
-  //envoyer un ticket par email
-  sendNotificationEmail(ticket: Ticket): Observable<any> {
-    const url = 'http://localhost:3000/send-email';
-    const body = {
-      to: ticket.assignee,
-      subject: `Ticket ${ticket.id} has been assigned to you`,
-      message: `Dear ${ticket.assignee},\n\nYou have been assigned to Ticket ${ticket.id}.\n\nThanks,\nThe Support Team`
-    };
-    return this.http.post<any>(url, body);
+   //changer un ticket en priorite
+   updateTicketPriorite(id: number, priorite: string): Observable<Ticket> {
+    const url = `${this.baseUrl}/${id}`;
+    const body = { priorite: priorite };
+    return this.http.patch<Ticket>(url, body);
   }
-  // private currentUser = 'nesrin'
 
-  //notification 
-  // getNotifications(): Observable<Ticket[]> {
-  //   return this.http.get<Ticket[]>(this.baseUrl + `?assignee=${this.currentUser}&status=En attente`);
-  // }
- //repondre sur un ticket 
-//  sendResponse(ticketId: number, response: string): Observable<any> {
-//   const url = `${this.baseUrl}/${ticketId}`;
-
-//   return this.http.patch(url, { response });
-// }
-//changer un ticket en attente 
 
 }

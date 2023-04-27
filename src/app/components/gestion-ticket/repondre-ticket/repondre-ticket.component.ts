@@ -7,15 +7,17 @@ import { CompteService } from 'src/app/core/services/compte.service';
 import { TicketService } from 'src/app/core/services/ticket.service';
 
 @Component({
-  selector: 'app-detail-ticket',
-  templateUrl: './detail-ticket.component.html',
-  styleUrls: ['./detail-ticket.component.css']
+  selector: 'app-repondre-ticket',
+  templateUrl: './repondre-ticket.component.html',
+  styleUrls: ['./repondre-ticket.component.css']
 })
-export class DetailTicketComponent {
+export class RepondreTicketComponent {
   ticket!: Ticket;
   assignee!: string;
   ticketForm!: FormGroup;
   comptes: Compte[] = []; // Les comptes affichés
+  priorite!: string;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -33,10 +35,8 @@ export class DetailTicketComponent {
   }
   onAssign(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.ticketService.assignTicket(Number(id), this. assignee).subscribe(ticket => this.ticket = ticket);
-    // this.ticketService.sendNotificationEmail(this.ticket).subscribe(() => {
-    //   console.log('Notification email sent.')
-    // });
+    this.ticketService.assignTicket(Number(id), this.assignee).subscribe(ticket => this.ticket = ticket);
+  
   }
   isResponseVisible = false;
   responseText: string='';
@@ -72,38 +72,27 @@ export class DetailTicketComponent {
       alert('Error submitting ticket response' );
     });
 }
-//fermer un ticket
+
 //fermer un ticket
 fermerTicket(): void {
   const id = this.route.snapshot.paramMap.get('id');
   const updatedTicket: Ticket = {
     ...this.ticket,
-    dateFermer: new Date().toISOString()
+    status:"Fermer",
+    dateFermer: new Date()
   };
-  this.ticketService.updateTicketStatus(Number(id), 'Fermer').subscribe(() => {
     this.ticketService.updateTicket(Number(id), updatedTicket).subscribe(() => {
       this.ticket = updatedTicket;
       alert('Ticket fermé avec succès');
     }, err => {
       alert('Erreur lors de la mise à jour de la date de fermeture');
     });
-  }, err => {
-    alert('Erreur lors de la mise à jour du statut du ticket');
-  });
+  }
   
+//modifier Priorite 
+Mofidier(): void {
+  const id = this.route.snapshot.paramMap.get('id');
+  this.ticketService.updateTicketPriorite(Number(id), this.priorite).subscribe
+  (ticket => this.ticket = ticket);
 }
-  //par email  recipientEmail: string;
-  // sendEmail() {
-  //   const msg = {
-  //     to: 'karraynesrin97@gmail.com',
-  //     from: 'onsnjeh2020@gmail.com',
-  //     subject: 'Test email',
-  //     text: 'Hello World!'
-  //   };
-  //   sgMail.send(msg).then(() => {
-  //     console.log('Email sent');
-  //   }).catch((error) => {
-  //     console.error(error);
-  //   });
-  // }
 }

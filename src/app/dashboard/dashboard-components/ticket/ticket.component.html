@@ -13,22 +13,16 @@
             <thead>
 
                 <tr>
-
-                    <th scope="col">Nom</th>
-                    <th scope="col">Periority</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Date</th>
+                    <th scope="col">Categorie</th>
+                    <th scope="col">Priorité</th>
+                    <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item2 of item2">
-
-                    <td>
-                        {{item2.titre }}
-                    </td>
-                    <td> {{item2.priorite}}</td>
                     <td>{{item2.categorie}} </td>
-                    <td>{{item2.date}}</td>
+                    <td> {{item2.priorite}}</td>
+                    <td>{{item2.status}}</td>
                 </tr>
             </tbody>
         </table>

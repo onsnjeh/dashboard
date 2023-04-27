@@ -22,7 +22,6 @@ import { GestionPartenairesComponent } from "./gestion-partenaires/gestion-parte
 import { AjouterTagsComponent } from "./gestion-tags/ajouter-tags/ajouter-tags.component";
 import { GestionTagsComponent } from "./gestion-tags/gestion-tags.component";
 import { CreationTicketComponent } from "./gestion-ticket/creation-ticket/creation-ticket.component";
-import { DetailTicketComponent } from "./gestion-ticket/detail-ticket/detail-ticket.component";
 import { GestionTicketComponent } from "./gestion-ticket/gestion-ticket.component";
 import { ComponentsRoutingModule } from "./components-routing";
 import { NgbRatingModule } from "@ng-bootstrap/ng-bootstrap";
@@ -35,6 +34,7 @@ import { EditCompteComponent } from './edit-compte/edit-compte.component';
 import { DetailCompteComponent } from './detail-compte/detail-compte.component';
 import { GestionManagerExpertComponent } from "./gestion-manager-expert/gestion-manager-expert.component";
 import { DetailCategorieComponent } from './gestion-categorie/detail-categorie/detail-categorie.component';
+import { RepondreTicketComponent } from "./gestion-ticket/repondre-ticket/repondre-ticket.component";
 
 
 
@@ -57,7 +57,6 @@ import { DetailCategorieComponent } from './gestion-categorie/detail-categorie/d
     AjouterTagsComponent,
     GestionPartenairesComponent,
     AjouterPartenairesComponent,
-    DetailTicketComponent,
     EditPartenaireComponent,
     EditOffreComponent,
     DetailOffreComponent,
@@ -67,7 +66,8 @@ import { DetailCategorieComponent } from './gestion-categorie/detail-categorie/d
 
     EditCompteComponent,
      DetailCompteComponent,
-     DetailCategorieComponent   
+     DetailCategorieComponent   ,
+     RepondreTicketComponent
   ],
   imports: [
     CommonModule,
@@ -96,7 +96,7 @@ import { DetailCategorieComponent } from './gestion-categorie/detail-categorie/d
     AjouterTagsComponent,
     GestionPartenairesComponent,
     AjouterPartenairesComponent,
-    DetailTicketComponent,
+    
   ]
 })
 export class ComponentsModule { }

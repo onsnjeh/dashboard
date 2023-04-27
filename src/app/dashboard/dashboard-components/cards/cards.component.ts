@@ -51,7 +51,7 @@ export class CardsComponent implements OnInit {
 
   getTickets() {
     this.ticketService.getTickets().subscribe((tickets) => {
-      this.TicketCountFermer = tickets.filter((ticket) =>ticket.status === 'Repondu').length;
+      this.TicketCountFermer = tickets.filter((ticket) =>ticket.status === 'Fermer').length;
       this.TicketCountAttent = tickets.filter((ticket) =>ticket.status === 'En attente').length;
       this.TicketCountTotal = tickets.length
       ;

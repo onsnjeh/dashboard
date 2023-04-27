@@ -19,22 +19,24 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-
-                        <th scope="col">Titre</th>
-                        <th scope="col">Priorité</th>
                         <th scope="col">Catégorie</th>
-                        <th scope="col">Date</th>
+                        <th scope="col">Priorité</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of tickets | paginate: { itemsPerPage: pageSize, currentPage: page }">
 
-                        <td>{{ item.titre }}</td>
-                        <td>{{ item.priorite }}</td>
                         <td>{{ item.categorie }}</td>
-                        <td>{{ item.date }}</td>
+                        <td>{{ item.priorite }}</td>
+                        <td>{{ item.status }}</td>
                         <td>
+                            
+                           <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"
+                            ngbTooltip="Repondre">
+                            <i class="fa fa-question"></i>
+                        </button>
                             <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"
                                 ngbTooltip="Fermer">
                                 <i class="fa fa-times"></i>
