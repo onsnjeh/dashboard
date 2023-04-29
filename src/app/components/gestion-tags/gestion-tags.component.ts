@@ -1,13 +1,3 @@
-
-
-// interface Item {
-//   title: string;
-//   description: string;
-//   level: number;
-//   children?: Item[];
-//   expanded?: boolean;
-// }
-
 import { Component } from "@angular/core";
 import { Tag } from "src/app/core/models/article.model";
 import { TagService } from "src/app/core/services/tags.service";
@@ -18,33 +8,42 @@ import { TagService } from "src/app/core/services/tags.service";
   styleUrls: ['./gestion-tags.component.css']
 })
 export class GestionTagsComponent {
-  items: Tag[]=[];
+  tags: Tag[]=[];
 
   constructor(private TagService:TagService) {}
 
   ngOnInit() {
-    this.TagService.getTags().subscribe((items: Tag[]) => this.items = items);
+    this.TagService.getTags().subscribe((tags: Tag[]) => this.tags = tags);
   }
 
-  toggleExpand(item: Tag) {
-    if (item.children && item.children.length > 0) {
-      item.expanded = !item.expanded;
+  toggleExpand(tags: Tag) {
+    if (tags.children && tags.children.length > 0) {
+      tags.expanded = !tags.expanded;
     }
   }
 
-  getChildItems(item: Tag): Tag[] {
-    let childItems: Tag[] = [];
+  getChildtagss(tags: Tag): Tag[] {
+    let childtagss: Tag[] = [];
 
-    if (item.children && item.children.length > 0) {
-      childItems = item.children;
+    if (tags.children && tags.children.length > 0) {
+      childtagss = tags.children;
 
-      item.children.forEach(child => {
-        const childItemsRecursion = this.getChildItems(child);
-        childItems = childItems.concat(childItemsRecursion);
+      tags.children.forEach(child => {
+        const childtagssRecursion = this.getChildtagss(child);
+        childtagss = childtagss.concat(childtagssRecursion);
       });
     }
 
-    return childItems;
+    return childtagss;
+  }
+
+  //supprimer tags
+  deleteTags(tags: Tag) :void {
+    this.TagService.deleteTag(tags.id)
+      .subscribe(() => {
+        alert('Tags supprimé !');
+        this.tags = this.tags.filter(p => p !== tags);
+      });
   }
 }
 

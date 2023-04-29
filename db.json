@@ -281,6 +281,7 @@
       "status": "Repondu",
       "dateCreate": "2023-04-27T17:56:05.164Z",
       "assignee": "expert3",
+      "dateRepondre": "2023-04-29T02:11:17.295Z",
       "responseText": "réponse juridique",
       "responseFile": "C:\\fakepath\\rapport PFE 2.odt"
     },
@@ -296,6 +297,19 @@
       "responseText": "test 1",
       "responseFile": "C:\\fakepath\\rapport de service de rapport .pdf",
       "dateFermer": "2023-04-27T19:34:50.412Z"
+    },
+    {
+      "id": 5,
+      "categorie": "sante",
+      "priorite": 10,
+      "question": "sante",
+      "fichier": "C:\\fakepath\\rapport de service de rapport .pdf",
+      "status": "Repondu",
+      "dateCreate": "2023-04-29T02:10:19.696Z",
+      "assignee": "expert5",
+      "dateRepondre": "2023-04-29T02:11:17.295Z",
+      "responseText": "sante",
+      "responseFile": "C:\\fakepath\\rapport de service de rapport .pdf"
     }
   ],
   "categorie": [
@@ -497,7 +511,26 @@
               "title": "option 1.2.1",
               "description": "Description du option 1.2.1",
               "level": 2,
-              "parentId": 3
+              "parentId": 3,
+              "children": [
+                {
+                  "id": 5,
+                  "title": "option 1.2.1.1",
+                  "description": "Description du option 1.2.1.1",
+                  "level": 3,
+                  "parentId": 3,
+                  "children": [
+                    {
+                      "id": 4,
+                      "title": "option 1.2.1.1.1",
+                      "description": "Description du option 1.2.1.1.1",
+                      "level": 4,
+                      "parentId": 3,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": 5,

@@ -33,6 +33,7 @@ export class RepondreTicketComponent implements OnInit {
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.ticketService.updateTicketStatus(id, 'En attente').subscribe();
+    this.ticketService.updateTicketStatus(id, 'Repondu').subscribe();    
     this.ticketService.getById(id).subscribe((ticket) => (this.ticket = ticket));
 
     this.dataService.getItemsByRole('expert').subscribe((comptes: Compte[]) => {
@@ -66,6 +67,7 @@ export class RepondreTicketComponent implements OnInit {
     }
     const updatedTicket: Ticket = {
       ...this.ticket,
+      dateRepondre:new Date,
       status: 'Repondu',
       responseText: this.responseText || this.ticket?.responseText,
       responseFile: this.responseFile || this.ticket?.responseFile

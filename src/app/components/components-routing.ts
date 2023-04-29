@@ -29,6 +29,9 @@ import { RepondreTicketComponent } from "./gestion-ticket/repondre-ticket/repond
 import { DetailTicketComponent } from "./gestion-ticket/detail-ticket/detail-ticket.component";
 import { EditDocumentComponent } from "./gestion-document/edit-document/edit-document.component";
 import { DetailDocumentComponent } from "./gestion-document/detail-document/detail-document.component";
+import { DetailTagsComponent } from "./gestion-tags/detail-tags/detail-tags.component";
+import { EditTagComponent } from "./gestion-tags/edit-tag/edit-tag.component";
+import { LaPaieComponent } from "./la-paie/la-paie.component";
 
 
 export const routes: Routes = [
@@ -67,9 +70,12 @@ export const routes: Routes = [
  { path:'detail-categorie/:id', component: DetailCategorieComponent },
  { path:'detail-ticket/:id', component: DetailTicketComponent },
  { path:'edit-document/:id', component: EditDocumentComponent },
+ { path:'edit-tags/:id', component: EditTagComponent },
 
 
  { path:'detail-document/:id', component: DetailDocumentComponent },
+ { path:'detail-tags/:id', component: DetailTagsComponent },
+ { path:'la-paie', component: LaPaieComponent },
 
 
 

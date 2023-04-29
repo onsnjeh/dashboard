@@ -12,7 +12,7 @@ export interface Ticket {
   assignee?: string;
   responseText: string ;
   responseFile: File;
-  createdUp: Date ;
+  dateRepondre: Date ;
   dateFermer: Date ;
 
 

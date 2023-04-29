@@ -38,6 +38,8 @@ import { RepondreTicketComponent } from "./gestion-ticket/repondre-ticket/repond
 import { DetailTicketComponent } from './gestion-ticket/detail-ticket/detail-ticket.component';
 import { DetailDocumentComponent } from './gestion-document/detail-document/detail-document.component';
 import { EditDocumentComponent } from './gestion-document/edit-document/edit-document.component';
+import { DetailTagsComponent } from './gestion-tags/detail-tags/detail-tags.component';
+import { LaPaieComponent } from './la-paie/la-paie.component';
 
 
 
@@ -73,7 +75,9 @@ import { EditDocumentComponent } from './gestion-document/edit-document/edit-doc
      RepondreTicketComponent,
      DetailTicketComponent,
      DetailDocumentComponent,
-     EditDocumentComponent
+     EditDocumentComponent,
+     DetailTagsComponent,
+     LaPaieComponent
   ],
   imports: [
     CommonModule,

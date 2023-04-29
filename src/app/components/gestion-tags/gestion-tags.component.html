@@ -6,65 +6,56 @@
       <app-ajouter-tags></app-ajouter-tags>
     </div>
   </div>
-  <div class="card-header bg-primary text-white px-6">
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="me-6">
-        <h2 class="card-title text-white mb-0">List Tags</h2>
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <div class="d-flex justify-content-between align-tagss-center">
+        <h2 class="card-title text-white mb-0">List Partenaires</h2>
       </div>
-
     </div>
-  </div>
-  <table class="table table-bordered">
-    <thead>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
       <tr>
-        <th>Titre</th>
-        <th>Description</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
+
       </tr>
     </thead>
     <tbody>
-      <ng-container *ngFor="let item of items">
-        <tr>
-          <td>
-            <span class="pl-{{ item.level }} cursor-pointer" (click)="toggleExpand(item)">
-              <span *ngIf="item.children && item.children.length > 0">
-                <i class="fas fa-caret-right mr-1" [ngClass]="{'rotate-icon': item.expanded}"></i>
-              </span>
-              {{ item.title }}
-            </span>
-          </td>
-          <td>{{item.description}}</td>
-        </tr>
-        <ng-container *ngIf="item.children && item.children.length > 0 && item.expanded">
-          <ng-container *ngFor="let child of item.children">
-            <tr>
-              <td>
-                <span class="pl-{{ child.level }} cursor-pointer" (click)="toggleExpand(child)">
-                  <span *ngIf="child.children && child.children.length > 0">
-                    <i class="fas fa-caret-right mr-1" [ngClass]="{'rotate-icon': child.expanded}"></i>
-                  </span>
-                  {{ child.title }}
-                </span>
-              </td>
-              <td>{{child.description}}</td>
-            </tr>
-            <ng-container *ngIf="child.children && child.children.length > 0 && child.expanded">
-              <ng-container *ngFor="let grandChild of child.children">
-                <tr>
-                  <td>
-                    <span class="pl-{{ grandChild.level }} cursor-pointer" (click)="toggleExpand(grandChild)">
-                      <span *ngIf="grandChild.children && grandChild.children.length > 0">
-                        <i class="fas fa-caret-right mr-1" [ngClass]="{'rotate-icon': grandChild.expanded}"></i>
-                      </span>
-                      {{ grandChild.title }}
-                    </span>
-                  </td>
-                  <td>{{grandChild.description}}</td>
-                </tr>
-              </ng-container>
-            </ng-container>
-          </ng-container>
-        </ng-container>
-      </ng-container>
+      <ng-container *ngFor="let tags of tags">
+        <ng-container *ngTemplateOutlet="tagsTemplate; context: {$implicit: tags, level: 0}"></ng-container>
+        
+      </ng-container>    
     </tbody>
   </table>
 </div>
+</div>
+
+<!-- définition du template pour chaque élément -->
+<ng-template #tagsTemplate let-tags let-level="level">
+  <tr>
+    <td>
+      <span class="pl-{{ level }} cursor-pointer" (click)="toggleExpand(tags)">
+        <span *ngIf="tags.children && tags.children.length > 0">
+          <i class="fas fa-caret-right mr-1" [ngClass]="{'rotate-icon': tags.expanded}"></i>
+        </span>
+        {{ tags.title }}
+      </span>
+    </td>
+    <td>{{tags.description}}</td>
+    <td>
+      <button class="btn btn-primary text-uppercase"style="margin-left: 10px;" ngbTooltip="modifier" 
+      ><i class="fa fa-pencil"></i></button>
+      <button class="btn btn-primary text-uppercase" style="margin-left: 10px;" 
+      (click)="deleteTags(tags)" ngbTooltip="supprimer"
+        ><i class="fa fa-trash"></i></button>
+    </td>
+  </tr>
+  <!-- si l'élément a des enfants et qu'il est ouvert, on appelle récursivement le template pour chaque enfant -->
+  <ng-container *ngIf="tags.children && tags.children.length > 0 && tags.expanded">
+    <ng-container *ngFor="let child of tags.children">
+      <ng-container *ngTemplateOutlet="tagsTemplate; context: {$implicit: child, level: level + 1}"></ng-container>
+    </ng-container>
+  </ng-container>
+</ng-template>

@@ -4,6 +4,7 @@ export interface Tag {
   description: string;
   level: number;
   children?: Tag[];
+  parentId: number;
   expanded?: boolean;
 }
 export interface  Article {

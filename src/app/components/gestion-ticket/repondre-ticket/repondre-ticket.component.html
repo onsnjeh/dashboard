@@ -1,4 +1,4 @@
-<div class="container-xxl bg-light my-3 py-5 ">
+<div class="container bg-light my-3 py-5 ">
   <div class="card">
     <div class="container my-2 py-2 ">
       <form *ngIf="ticket">
@@ -30,10 +30,13 @@
             <form (ngSubmit)="onAssign()">
               <h3>Affecter par un Expert :</h3>
               <div class="row">
-                <div class="col-5"> <select name="assignee" id="assignee" [(ngModel)]="assignee" class="form-select">
+                <div class="col-5">
+                  <select name="assignee" id="assignee" [(ngModel)]="assignee" class="form-select">
                     <option *ngFor="let compte of comptes" [value]="compte.nom">{{ compte.nom }}</option>
-                  </select></div>
-                <div class="col-7"> <button type="submit" class="btn btn-outline-primary mb-2 me-2">Assign</button>
+                  </select>
+                </div>
+                <div class="col-7">
+                  <button type="submit" class="btn btn-outline-primary mb-2 me-2">Assign</button>
                 </div>
               </div>
 
@@ -43,13 +46,29 @@
               <h3>Modifier Priorité :</h3>
               <div class="form-group">
                 <div class="row">
-                  <div class="col-5"> 
-                <input type="text" id="priorite" [(ngModel)]="priorite" name="priorite" class="form-control" />
+                  <div class="col-5">
+                    <input type="text" id="priorite" [(ngModel)]="priorite" name="priorite" class="form-control" />
                   </div>
-              <div class="col-7"> 
-                   <button type="submit" class="btn btn-outline-primary mb-2 me-2">Modifier</button>
-                 </div>
-                 </div>
+                  <div class="col-7">
+                    <button type="submit" class="btn btn-outline-primary mb-2 me-2">Modifier</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+
+            <br>
+            <form (ngSubmit)="MofidierPriorite()" class="mt-4">
+              <h3>Modifier Priorité :</h3>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-5">
+                    <input type="text" id="priorite" [(ngModel)]="priorite" name="priorite" class="form-control" />
+                  </div>
+                  <div class="col-7">
+                    <button type="submit" class="btn btn-outline-primary mb-2 me-2">Modifier</button>
+                  </div>
+                </div>
               </div>
             </form>
 
@@ -67,14 +86,20 @@
                 <div class="form-group">
                   <br>
                   <h3>Choisir Fichier :</h3>
-                  <div class="custom-file">
-                    <input type="file" [(ngModel)]="responseFile" name="responseFile" class="custom-file-input"
-                      id="customFile" multiple required>
-                    
+                  <div class="row">
+                    <div class="col-7">
+                      
+                      <div class="custom-file">
+                        <input type="file" [(ngModel)]="responseFile" name="responseFile" class="custom-file-input"
+                          id="customFile" multiple required>
+
+                      </div>
+                    </div>
+                    <div class="col-5"> <button type="submit" class="btn btn-outline-primary me-2">Envoyer</button>
+                    </div>
+
                   </div>
                 </div>
-                <br>
-                <button type="submit" class="btn btn-outline-primary me-2">Envoyer</button>
               </form>
             </div>
 
@@ -88,21 +113,21 @@
           <div class="col-lg-2 col-md-8">
             <button class="btn btn-outline-primary mb-2 me-2" type="submit" (click)="fermerTicket()">Fermer </button>
           </div>
-         
+
 
         </div>
       </form>
       <hr>
 
       <div class="row g-3">
-      <div class="col-lg-10 col-md-4">
+        <div class="col-lg-10 col-md-4">
 
-      </div>
+        </div>
 
-      <div class="col-lg-2 col-md-8">
+        <div class="col-lg-2 col-md-8">
           <button class="btn btn-outline-primary mb-2 me-2" type="submit" (click)="annuler()">annuler </button>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </div>

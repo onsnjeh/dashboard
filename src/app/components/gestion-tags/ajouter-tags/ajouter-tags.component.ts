@@ -29,9 +29,9 @@ export class AjouterTagsComponent {
   
   
     ngOnInit() {
-      this.list.getTags().subscribe((allData:any) => {
-        this.listTags = allData;
-        })
+      // this.list.getTags().subscribe((allData:any) => {
+      //   this.listTags = allData;
+      //   })
     }
   
    

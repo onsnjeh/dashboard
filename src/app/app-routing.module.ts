@@ -33,6 +33,9 @@ import { DetailTicketComponent } from './components/gestion-ticket/detail-ticket
 import { EditDocumentComponent } from './components/gestion-document/edit-document/edit-document.component';
 import { DetailDocumentComponent } from './components/gestion-document/detail-document/detail-document.component';
 import { ProfilComponent } from './layouts/profil/profil.component';
+import { DetailTagsComponent } from './components/gestion-tags/detail-tags/detail-tags.component';
+import { EditTagComponent } from './components/gestion-tags/edit-tag/edit-tag.component';
+import { LaPaieComponent } from './components/la-paie/la-paie.component';
 
 
 
@@ -81,9 +84,12 @@ const routes: Routes = [
       { path:'edit-document/:id', component: EditDocumentComponent },
       { path:'detail-document/:id', component: DetailDocumentComponent },
       { path:'profil', component: ProfilComponent },
+      { path:'edit-tags/:id', component: EditTagComponent },
+      { path:'detail-tags/:id', component: DetailTagsComponent },
 
      
-      
+      { path:'la-paie', component: LaPaieComponent },
+
 
 
 
