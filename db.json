@@ -93,134 +93,99 @@
   "article": [
     {
       "id": 1,
-      "titre": "article 1",
-      "reference": "2222",
-      "date_publication": "2023-12-22",
-      "abstract": "No matter how far along you are in your sophistication as an amateur astronomer, there is always one.",
+      "titre": "Titre de l'article 1",
+      "reference": 1234,
+      "date_publication": "2023-04-29",
+      "abstract": "Ceci est un résumé de l'article 1.",
+      "dateCreate": "2023-04-29T08:30:00.000Z",
       "tags": [
-        1,
-        3,
-        4
+        "tag1",
+        "tag2"
       ],
-      "categorie": "juridique",
-      "type": "juridique",
-      "theme": "juridique"
+      "categorie": "Catégorie de l'article 1",
+      "type": "Type d'article 1",
+      "theme": "Thème de l'article 1",
+      "fichier": "chemin/vers/fichier1",
+      "textFichier": "Texte du fichier 1"
     },
     {
       "id": 2,
-      "titre": "article 2",
-      "reference": "2222",
-      "date": "12/2/2021",
-      "abstract": "No matter how far along you are in your sophistication as an amateur astronomer, there is always one.",
+      "titre": "Titre de l'article 2",
+      "reference": 5678,
+      "date_publication": "2023-04-30",
+      "abstract": "Ceci est un résumé de l'article 2.",
+      "dateCreate": "2023-04-30T10:45:00.000Z",
       "tags": [
-        1,
-        2,
-        4
-      ]
+        "tag3",
+        "tag4"
+      ],
+      "categorie": "Catégorie de l'article 2",
+      "type": "Type d'article 2",
+      "theme": "Thème de l'article 2",
+      "fichier": "chemin/vers/fichier2",
+      "textFichier": "Texte du fichier 2"
     },
     {
       "id": 3,
-      "titre": "article 3",
-      "reference": "2222",
-      "date": "12/2/2021",
-      "abstract": "No matter how far along you are in your sophistication as an amateur astronomer, there is always one.",
+      "titre": "Titre de l'article 3",
+      "reference": 9012,
+      "date_publication": "2023-05-01",
+      "abstract": "Ceci est un résumé de l'article 3.",
+      "dateCreate": "2023-05-01T14:20:00.000Z",
       "tags": [
-        2,
-        3
-      ]
+        "tag2",
+        "tag4"
+      ],
+      "categorie": "Catégorie de l'article 3",
+      "type": "Type d'article 3",
+      "theme": "Thème de l'article 3",
+      "fichier": "chemin/vers/fichier3",
+      "textFichier": "Texte du fichier 3"
     },
     {
       "id": 4,
-      "titre": "article 4",
-      "reference": "2222",
-      "date_publication": "12/2/2021",
-      "abstract": "No matter how far along you are in your sophistication as an amateur astronomer, there is always one.",
+      "titre": "Titre de l'article 4",
+      "reference": 3456,
+      "date_publication": "2023-05-02",
+      "abstract": "Ceci est un résumé de l'article 4.",
+      "dateCreate": "2023-05-02T09:15:00.000Z",
       "tags": [
-        4
-      ]
+        "tag1",
+        "tag3"
+      ],
+      "categorie": "Catégorie de l'article 4",
+      "type": "Type d'article 4",
+      "theme": "Thème de l'article 4",
+      "fichier": "chemin/vers/fichier4",
+      "textFichier": "Texte du fichier 4"
     },
     {
       "id": 5,
-      "titre": "douane fiscal",
-      "reference": "2222",
-      "date_publication": "12/2/2021",
-      "abstract": "No matter how far along you are in your sophistication as an amateur astronomer, there is always one.",
-      "tags": [
-        2
-      ]
+      "titre": "\"Titre de l'article 5",
+      "reference": 123456,
+      "date_publication": "2202-02-23",
+      "abstract": "Ceci est un résumé de l'article 4",
+      "tags": "tags fiscal",
+      "categorie": "fiscal",
+      "type": "type fiscal",
+      "theme": "theme fiscal",
+      "textFichier": "Ceci est un résumé de l'article 5",
+      "fichier": "C:\\fakepath\\rapport PFE 2.odt",
+      "dateCreate": "2023-04-29T20:39:35.816Z"
     },
     {
       "id": 6,
-      "titre": "decrets social",
-      "reference": "2222",
-      "date": "12/2/2021",
-      "abstract": "No matter how far along you are in your sophistication as an amateur astronomer, there is always one.",
-      "tags": [
-        1
-      ]
-    },
-    {
-      "id": 7,
-      "titre": "arretés juridique",
-      "reference": "2222",
-      "date_publication": "12/2/2021",
-      "abstract": "No matter how far along you are in your sophistication as an amateur astronomer, there is always one.",
-      "tags": [
-        3
-      ]
-    },
-    {
-      "id": 8,
-      "titre": "décrets juridique",
-      "reference": "2222",
-      "date_publication": "12/2/2021",
-      "abstract": "No matter how far along you are in your sophistication as an amateur astronomer, there is always one.",
-      "tags": [
-        1,
-        3,
-        4
-      ]
-    },
-    {
-      "id": 9,
-      "titre": "ticket 25",
-      "reference": 2001,
-      "date_publication": "2001-12-11",
-      "abstract": "test 1",
-      "tags": "test1",
-      "categorie": "fiscal",
-      "type": "type fiscal",
-      "theme": "theme fiscal",
-      "textFichier": "",
-      "fichier": "C:\\fakepath\\chapitre 2.odt",
-      "date": "2023-04-17T22:24:12.652Z"
-    },
-    {
-      "id": 10,
-      "titre": "test1",
-      "reference": 2001,
-      "date_publication": "2001-12-11",
-      "abstract": "test 1",
-      "tags": "test1",
-      "categorie": "fiscal",
-      "type": "type fiscal",
-      "theme": "theme fiscal",
-      "fichier": "C:\\fakepath\\chapitre 2.odt",
-      "date": "2023-04-17T22:27:38.407Z"
-    },
-    {
-      "id": 11,
-      "titre": "test 2023",
-      "reference": 2323,
-      "date_publication": "2023-12-22",
-      "abstract": "test 2023",
-      "tags": "test 2023",
-      "categorie": "sante",
-      "type": "medical",
-      "theme": "medical",
-      "textFichier": "test 2023",
-      "fichier": "C:\\fakepath\\chapitre 3.odt",
-      "date": "2023-04-27T21:51:29.097Z"
+      "titre": "titre 6",
+      "reference": 753,
+      "date_publication": "2013-02-22",
+      "abstract": "abstract titre 6",
+      "tags": "tags social",
+      "categorie": "social",
+      "type": "type social",
+      "theme": "theme social",
+      "textFichier": "abstract titre 6",
+      "fichier": "C:\\fakepath\\introduction et conslison genral.odt",
+      "dateCreate": "2023-04-29T20:40:48.578Z"
     }
   ],
   "partenaires": [
@@ -590,13 +555,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": 11,
-      "title": "option 3",
-      "description": "Description d'option 3",
-      "level": 0,
-      "children": []
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ArticleService } from 'src/app/core/services/article.service';
 
@@ -11,7 +12,8 @@ export class ModifierProfilComponent {
   closeResult: string='';
 
   constructor(
-     private modalService: NgbModal
+     private modalService: NgbModal,
+     private router :Router
   ) { }
  
 
@@ -20,7 +22,10 @@ export class ModifierProfilComponent {
 	}
   
   
-   
+  annuler()
+  {
+    this.router.navigateByUrl('/profil')
+  }
     
   
 

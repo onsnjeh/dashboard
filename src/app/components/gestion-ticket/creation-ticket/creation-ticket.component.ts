@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Categorie } from 'src/app/core/models/categorie.model';
 import { Ticket } from 'src/app/core/models/ticket.model';
 import { CategorieService } from 'src/app/core/services/categorie.service';
@@ -39,8 +40,7 @@ export class CreationTicketComponent {
 			private categorieService: CategorieService,
 			private ticketService: TicketService,
 			private fb: FormBuilder,
-			// private toastr: ToastrService
-	) {}
+private router : Router	) {}
 
 	ngOnInit(): void {
 			this.categorieService.getCategories().subscribe(
@@ -75,4 +75,8 @@ export class CreationTicketComponent {
 		// this.toastr.success("Le ticket a été créé avec succès.")
 
 	}
+	annuler()
+	{
+			this.router.navigateByUrl('/gestion-ticket')  }
+	
 }

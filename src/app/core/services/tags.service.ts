@@ -15,12 +15,17 @@ export class TagService {
     return this.http.get<Tag[]>(this.apiUrl);
   }
 
+   // Récupère un tag par son id
+   getById(id: number): Observable<Tag> {
+    return this.http.get<Tag>(`${this.apiUrl}/${id}`);
+  }
+
   createTag(tag: Tag): Observable<Tag> {
     return this.http.post<Tag>(this.apiUrl, tag);
   }
 
-  updateTag(tag: Tag): Observable<Tag> {
-    return this.http.put<Tag>(`${this.apiUrl}/${tag.id}`, tag);
+  updateTag(id: number, Tag: Tag): Observable<Tag> {
+    return this.http.put<Tag>(`${this.apiUrl}/${id}`, Tag)
   }
 
   deleteTag(id: number): Observable<any> {

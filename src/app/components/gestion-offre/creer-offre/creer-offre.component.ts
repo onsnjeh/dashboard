@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Offre } from 'src/app/core/models/offre.model';
 import { OffreService } from 'src/app/core/services/offre.service';
@@ -16,7 +17,8 @@ export class CreerOffreComponent implements OnInit {
 
   constructor( 
     private offreService: OffreService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private router :Router) { }
 
   ngOnInit(): void {
     this.offreForm = this.fb.group({
@@ -48,7 +50,10 @@ export class CreerOffreComponent implements OnInit {
 
 	}
 
+  annuler(){
+    this.router.navigateByUrl('/gestion-offre')
 
+  }
 
 
 

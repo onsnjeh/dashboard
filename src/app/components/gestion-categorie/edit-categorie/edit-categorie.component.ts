@@ -53,4 +53,6 @@ export class EditCategorieComponent implements OnInit {
      alert("Categorie modifié avec succès.")
      );
      }
+     annuler(){
+      this.router.navigateByUrl('/gestion-categorie');     }
     }

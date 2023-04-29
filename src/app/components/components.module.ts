@@ -1,6 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { FeatherModule } from "angular-feather";
 import { allIcons } from "angular-feather/icons";
 import { DemoFlexyModule } from "../demo-flexy-module";
@@ -82,9 +84,14 @@ import { LaPaieComponent } from './la-paie/la-paie.component';
   imports: [
     CommonModule,
     FeatherModule.pick(allIcons),
-    DemoFlexyModule,ReactiveFormsModule,
-    FormsModule,NgxPaginationModule, ComponentsRoutingModule     
-     ,NgbRatingModule],
+    DemoFlexyModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxPaginationModule, 
+    ComponentsRoutingModule,
+    NgbTooltipModule,
+    NgbRatingModule
+  ],
   exports: [
     GestionClientComponent,
     GestionManagerExpertComponent,

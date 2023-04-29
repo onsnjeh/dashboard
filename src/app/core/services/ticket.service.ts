@@ -67,5 +67,12 @@ export class TicketService {
     return this.http.patch<Ticket>(url, body);
   }
 
-
+//dernier un ticket
+getLastTicket(): Observable<Ticket> {
+  return this.http.get<Ticket[]>(this.baseUrl).pipe(
+    map(tickets => {
+      return tickets[tickets.length - 1];
+    })
+  );
+}
 }

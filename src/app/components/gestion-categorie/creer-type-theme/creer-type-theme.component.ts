@@ -78,7 +78,11 @@ export class CreerTypeThemeComponent {
       }
     );
 alert("Type et Theme ajoute avec succès")
-this.router.navigate(['/gestion-categorie'])
     this.typeThemeForm.reset();
+  }
+
+  annuler(){
+    this.router.navigateByUrl('/gestion-categorie')
+
   }
 }

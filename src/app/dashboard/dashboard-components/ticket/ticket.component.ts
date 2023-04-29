@@ -10,6 +10,8 @@ import { TicketService } from "src/app/core/services/ticket.service";
 })
 export class TicketComponent {
   item2: Ticket[] = [];
+ 
+
   constructor(
     private service: TicketService
   ) { }
@@ -20,12 +22,16 @@ export class TicketComponent {
   }
   
   GetTicket() {
-    this.service.getTopTickets().subscribe((allData) => {
-      this.item2 = allData;
-      console.log(this.item2);
- 
-    });
+      this.service.getTickets().subscribe(item2 => {
+        // Triez les tickets par date de création décroissante
+        item2.sort((a, b) => new Date(b.dateCreate).getTime() - new Date(a.dateCreate).getTime());
+  
+        // Récupérez les 5 premiers tickets
+        this.item2 = item2.slice(0, 5);
+      });
+    
   }
+  
 
 
 }

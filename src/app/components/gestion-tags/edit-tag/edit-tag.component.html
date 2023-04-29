@@ -1,1 +1,31 @@
-<p>edit-tag works!</p>
+<div class="container-xxl bg-light my-3 py-5">
+ <div class="card">
+   <div class="container my-2 py-2">
+    <form>
+    <!-- <form *ngIf="tag" [formGroup]="tagForm" (ngSubmit)="onSubmit()"> -->
+     <div class="row g-3">
+         <div class="col-12 mb-2">
+           <h2>Modifier Tag</h2>
+         </div>
+         <div class="col-lg-6 col-md-6">
+           <div class="mb-3">
+             <label for="title" class="form-label"><h3>Titre :</h3></label>
+             <input type="text" class="form-control" id="title"formControlName="title" name="title" required>
+           </div>
+         </div>
+         <div class="col-lg-6 col-md-6">
+           <div class="mb-3">
+             <label for="description" class="form-label"><h3>Description :</h3></label>
+             <textarea class="form-control" rows="4" id="description"formControlName="description" name="description"
+               required></textarea>
+           </div>
+         </div>
+       </div>
+       <div class="modal-footer">
+         <button type="submit" class="btn btn-primary">Enregistrer</button>
+         <button type="button" class="btn btn-secondary" (click)="annuler()">Annuler</button>
+       </div>
+     </form>
+   </div>
+ </div>
+</div>

@@ -48,7 +48,10 @@ export class AjouterCompteComponent implements OnInit {
     // this.toastr.success("Le ticket a été créé avec succès.")
 
   }
+  annuler(){
+    this.router.navigate(['/gestion-manager-experte'])
 
+  }
 
 
 

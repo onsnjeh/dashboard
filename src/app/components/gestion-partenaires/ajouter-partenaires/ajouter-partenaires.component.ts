@@ -18,7 +18,8 @@ export class AjouterPartenairesComponent implements OnInit {
 
   constructor( private modalService: NgbModal,
     private partenaireService: PartenairesService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private router:Router) { }
 
   ngOnInit(): void {
     this.partenaireForm = this.fb.group({
@@ -52,7 +53,10 @@ export class AjouterPartenairesComponent implements OnInit {
 		this.modalService.open(content, {size: 'lg' });
 	}
 
+  annuler(){
+    this.router.navigateByUrl('/gestion-partenaires')
 
+  }
 
 
 

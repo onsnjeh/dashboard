@@ -36,12 +36,10 @@
             <input type="password" placeholder="Entrer Password" class="form-control" id="password"
               formControlName="password" name="password" required>
           </div>
-          <br>
-          <div class=" col-lg-10 col-md-8"></div>
-          <div class=" col-lg-2 col-md-8">
-            <button class="btn btn-primary text-uppercase" type="submit">Ajouter<i class="fa fa-plus"
-                style="color:white;"></i></button>
-          </div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary">Enregistrer</button>
+						<button type="button" class="btn btn-primary" (click)="annuler()">Annuler</button>
+				</div>
 
         </div>
       </form>

@@ -15,7 +15,7 @@
                                 <div class="col-lg-6 col-md-12">
                                     <label><h5>selection de Tag père :</h5> </label>
                                         <select class="form-select" ngModel="selectedTag" >
-                                            <option aria-selected="true">--select Tag--</option>
+                                            <option value="">Sélectionner un tag</option>
                                             <option *ngFor="let tag of listTags" ngValue="tag">{{tag.name}}</option>
                                         </select>
                                     

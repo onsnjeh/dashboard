@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Categorie } from 'src/app/core/models/categorie.model';
 import { CategorieService } from 'src/app/core/services/categorie.service';
@@ -17,7 +18,8 @@ export class CreationCategorieComponent {
 
   constructor( private modalService: NgbModal,
     private CategorieService: CategorieService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private router :Router) { }
 
   ngOnInit(): void {
     this.CategorieForm = this.fb.group({
@@ -48,5 +50,7 @@ export class CreationCategorieComponent {
   openModalDialogCustomClass(content:any) {
 		this.modalService.open(content, {size: 'lg' });
 	}
-
+  annuler(){
+    this.router.navigateByUrl('/gestion-categorie')
+  }
 }

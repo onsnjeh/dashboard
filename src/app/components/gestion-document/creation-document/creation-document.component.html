@@ -35,7 +35,7 @@
 									<label>Categorie :</label>
 									<select class="form-select" name="categories" [(ngModel)]="selectedCategorieName"
 										(change)="onCategorieChange()" id="categorie" formControlName="categorie" >
-										<option selected="true">--Select Categorie--</option>
+										<option value="">Sélectionner un categorie</option>
 										<option *ngFor="let categorie of categories" [value]="categorie.name">
 											{{categorie.name}}</option>
 									</select>
@@ -45,7 +45,7 @@
 										<label>Type :</label>
 										<select class="form-select" name="types" [(ngModel)]="selectedThemeName"
 											id="type" formControlName="type" >
-											<option selected="true">--Select Type--</option>
+											<option value="">Sélectionner un type</option>
 											<option *ngFor="let type of types" [value]="type.name">{{type.name}}
 											</option>
 										</select>
@@ -54,7 +54,7 @@
 										<label>Thème :</label>
 										<select class="form-select" name="themes" [(ngModel)]="selectedTypeName"
 											id="theme" formControlName="theme" >
-											<option selected="true">--Select Thème--</option>
+											<option value="">Sélectionner un type</option>
 											<option *ngFor="let theme of themes" [value]="theme.name">{{theme.name}}
 											</option>
 										</select>
@@ -154,10 +154,10 @@
 							</div>
 						</div>
 					</div>
-					<div class=" col-lg-10 col-md-8"></div>
-					<div class=" col-lg-2 col-md-8">
-						<button class="btn btn-primary text-uppercase" type="submit">Ajouter</button>
-					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary">Enregistrer</button>
+						<button type="button" class="btn btn-primary" (click)="annuler()">Annuler</button>
+				</div>
 
 				</div>
 			</form>

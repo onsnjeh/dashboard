@@ -23,10 +23,14 @@ export class ListDocComponent {
     // Charge les Articles depuis le serveur
     loadArticles() {
       this.ArticleService.getArticles().subscribe(articles => {
-        this.articles = articles;
+        // Triez les articles par date de création décroissante
+        articles.sort((a, b) => new Date(b.dateCreate).getTime() - new Date(a.dateCreate).getTime());
+  
+        // Récupérez les 5 premiers articles
+        this.articles = articles.slice(0, 5);
       });
     }
-  
+    
     // Retourne les Articles à afficher pour la page courante
     get ArticlesToShow(): Article[] {
       const startIndex = (this.page - 1) * this.pageSize;

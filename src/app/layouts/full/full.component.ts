@@ -45,12 +45,12 @@ export class FullComponent {
     },
     {
       link: "/gestion-manager-expert",
-      icon: "file-text",
+      icon: "users",
       menu: "List Manager/Expert",
     },
     {
       link: "/gestion-client",
-      icon: "users",
+      icon: "user",
       menu: "List Client",
     },
     {
@@ -65,7 +65,7 @@ export class FullComponent {
     },
     {
       link: "/gestion-tags",
-      icon: "align-justify",
+      icon: "tag",
       menu: "List Tag",
     },
     {

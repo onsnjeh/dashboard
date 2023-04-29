@@ -46,7 +46,7 @@ export class EditCompteComponent implements OnInit {
   }
 
   annuler(): void {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/gestion-expert-manager']);
   }
   onSubmit() {
     const updatedCompte: Compte = {
@@ -59,7 +59,7 @@ export class EditCompteComponent implements OnInit {
 
     };
     this.CompteService.update(this.Compte.id, updatedCompte)
-      .subscribe(() => this.router.navigateByUrl('/home'));
+      .subscribe(() => this.router.navigateByUrl('/gestion-expert-manager'));
     alert("Compte modifié avec succès.")
   }
 
