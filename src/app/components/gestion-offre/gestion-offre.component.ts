@@ -18,6 +18,8 @@ export class GestionOffreComponent {
 
   ngOnInit() {
     this.loadoffres();
+    this.search(''); // appel initial sans terme de recherche
+
   }
 
   // Charge les offres depuis le serveur
@@ -26,7 +28,20 @@ export class GestionOffreComponent {
       this.offres = offres;
     });
   }
+  search(searchTerm: string) {
+    this.offreService.searchOffres(searchTerm).subscribe(
+      offres => this.offres = offres,
+      error => console.log(error)
+    );
+  }
 
+  onSearch(searchTerm: string) {
+    this.search(searchTerm);
+  }
+
+  onClear() {
+    this.search('');
+  }
   // Retourne les offres à afficher pour la page courante
   get offresToShow(): Offre[] {
     const startIndex = (this.page - 1) * this.pageSize;

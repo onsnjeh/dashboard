@@ -19,6 +19,8 @@ export class GestionTicketComponent implements OnInit{
   
     ngOnInit() {
       this.loadTickets();
+      this.search(''); // appel initial sans terme de recherche
+
     }
   
     // Charge les tickets depuis le serveur
@@ -26,6 +28,21 @@ export class GestionTicketComponent implements OnInit{
       this.ticketService.getTickets().subscribe(tickets => {
         this.tickets = tickets;
       });
+    }
+  
+    search(searchTerm: string) {
+      this.ticketService.searchTickets(searchTerm).subscribe(
+        tickets => this.tickets = tickets,
+        error => console.log(error)
+      );
+    }
+  
+    onSearch(searchTerm: string) {
+      this.search(searchTerm);
+    }
+  
+    onClear() {
+      this.search('');
     }
   
     // Retourne les tickets à afficher pour la page courante

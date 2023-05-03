@@ -16,11 +16,12 @@ export class GestionDocumentComponent implements OnInit{
     pageSize = 5; // Nombre de Articles par page
     tags: Tag[] = []; // Les tags affichés
 
-    constructor(private ArticleService: ArticleService,
-      private TagService : TagService) { }
+    constructor(private ArticleService: ArticleService) { }
   
     ngOnInit() {
       this.loadArticles();
+      this.search(''); // appel initial sans terme de recherche
+
     }
   
     // Charge les Articles depuis le serveur
@@ -33,14 +34,21 @@ export class GestionDocumentComponent implements OnInit{
       });
     }
   
-
-    // Charge les Articles depuis le serveur
-    // loadTags() {
-    //   this.TagService.getTags().subscribe(tags => {
-    //     this.tags = tags;
-    //   });
-    // }
-
+    search(searchTerm: string) {
+      this.ArticleService.searchArticles(searchTerm).subscribe(
+        articles => this.articles = articles,
+        error => console.log(error)
+      );
+    }
+  
+    onSearch(searchTerm: string) {
+      this.search(searchTerm);
+    }
+  
+    onClear() {
+      this.search('');
+    }
+  
 
     // Retourne les Articles à afficher pour la page courante
     get ArticlesToShow(): Article[] {

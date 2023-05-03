@@ -19,8 +19,22 @@ export class GestionClientComponent implements OnInit {
     this.compteService.getItemsByRole('client').subscribe(comptes => {
       this.comptes = comptes;
     });
+    this.search(''); // appel initial sans terme de recherche
+
+  }
+  search(searchTerm: string) {
+    this.compteService.searchComptes(searchTerm,'client').subscribe(
+      comptes => this.comptes = comptes,
+    );
   }
 
+  onSearch(searchTerm: string) {
+    this.search(searchTerm);
+  }
+
+  onClear() {
+    this.search('');
+  }
   // Retourne les comptes à afficher pour la page courante
   get comptesToShow(): Compte[] {
     const startIndex = (this.page - 1) * this.pageSize;

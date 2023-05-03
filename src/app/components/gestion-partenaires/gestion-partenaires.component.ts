@@ -30,4 +30,18 @@ deletePartenaire(partner: Partenaire): void {
       this.partenaires = this.partenaires.filter(p => p !== partner);
     });
 }
+search(searchTerm: string) {
+  this.partenairesService.searchPartenaires(searchTerm).subscribe(
+    partenaires => this.partenaires = partenaires,
+  );
+}
+
+onSearch(searchTerm: string) {
+  this.search(searchTerm);
+}
+
+onClear() {
+  this.search('');
+}
+
 }

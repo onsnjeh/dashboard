@@ -14,6 +14,8 @@ export class GestionTagsComponent {
 
   ngOnInit() {
     this.TagService.getTags().subscribe((tags: Tag[]) => this.tags = tags);
+    this.search(''); // appel initial sans terme de recherche
+
   }
 
   toggleExpand(tags: Tag) {
@@ -21,7 +23,19 @@ export class GestionTagsComponent {
       tags.expanded = !tags.expanded;
     }
   }
+  search(searchTerm: string) {
+    this.TagService.searchTags(searchTerm).subscribe(
+      tags => this.tags = tags,
+    );
+  }
 
+  onSearch(searchTerm: string) {
+    this.search(searchTerm);
+  }
+
+  onClear() {
+    this.search('');
+  }
   getChildtagss(tags: Tag): Tag[] {
     let childtagss: Tag[] = [];
 

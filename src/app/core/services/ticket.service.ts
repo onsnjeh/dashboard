@@ -75,4 +75,8 @@ getLastTicket(): Observable<Ticket> {
     })
   );
 }
+searchTickets(searchTerm: string): Observable<Ticket[]> {
+  return this.http.get<Ticket[]>(`${this.baseUrl}?q=${searchTerm}`);
+}
+
 }

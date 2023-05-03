@@ -28,8 +28,27 @@ export class GestionManagerExpertComponent {
       this.managerComptes = managerComptes;
       this.expertComptes = expertComptes;
     });
+    this.search(''); // appel initial sans terme de recherche
+
+  }
+  
+  search(searchTerm: string) {
+    forkJoin([
+      this.compteService.searchComptes(searchTerm,'manager'),
+      this.compteService.searchComptes(searchTerm,'expert')
+    ]).subscribe(([managerComptes, expertComptes]) => {
+      this.managerComptes = managerComptes;
+      this.expertComptes = expertComptes;
+    });   
   }
 
+  onSearch(searchTerm: string) {
+    this.search(searchTerm);
+  }
+
+  onClear() {
+    this.search('');
+  }
   // Retourne les comptes à afficher pour la page courante
   get comptesToShow(): Compte[] {
     const startIndex = (this.page - 1) * this.pageSize;

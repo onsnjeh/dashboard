@@ -38,5 +38,9 @@ getArticles(): Observable<Article[]> {
   delete(id: number): Observable<Article> {
     return this.http.delete<Article>(`${this.baseUrl}/${id}`);
   }
+
+  searchArticles(searchTerm: string): Observable<Article[]> {
+    return this.http.get<Article[]>(`${this.baseUrl}?q=${searchTerm}`);
+  }
 }
 

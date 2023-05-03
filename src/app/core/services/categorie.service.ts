@@ -177,4 +177,11 @@ export class CategorieService {
         );
       })
     );
-    }}    
+    }
+  
+    searchCategories(searchTerm: string): Observable<Categorie[]> {
+      return this.http.get<Categorie[]>(`${this.baseUrl}categorie/?q=${searchTerm}`);
+    
+  }
+  
+  }    

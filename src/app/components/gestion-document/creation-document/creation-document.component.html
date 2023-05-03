@@ -43,7 +43,7 @@
 								<div class="row g-3">
 									<div class="col-lg-6 col-md-6">
 										<label>Type :</label>
-										<select class="form-select" name="types" [(ngModel)]="selectedThemeName"
+										<select class="form-select" name="types" [(ngModel)]="selectedTypeName"
 											id="type" formControlName="type" >
 											<option value="">Sélectionner un type</option>
 											<option *ngFor="let type of types" [value]="type.name">{{type.name}}
@@ -52,9 +52,9 @@
 									</div>
 									<div class="col-lg-6 col-md-6">
 										<label>Thème :</label>
-										<select class="form-select" name="themes" [(ngModel)]="selectedTypeName"
+										<select class="form-select" name="themes" [(ngModel)]="selectedThemeName"
 											id="theme" formControlName="theme" >
-											<option value="">Sélectionner un type</option>
+											<option value="">Sélectionner un thème</option>
 											<option *ngFor="let theme of themes" [value]="theme.name">{{theme.name}}
 											</option>
 										</select>

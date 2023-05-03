@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-barre-recherche',
@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class BarreRechercheComponent {
 
+  @Output() search = new EventEmitter<string>();
+  @Output() clear = new EventEmitter<void>();
+  searchTerm: string = '';
+
+  onSearch() {
+    this.search.emit(this.searchTerm);
+  }
+
+  onClear() {
+    this.searchTerm = '';
+    this.clear.emit();
+  }
 }

@@ -35,4 +35,9 @@ export class PartenairesService {
   delete(id: number): Observable<Partenaire> {
     return this.http.delete<Partenaire>(`${this.baseUrl}/${id}`);
   }
+
+  searchPartenaires(searchTerm: string): Observable<Partenaire[]> {
+    return this.http.get<Partenaire[]>(`${this.baseUrl}?q=${searchTerm}`);
+  }
+
 }

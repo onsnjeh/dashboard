@@ -12,7 +12,7 @@ export class CompteService {
   constructor(private http: HttpClient) { }
 
   getItemsByRole(role: string): Observable<Compte[]> {
-    return this.http.get<Compte[]>(`http://localhost:3000/compte?role=${role}`);
+    return this.http.get<Compte[]>(`${this.baseUrl}?role=${role}`);
   }
     
   // Récupère tous les Comptes
@@ -43,7 +43,7 @@ export class CompteService {
 
 
   getProfil(nom:string){
-    return this.http.get< Compte>(`http://localhost:3000/compte?role=${nom}`);
+    return this.http.get< Compte>(`${this.baseUrl}?role=${nom}`);
 
   }
 
@@ -60,5 +60,9 @@ export class CompteService {
       });
   }
 
+  searchComptes(searchTerm: string, role: string): Observable<Compte[]> {
+    return this.http.get<Compte[]>(`${this.baseUrl}?role=${role}&q=${searchTerm}`);
+  }
+  
 }
 

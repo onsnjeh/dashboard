@@ -1,5 +1,5 @@
-<app-barre-recherche></app-barre-recherche>
-
+<app-barre-recherche (search)="onSearch($event)" (clear)="onClear()"></app-barre-recherche>
+<br>
 <div class="container-fluid">
 
     <div class="card">
@@ -18,7 +18,7 @@
                 <th scope="col">Nom</th>
                 <th scope="col">Prénom</th>
                 <th scope="col">Email</th>
-                <th scope="col">Mot de Passe</th>
+                <th scope="col">Rôle</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -27,7 +27,7 @@
                 <th><a [routerLink]="['/detail-compte', items.id]">{{items.nom}}</a></th>
                 <th>{{items.prenom}}</th>
                 <th>{{items.email}}</th>
-                <th ng-bind="password">{{items.password}}</th>
+                <th >{{items.role}}</th>
                 <td>
                     <button class="btn btn-primary text-uppercase" style="margin-left: 10px;"
                     [routerLink]="['/edit-compte', items.id]" ngbTooltip="modifier"><i

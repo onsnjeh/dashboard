@@ -24,6 +24,8 @@ export class GestionCategorieComponent {
   ngOnInit() {
     
     this.GetCategorie();
+    this.search(''); // appel initial sans terme de recherche
+
   }
   
   GetCategorie() {
@@ -32,7 +34,20 @@ export class GestionCategorieComponent {
       console.log(this.item1);
  
     });}
+    search(searchTerm: string) {
+      this.service.searchCategories(searchTerm).subscribe(
+        item1 => this.item1 = item1,
+        error => console.log(error)
+      );
+    }
   
+    onSearch(searchTerm: string) {
+      this.search(searchTerm);
+    }
+  
+    onClear() {
+      this.search('');
+    }
 //delete 
 deleteCategorie(id: number): void {
   this.service.deleteCategorie(id)

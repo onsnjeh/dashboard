@@ -42,4 +42,9 @@ export class OffreService {
     const url = `${this.baseUrl}?titre=${titre}`;
     return this.http.get<Offre>(url);
   }
+
+  searchOffres(searchTerm: string): Observable<Offre[]> {
+    return this.http.get<Offre[]>(`${this.baseUrl}?q=${searchTerm}`);
+  }
+
 }

@@ -31,4 +31,8 @@ export class TagService {
   deleteTag(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+  searchTags(searchTerm: string): Observable<Tag[]> {
+    return this.http.get<Tag[]>(`${this.apiUrl}?q=${searchTerm}`);
+  }
 }
