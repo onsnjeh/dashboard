@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { Compte } from 'src/app/core/models/compte.model';
 import { Ticket } from 'src/app/core/models/ticket.model';
 import { CompteService } from 'src/app/core/services/compte.service';
@@ -17,9 +18,10 @@ export class LaPaieComponent implements OnInit {
   constructor(private ticketService: TicketService, private compteService: CompteService) { }
 
   ngOnInit() {
-    this.ticketService.getTickets().subscribe((tickets) => {
-      this.tickets = tickets;
-      this.filterTickets();
+    this.ticketService.getTickets().pipe(
+      map(tickets => tickets.filter((t:Ticket) => t.assignee === this.selectedExpert))
+    ).subscribe((filteredTickets) => {
+      this.tickets = filteredTickets;
     });
 
     this.compteService.getItemsByRole('expert').subscribe((experts) => {
@@ -34,8 +36,20 @@ export class LaPaieComponent implements OnInit {
   }
 
   private filterTickets() {
-    if (this.experts.length > 0 && this.selectedExpert !== '') {
-      this.tickets = this.tickets.filter((t:Ticket) => t.assignee === this.selectedExpert);
+    if (this.experts.length > 0) {
+      if (this.selectedExpert !== '') {
+        // si un expert est sélectionné, filtrer les tickets en fonction de l'expert
+        this.ticketService.getTickets().pipe(
+          map(tickets => tickets.filter((t:Ticket) => t.assignee === this.selectedExpert))
+        ).subscribe((filteredTickets) => {
+          this.tickets = filteredTickets;
+        });
+      } else {
+        // si aucun expert n'est sélectionné, afficher tous les tickets
+        this.ticketService.getTickets().subscribe((tickets) => {
+          this.tickets = tickets;
+        });
+      }
     }
   }
 }
