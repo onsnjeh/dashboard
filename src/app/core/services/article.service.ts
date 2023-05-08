@@ -42,5 +42,28 @@ getArticles(): Observable<Article[]> {
   searchArticles(searchTerm: string): Observable<Article[]> {
     return this.http.get<Article[]>(`${this.baseUrl}?q=${searchTerm}`);
   }
+
+//   import { Injectable } from '@angular/core';
+// import { HttpClient } from '@angular/common/http';
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class SchemaService {
+
+//   private readonly jsonServerUrl = 'http://localhost:3000/schemas';
+
+//   constructor(private http: HttpClient) { }
+
+//   saveSchema(fileInput: HTMLInputElement) {
+//     const fullPath = fileInput.value;
+//     const schemaUrl = `file:///${fullPath.replace(/\\/g, '/')}`;
+//     const schema = {
+//       url: schemaUrl
+//     };
+//     return this.http.post(this.jsonServerUrl, schema);
+//   }
+// }
+
 }
 
