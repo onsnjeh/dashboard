@@ -3,10 +3,13 @@ export interface Tag {
   title: string;
   description: string;
   level: number;
-  children?: Tag[];
-  parentId: number;
+  parentName: string;
+  // parentId: number;
+  children: Tag[];
   expanded?: boolean;
 }
+
+
 export interface  Article {
 
   id: number;

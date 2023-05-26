@@ -1,57 +1,124 @@
 <ng-template #content let-modal>
-	<div class="modal-header">
-		<h3 class="modal-title">Ajouter un Tag</h3>
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-	</div>
-	<!-- <div class="container-xxl bg-light my-6 py-6 "> -->
-        <div class="card ">
-            <div class="container my-4 py-4 ">
-             <form>
-                    <div class="container my-4 py-4 ">
-                        <form>
-                            <div class="row g-3">
-                               
-            
-                                <div class="col-lg-6 col-md-12">
-                                    <label><h5>selection de Tag père :</h5> </label>
-                                        <select class="form-select" ngModel="selectedTag" >
-                                            <option value="">Sélectionner un tag</option>
-                                            <option *ngFor="let tag of listTags" ngValue="tag">{{tag.name}}</option>
-                                        </select>
-                                    
-                                    
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <h5>Tag :</h5>
-                                    <input class="form-control" rows="4" class="form-control" id="exampleInputName"
-                                        placeholder="Entrez un tag">
-                                </div>
-                                <div class="form-group row mt-5">
-                                    <label for="exampleInputName" ><h5>Description :</h5></label>
-                                    <div class="col-sm-10">
-                                        <textarea class="form-control" rows="4" class="form-control" id="exampleInputName"
-                                        placeholder="écrire ici ..."></textarea>
-                                    </div>
-                                  </div>
-                            
-                            </div>
-                    
-                        
-                        </form>
-                    </div>
-             </form>
-            </div>
-           </div>
-          <!-- </div> -->
-	<div class="modal-footer">
-    <button class="btn btn-primary text-uppercase" type="submit">Ajouter <i class="fa fa-plus"
-      style="color:white;"></i></button>
-		<!-- <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button> -->
-	</div>
+  <div class="modal-header">
+    <h4 class="modal-title">Ajouter un Tag</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="tagTitle">Titre</label>
+        <input type="text" class="form-control" id="tagTitle" [(ngModel)]="newTag.title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="tagDescription">Description</label>
+        <textarea class="form-control" id="tagDescription" [(ngModel)]="newTag.description" name="description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="tagLevel">Niveau</label>
+        <input class="form-control" type="number" id="level" name="level" [(ngModel)]="newTag.level" required>
+
+      </div>
+      <div class="form-group" *ngIf="newTag.level > 0">
+        <label for="parentTag">Tag parent</label>
+        <select class="form-control" id="parentName" name="parentName" [(ngModel)]="newTag.parentName">
+          <option value="">None</option>
+          <ng-container *ngFor="let tag of tags">
+            <ng-template [ngIf]="tag.level === 0">
+              <option [value]="tag.title">{{ tag.title }}</option>
+              <ng-container *ngTemplateOutlet="nestedOptions; context: { tags: tag.children, level: 1 }"></ng-container>
+            </ng-template>
+          </ng-container>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="addTag()">Ajouter</button>
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Annuler</button>
+  </div>
 </ng-template>
-
-
-   <button class="btn btn-outline-primary mb-2 me-2" (click)="openModalDialogCustomClass(content)">
-	Ajouter un Tag
+<ng-template #nestedOptions let-tags="tags" let-level="level">
+  <ng-container *ngIf="tags">
+    <option *ngFor="let tag of tags" [value]="tag.title">{{ '--'.repeat(level) }} {{ tag.title }}</option>
+    <ng-container *ngFor="let tag of tags">
+      <ng-container *ngTemplateOutlet="nestedOptions; context: { tags: tag.children, level: level + 1 }"></ng-container>
+    </ng-container>
+  </ng-container>
+</ng-template>
+<button class="btn btn-outline-primary mb-2 me-2" (click)="openModalDialogCustomClass(content)">
+  Ajouter un Tag
 </button>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ng-template #content let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title">Ajouter un Tag</h3>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="container my-4 py-4">
+    <form (ngSubmit)="addTag()">
+      <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" [(ngModel)]="newTag.title" required>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" [(ngModel)]="newTag.description" required></textarea>
+      </div>
+      <div>
+        <label for="level">Level:</label>
+        <input type="number" id="level" name="level" [(ngModel)]="newTag.level" required>
+      </div>
+      <div>
+        <label for="parentName">Parent Tag:</label>
+        <select id="parentName" name="parentName" [(ngModel)]="newTag.parentName">
+          <option value="">None</option>
+          <ng-container *ngFor="let tag of tags">
+            <ng-template [ngIf]="tag.level === 0">
+              <option [value]="tag.title">{{ tag.title }}</option>
+              <ng-container *ngTemplateOutlet="nestedOptions; context: { tags: tag.children, level: 1 }"></ng-container>
+            </ng-template>
+          </ng-container>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary text-uppercase" type="submit">Enregistrer</button>
+      </div>    </form>
+  </div>
+
+</ng-template>
+
+<ng-template #nestedOptions let-tags="tags" let-level="level">
+  <ng-container *ngIf="tags">
+    <option *ngFor="let tag of tags" [value]="tag.title">{{ '--'.repeat(level) }} {{ tag.title }}</option>
+    <ng-container *ngFor="let tag of tags">
+      <ng-container *ngTemplateOutlet="nestedOptions; context: { tags: tag.children, level: level + 1 }"></ng-container>
+    </ng-container>
+  </ng-container>
+</ng-template>
+
+<button class="btn btn-outline-primary mb-2 me-2" (click)="openModalDialogCustomClass(content)">
+  Ajouter un Tag
+</button> -->

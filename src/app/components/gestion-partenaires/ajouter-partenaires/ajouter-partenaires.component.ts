@@ -53,10 +53,7 @@ export class AjouterPartenairesComponent implements OnInit {
 		this.modalService.open(content, {size: 'lg' });
 	}
 
-  annuler(){
-    this.router.navigateByUrl('/gestion-partenaires')
-
-  }
+ 
 
 
 

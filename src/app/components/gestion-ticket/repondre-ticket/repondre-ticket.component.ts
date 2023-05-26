@@ -18,6 +18,7 @@ export class RepondreTicketComponent implements OnInit {
   ticketForm!: FormGroup 
   comptes: Compte[] = []; // Les comptes affichés
   priorite!: string 
+  status: string = ''; // Ajouter la propriété status avec le type approprié
 
   isResponseVisible = false;
   responseText = '';
@@ -39,6 +40,9 @@ export class RepondreTicketComponent implements OnInit {
     this.dataService.getItemsByRole('expert').subscribe((comptes: Compte[]) => {
       this.comptes = comptes;
     });
+ 
+
+
   }
 //affecter tickect 
   onAssign() {

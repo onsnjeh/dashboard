@@ -39,7 +39,9 @@ import { ModifierProfilComponent } from './layouts/profil/modifier-profil/modifi
     FormsModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

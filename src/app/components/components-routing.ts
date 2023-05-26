@@ -19,7 +19,7 @@ import { EditOffreComponent } from "./gestion-offre/edit-offre/edit-offre.compon
 import { EditPartenaireComponent } from "./gestion-partenaires/edit-partenaire/edit-partenaire.component";
 import { DetailOffreComponent } from "./gestion-offre/detail-offre/detail-offre.component";
 import { EditCategorieComponent } from "./gestion-categorie/edit-categorie/edit-categorie.component";
-import { EditTypeThemeComponent } from "./gestion-categorie/edit-type-theme/edit-type-theme.component";
+
 import { AjouterCompteComponent } from "./ajouter-compte/ajouter-compte.component";
 import { EditCompteComponent } from "./edit-compte/edit-compte.component";
 import { DetailCompteComponent } from "./detail-compte/detail-compte.component";
@@ -65,8 +65,8 @@ export const routes: Routes = [
  { path:'edit-partenaire/:id', component: EditPartenaireComponent },
  { path:'edit-offre/:id', component: EditOffreComponent},
  
- { path: 'edit-type-theme/:id', component: EditTypeThemeComponent },
 
+ 
  { path:'detail-categorie/:id', component: DetailCategorieComponent },
  { path:'detail-ticket/:id', component: DetailTicketComponent },
  { path:'edit-document/:id', component: EditDocumentComponent },

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { Ticket } from "src/app/core/models/ticket.model";
 import { TicketService } from "src/app/core/services/ticket.service";
 
@@ -14,8 +15,10 @@ export class GestionTicketComponent implements OnInit{
     tickets: Ticket[] = []; // Les tickets affichés
     page = 1; // La page courante
     pageSize = 5; // Nombre de tickets par page
-  
-    constructor(private ticketService: TicketService) { }
+
+    constructor(private ticketService: TicketService,
+      private route: ActivatedRoute,
+      ) { }
   
     ngOnInit() {
       this.loadTickets();
@@ -44,7 +47,29 @@ export class GestionTicketComponent implements OnInit{
     onClear() {
       this.search('');
     }
-  
+//fermer
+
+fermerTicket(ticket: Ticket) {
+  const updatedTicket: Ticket = {
+    ...ticket,
+    status: 'Fermer',
+    dateFermer: new Date()
+  };
+
+  this.ticketService.updateTicket(ticket.id, updatedTicket).subscribe(
+    () => {
+      const ticketIndex = this.tickets.findIndex(t => t.id === ticket.id);
+      if (ticketIndex !== -1) {
+        this.tickets[ticketIndex] = updatedTicket;
+        alert('Ticket fermé avec succès');
+      }
+    },
+    error => {
+      console.log(error);
+      alert('Erreur lors de la fermeture du ticket');
+    }
+  );
+}
     // Retourne les tickets à afficher pour la page courante
     get ticketsToShow(): Ticket[] {
       const startIndex = (this.page - 1) * this.pageSize;

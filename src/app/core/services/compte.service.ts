@@ -2,12 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Compte } from '../models/compte.model';
+import { FichePaie } from '../models/fichedepaie.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompteService {
   private baseUrl = 'http://localhost:3000/compte'; // URL de l'API json-server
+  private apiUrl = 'http://localhost:3000/fichepaie'; // Remplacez l'URL par celle de votre serveur JSON
+
 
   constructor(private http: HttpClient) { }
 
@@ -40,6 +43,17 @@ export class CompteService {
     return this.http.delete<Compte>(`${this.baseUrl}/${id}`);
   }
 
+  setCurrentCompte(Compte: Compte) {
+    localStorage.setItem('currentCompte', JSON.stringify(Compte));
+  }
+
+  getCurrentCompte() {
+    return JSON.parse(localStorage.getItem('currentCompte') || '{}');
+  }
+
+  logout() {
+    localStorage.removeItem('currentCompte');
+  }
 
 
   getProfil(nom:string){
@@ -62,6 +76,13 @@ export class CompteService {
 
   searchComptes(searchTerm: string, role: string): Observable<Compte[]> {
     return this.http.get<Compte[]>(`${this.baseUrl}?role=${role}&q=${searchTerm}`);
+  }
+
+  //calculer paie 
+
+
+  createFichePaie(FichePaie: FichePaie): Observable<FichePaie> {
+    return this.http.post<FichePaie>(this.apiUrl, FichePaie);
   }
   
 }

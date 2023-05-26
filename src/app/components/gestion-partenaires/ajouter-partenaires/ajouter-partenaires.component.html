@@ -2,7 +2,6 @@
   <ng-template #content let-modal>
     <div class="modal-header">
       <h3 class="modal-title">Ajouter Partenaire</h3>
-      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <!-- <div class="container-xxl bg-light my-6 py-6 "> -->
           <div class="card ">
@@ -29,7 +28,8 @@
        
                   <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
-                    <button type="button" class="btn btn-primary" (click)="annuler()">Annuler</button>
+                    <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Annuler</button>
+
             </div>
   </form>
 </div>

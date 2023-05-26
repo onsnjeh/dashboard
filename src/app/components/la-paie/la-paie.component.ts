@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { Compte } from 'src/app/core/models/compte.model';
+import { FichePaie } from 'src/app/core/models/fichedepaie.model';
 import { Ticket } from 'src/app/core/models/ticket.model';
 import { CompteService } from 'src/app/core/services/compte.service';
 import { TicketService } from 'src/app/core/services/ticket.service';
@@ -14,9 +15,25 @@ export class LaPaieComponent implements OnInit {
   tickets: Ticket[] = [];
   experts: Compte[] = [];
   selectedExpert: string = '';
-
+  fichePaieAmount: number = 0;
+  fichePaie: FichePaie | undefined;
   constructor(private ticketService: TicketService, private compteService: CompteService) { }
-
+  calculateFichePaie() {
+    const selectedExpert = this.experts.find((expert) => expert.nom === this.selectedExpert);
+    if (selectedExpert) {
+      const ticketCount = this.tickets.length;
+      const fichePaie: FichePaie = {
+        id: 0,
+        expertId: selectedExpert.id,
+        expertName: selectedExpert.nom,
+        ticketCount: ticketCount,
+        payrollAmount: this.fichePaieAmount
+      };
+      this.compteService.createFichePaie(fichePaie).subscribe((createdFichePaie) => {
+        this.fichePaie = createdFichePaie;
+      });
+    }
+  }
   ngOnInit() {
     this.ticketService.getTickets().pipe(
       map(tickets => tickets.filter((t:Ticket) => t.assignee === this.selectedExpert))

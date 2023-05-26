@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FeatherModule } from "angular-feather";
@@ -29,7 +29,6 @@ import { ComponentsRoutingModule } from "./components-routing";
 import { NgbRatingModule } from "@ng-bootstrap/ng-bootstrap";
 import { NgxPaginationModule } from "ngx-pagination";
 import { EditCategorieComponent } from './gestion-categorie/edit-categorie/edit-categorie.component';
-import { EditTypeThemeComponent } from "./gestion-categorie/edit-type-theme/edit-type-theme.component";
 import { AjouterCompteComponent } from './ajouter-compte/ajouter-compte.component';
 
 import { EditCompteComponent } from './edit-compte/edit-compte.component';
@@ -42,6 +41,7 @@ import { DetailDocumentComponent } from './gestion-document/detail-document/deta
 import { EditDocumentComponent } from './gestion-document/edit-document/edit-document.component';
 import { DetailTagsComponent } from './gestion-tags/detail-tags/detail-tags.component';
 import { LaPaieComponent } from './la-paie/la-paie.component';
+import { EditTagComponent } from "./gestion-tags/edit-tag/edit-tag.component";
 
 
 
@@ -68,9 +68,8 @@ import { LaPaieComponent } from './la-paie/la-paie.component';
     EditOffreComponent,
     DetailOffreComponent,
     EditCategorieComponent,
-    EditTypeThemeComponent,
     AjouterCompteComponent,
-
+    EditTagComponent,
     EditCompteComponent,
      DetailCompteComponent,
      DetailCategorieComponent   ,
@@ -85,12 +84,12 @@ import { LaPaieComponent } from './la-paie/la-paie.component';
     CommonModule,
     FeatherModule.pick(allIcons),
     DemoFlexyModule,
-    ReactiveFormsModule,
-    FormsModule,
+    ReactiveFormsModule,    FormsModule,
     NgxPaginationModule, 
     ComponentsRoutingModule,
     NgbTooltipModule,
-    NgbRatingModule
+    NgbRatingModule,
+    
   ],
   exports: [
     GestionClientComponent,

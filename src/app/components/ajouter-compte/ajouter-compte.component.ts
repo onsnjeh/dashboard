@@ -49,7 +49,7 @@ export class AjouterCompteComponent implements OnInit {
 
   }
   annuler(){
-    this.router.navigate(['/gestion-manager-experte'])
+    this.router.navigate(['/gestion-manager-expert'])
 
   }
 

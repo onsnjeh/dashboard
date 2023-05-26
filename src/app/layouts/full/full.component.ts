@@ -61,7 +61,7 @@ export class FullComponent {
     {
       link: "/gestion-categorie",
       icon: "menu",
-      menu: "List Categorie",
+      menu: "List Catégorie",
     },
     {
       link: "/gestion-tags",
@@ -76,7 +76,7 @@ export class FullComponent {
     {
       link: "/la-paie",
       icon: "bar-chart-2",
-      menu: "La paie",
+      menu: "Fiche de paie",
     }
   ]
 

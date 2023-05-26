@@ -1,58 +1,110 @@
 <div class="container-xxl bg-light my-3 py-5 ">
- <div class="card">
-   <div class="container my-2 py-2 ">
-     <form>
-       <div class="row g-3">
-         <div class="container">
-           <div class="row">
-             <div class="col-lg-6 col-md-8">
-               <h3>Expert :</h3>
-               <select (change)="onExpertSelected($event)" class="form-select">
-                 <option value="">Sélectionner un expert</option>
-                 <option *ngFor="let expert of experts" [value]="expert.nom">{{ expert.nom }}</option>
-               </select>
-             </div>
-             <div class="col-lg-6 col-md-8">
-               <h3>Date :</h3>
-               <select class="form-select">
-                 <option value="today">Aujourd'hui</option>
-                 <option value="week">Cette semaine</option>
-                 <option value="month">Ce mois-ci</option>
-               </select>
-             </div>
-           </div>
-           <div class="row mt-3">
-             <div class="col">
-               <table class="table table-striped">
-                 <thead>
-                   <tr>
-                     <th scope="col">ID</th>
-                     <th scope="col">Sujet</th>
-                     <th scope="col">Statut</th>
-                     <th scope="col">Date </th>
-                   </tr>
-                 </thead>
-                 <tbody>
-                   <tr *ngFor="let ticket of tickets">
-                     <td>{{ ticket.id }}</td>
-                     <td>{{ ticket.categorie }}</td>
-                     <td>{{ ticket.status }}</td>
-                     <td >{{ ticket.dateFermer }} {{ ticket.dateRepondre }}</td>
-                     <td></td>
-                   </tr>
-                 </tbody>
-               </table>
-             </div>
-             <div class="row g-3 mt-8">
-               <div class="col-lg-6 col-md-4">
-                 <h3>La somme :</h3>
-                 <input class="form-control" id="exampleInputName" placeholder="0.000 dt">
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </form>
-   </div>
- </div>
+  <div class="card">
+    <div class="container my-2 py-2 ">
+      <form (ngSubmit)="calculateFichePaie()">
+        <div class="row g-3">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 col-md-8">
+                <h3>Expert :</h3>
+                <select (change)="onExpertSelected($event)" class="form-select" [(ngModel)]="selectedExpert" name="selectedExpert">
+                  <option value="">Sélectionner un expert</option>
+                  <option *ngFor="let expert of experts" [value]="expert.nom">{{ expert.nom }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Catégorie</th>
+                      <th scope="col">Priorité</th>
+                      <th scope="col">Statut</th>
+                      <th scope="col">Date Réponse</th>
+                      <th scope="col">Date Fermeture</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ticket of tickets">
+                      <td>{{ ticket.id }}</td>
+                      <td>{{ ticket.categorie }}</td>
+                      <td>{{ ticket.priorite }}</td>
+                      <td>{{ ticket.status }}</td>
+                      <td>{{ ticket.dateRepondre }}</td>
+                      <td>{{ ticket.dateFermer }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="row g-3 mt-8">
+                <div class="col-lg-6 col-md-4">
+                  <h3>La somme :</h3>
+                  <div class="row g-3 mt-8">
+                    <div class="col-lg-8 col-md-4">
+                      <input class="form-control" id="exampleInputName" placeholder="0.000 dt" [(ngModel)]="fichePaieAmount" name="fichePaieAmount">
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                      <button type="submit" class="btn btn-primary">Calculer</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-8" *ngIf="fichePaie">
+                <div class="col">
+                  <h3>Fiche de paie :</h3>
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nom d"expert</th>
+                        <th scope="col">Nombre de tickets</th>
+                        <th scope="col">Somme de la fiche de paie</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ fichePaie.id }}</td>
+                        <td>{{ fichePaie.expertName }}</td>
+                        <td>{{ fichePaie.ticketCount }}</td>
+                        <td>{{ fichePaie.payrollAmount }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
+
+<!--                      <input class="form-control" id="exampleInputName" placeholder="0.000 dt" [(ngModel)]="payrollAmount"name="payrollAmount">
+
+  
+  <div class="row mt-8" *ngIf="fichePaie">
+                <div class="col">
+                  <h3>Fiche de paie :</h3>
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nom d"expert</th>
+                        <th scope="col">Nombre de tickets</th>
+                        <th scope="col">Somme de la fiche de paie</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ fichePaie.id }}</td>
+                        <td>{{ fichePaie.expertName }}</td>
+                        <td>{{ fichePaie.ticketCount }}</td>
+                        <td>{{ fichePaie.payrollAmount }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div> -->

@@ -22,7 +22,6 @@ import { EditPartenaireComponent } from './components/gestion-partenaires/edit-p
 import { EditOffreComponent } from './components/gestion-offre/edit-offre/edit-offre.component';
 import { DetailOffreComponent } from './components/gestion-offre/detail-offre/detail-offre.component';
 import { EditCategorieComponent } from './components/gestion-categorie/edit-categorie/edit-categorie.component';
-import { EditTypeThemeComponent } from './components/gestion-categorie/edit-type-theme/edit-type-theme.component';
 import { AjouterCompteComponent } from './components/ajouter-compte/ajouter-compte.component';
 import { EditCompteComponent } from './components/edit-compte/edit-compte.component';
 import { DetailCompteComponent } from './components/detail-compte/detail-compte.component';
@@ -36,6 +35,7 @@ import { ProfilComponent } from './layouts/profil/profil.component';
 import { DetailTagsComponent } from './components/gestion-tags/detail-tags/detail-tags.component';
 import { EditTagComponent } from './components/gestion-tags/edit-tag/edit-tag.component';
 import { LaPaieComponent } from './components/la-paie/la-paie.component';
+
 
 
 
@@ -76,7 +76,6 @@ const routes: Routes = [
       { path:'edit-partenaire/:id', component: EditPartenaireComponent },
       { path:'edit-offre/:id', component: EditOffreComponent},
       
-      { path: 'edit-type-theme/:id', component: EditTypeThemeComponent },
      
       { path:'detail-categorie/:id', component: DetailCategorieComponent },
      
@@ -96,7 +95,7 @@ const routes: Routes = [
     
     ]
   },
-
+ 
   {path:"", redirectTo:"/home", pathMatch:"full"},
   {path:"**", redirectTo:"/home", pathMatch:"full"},
  
